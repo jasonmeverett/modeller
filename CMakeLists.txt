@@ -23,6 +23,7 @@ set(CMAKE_BUILD_TYPE Debug)
 set(CMAKE_Fortran_MODULE_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/mod)
 set(ENTITYX_BUILD_SHARED False CACHE bool "Testing")
 set(ENTITYX_BUILD_TESTING False CACHE bool "Testing")
+set(PYTHON_EXECUTABLE "/miniconda3/envs/modeller/bin/python")
 
 find_package(Simbody REQUIRED)
 add_subdirectory(extern/pybind11)

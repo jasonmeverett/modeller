@@ -59,16 +59,20 @@ ADD ./modeller.yml /modeller/
 RUN cd /modeller && \
     /miniconda3/bin/conda env create -f ./modeller.yml
 
-
 RUN echo "conda activate modeller" >> /root/.bashrc
 
 # -------------------------------------------------------
 #                                              NAIF SPICE
 # -------------------------------------------------------
 
+RUN wget http://naif.jpl.nasa.gov/pub/naif/toolkit//C/PC_Linux_GCC_64bit/packages/cspice.tar.Z -P /opt/SPICE && \
+    wget http://naif.jpl.nasa.gov/pub/naif/toolkit//C/PC_Linux_GCC_64bit/packages/importCSpice.csh -P /opt/SPICE && \
+    cd /opt/SPICE && \
+    /bin/csh ./importCSpice.csh && \
+    cd / 
 
-# RUN wget http://naif.jpl.nasa.gov/pub/naif/toolkit//C/PC_Linux_GCC_64bit/packages/cspice.tar.Z -P /opt/SPICE && \
-#     wget http://naif.jpl.nasa.gov/pub/naif/toolkit//C/PC_Linux_GCC_64bit/packages/importCSpice.csh -P /opt/SPICE && \
-#     cd /opt/SPICE && \
-#     /bin/csh ./importCSpice.csh && \
-#     cd / 
+# -------------------------------------------------------
+#              Install Simbody. TODO: Do it thru conda!!!
+# -------------------------------------------------------
+
+RUN apt-get install -y libsimbody-dev simbody-doc
