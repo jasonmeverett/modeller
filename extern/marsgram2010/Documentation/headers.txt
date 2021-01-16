@@ -1,0 +1,282 @@
+Graphics outputs files and headers for Mars-GRAM are:
+
+Headers for Unit 29 'Output.txt' are:
+
+  Time      = time after initial input time (sec)
+
+  Height    = planeto-centric height (km) above MOLA areoid 
+              (Height=HgtMOLA) OR planeto-centric height (km) above 
+              ellipsoid (Height = HgtELPS) OR planeto-centric
+              height (km) above local MOLA topographic surface
+              (Height=HgtSFCM) OR planeto-graphic height (km)
+              above ellipsoid (Height = HgtGRPH), as determined by
+              input parameters MOLAhgts, NVARX, NVARY, and ipclat
+
+  Lat       = planeto-centric latitude (Lat = LatPC) or planeto-graphic
+              latitude (Lat = LatPG) in degrees (North positive)
+
+  LonW/LonE = longitude (degrees, West positive or East Positive)
+
+  Denkgm3   = Average (mean plus wave = perturbed) density (kg/m**3) OR 
+              "Logkgm3" for Log10(kg/m**3) OR "Den%Avg" for percent 
+              deviation from COSPAR average, OR "Denkgkm3" for
+              kg/km**3, depending on input value of LOGSCALE
+
+  Temp      = average temperature (K)
+
+  EWind     = eastward wind component (m/s, positive toward East)
+
+  NWind     = northward wind component (m/s, positive toward North)
+
+  sigD      = standard deviation for density perturbations (% of
+              unperturbed mean)
+
+  Ls        = areocentric longitude of Sun from Mars (degrees)
+
+  Dust      = dust optical depth
+
+  LTST      = local true solar time (Mars hours)
+
+  CO2%m     = Carbon Dioxide mass concentration (% by mass)
+
+  N2%m      = Nitrogen mass concentration (% by mass)
+
+  Ar%m      = Argon mass concentration (% by mass)
+
+  O2%m      = Molecular Oxygen mass concentration (% by mass)
+
+  CO%m      = Carbon Monoxide mass concentration (% by mass)
+
+  O%m       = Atomic Oxygen mass concentration (% by mass)
+
+  He%m      = Helium mass concentration (% by mass)
+
+  H2%m      = Molecular Hydrogen mass concentration (% by mass)
+
+  H%m       = Atomic Hydrogen mass concentration (% by mass)
+
+  H2O%m     = Water vapor mass concentration (% by mass)
+
+  DensP     = Ratio of perturbed density to mean density      
+
+Headers for Unit 25 'DayData.txt' (Daily averages for heights below 
+1.26 nbar level) are:
+
+  Var_X     = user-selected plot variable (determined by NVARX value)
+
+  Var_Y     = (Optional) user-selected plot variable (from NVARY value)
+
+  TempDay   = Local daily average temperature (K)
+
+  PresDay   = Local daily average pressure (N/m**2 or as prescribed by
+              LOGSCALE)
+
+  DensDay   = Local daily average density (kg/m**3 or as prescribed by
+              LOGSCALE)
+
+  EWwnDay   = Local daily average Eastward wind (m/s)
+
+  NSwnDay   = Local daily average Northward wind (m/s)
+
+  Tempmin   = Local daily minimum temperature (K)
+
+  Tempmax   = Local daily maximum temperature (K)
+
+  Densmin   = Local daily minimum density (kg/m**3 or as prescribed by
+              LOGSCALE)
+
+  Densmax   = Local daily maximum density (kg/m**3 or as prescribed by
+              LOGSCALE)
+
+  LOGSCALE  = option controlling units of pressure and density output
+ 
+  DensAV    = Local density (kg/m**3 or as prescribed by LOGSCALE)
+
+Headers for Unit 21 'Density.txt' are:
+
+  Var_X     = user-selected plot variable (determined by NVARX value)
+
+  Var_Y     = (Optional) user-selected plot variable (from NVARY value)
+
+  DENSLO    = low (~ average - 1 standard deviation) density (kg/m**3 or
+              Log-10 or % from COSPAR or kg/km**3, as controlled by
+              LOGSCALE)
+
+  DENSAV    = average (mean plus wave-perturbed) density (kg/m**3 or
+              Log-10 or % from COSPAR, or kg/km**3, as controlled by
+              LOGSCALE)
+
+  DENSHI    = high (~ average + 1 standard deviation) density (kg/m**3 or
+              Log-10 or % from COSPAR, or kg/km**3, as controlled by
+              LOGSCALE)
+
+  DENSTOT   = total (mean plus perturbed) density (kg/m**3 or
+              Log-10 or % from COSPAR, or kg/km**3, as controlled by
+              LOGSCALE)
+
+  DustOD    = dust optical depth
+
+  Radius    = Radial distance from planetary center of mass to spacecraft
+              position (areoid radius plus altitude)
+
+  Grav      = local acceleration of gravity (m/s**2)
+
+  RadAU     = Mars orbital radius (Astronomical Units)
+
+  LOGSCALE  = option controlling units of density output
+
+  hgtoffset =  local height offset (km) for MTGCM and MGCM data 
+ 
+  ibougher  =  input parameter controlling height offset option
+  
+  MapYear   =  TES mapping year (0 for Mars-GRAM 2001 data) 
+     
+  profwgt   =  Weight factor for auxiliary input profile data   
+
+Headers for Unit 27 'MarsRad.txt' are:
+
+  Var_X     = user-selected plot variable (determined by NVARX value)
+
+  Var_Y     = (Optional) user-selected plot variable (from NVARY value)
+
+  alb       = surface albedo (ratio upward/downward SW radiation at surface)
+
+  mu0       = cosine of solar zenith angle
+
+  Dareaden  = dust column areal density (kg/m**2)
+
+  Dmixrat   = dust mixing ratio (kg dust / kg air)
+
+  Dmasden   = dust mass density (micrograms dust / m**3)
+
+  Dnumden   = dust number density (number dust particles / m**3)
+
+  Ice       = surface polar ice indicator (0 = no, 1 = yes)
+
+
+Headers for Unit 22 'Perturb.txt' are:
+ 
+  Var_X     = user-selected plot variable (determined by NVARX value)
+
+  Var_Y     = (Optional) user-selected plot variable (from NVARY value)
+
+  SigD      = standard deviation of density perturbations (% of unperturbed
+              mean)
+
+  DensRand  = density perturbation from random model (%  of unperturbed mean)
+
+  DensWave  = density perturbation from wave model (% of unperturbed mean)
+
+  DensP     = total density perturbation value (% of unperturbed mean)
+
+  corlim    = fraction of minimum step size for accuracy of perturbations
+              (should be > 1 for insured accuracy of perturbations)
+
+  SigU      = standard deviation of horizontal wind perturbations (m/s)
+
+  SigW      = standard deviation of vertical wind perturbations (m/s)
+
+  iupdate   = 1 if perturbations updated
+              0 if perturbations not updated but perturbation step updated 
+             -1 if neither perturbations nor step updated
+
+     
+Headers for Unit 26 'ThrmData.txt'  (Thermospheric parameters for heights 
+above 80 km) are:
+
+  Var_X     = user-selected plot variable (determined by NVARX value)
+
+  Var_Y     = (Optional) user-selected plot variable (from NVARY value)
+
+  Tbase     = temperature at 1.26 nbar level (K)
+
+  Zbase     = altitude of 1.26 nbar level (km)
+
+  F1peak    = altitude of F1 ionization peak (km)
+
+  MolWgt    = mean molecular weight (kg/kg.mole)
+
+  Texos     = exospheric temperature (K)
+
+  hgtoffset = height offset for thermospheric (MTGCM) data (km)
+
+  ibougher  = input parameter controlling height offset option  
+
+
+Headers for Unit 24 'TPresHgt.txt' are:
+
+  Var_X     = user-selected plot variable (determined by NVARX value)
+
+  Var_Y     = (Optional) user-selected plot variable (from NVARY value)
+
+  Temp      = mean temperature (K)
+
+  Pres      = mean (plus wave-perturbed) pressure (N/m**2, or as
+              controlled by LOGSCALE)
+
+  TdegC     = mean temperature (degrees C)
+
+  Pres_mb   = mean (plus wave-perturbed) pressure (mb)
+
+  Hrho      = density scale height (km)
+
+  Hpres     = pressure scale height (km)
+
+  MolWt     = molecular weight (kg/kg-mole)
+
+  TerHgt    = altitude of local surface above MOLA 1/2-degree areoid
+
+  Tgrnd     = ground surface temperature (K)
+
+  Areoid    = local radius (km) of MOLA 1/2-degree areoid
+
+  dAreoid   = MOLA areoid minus radius of old reference ellipsoid (km);
+              (equal to height from old ellipsoid minus height from
+              MOLA areoid)
+
+  CO2%v     = mole fraction (%) Carbon Dioxide concentration (% by volume)
+
+  N2%v      = mole fraction (%) Nitrogen concentration (% by volume)
+
+  Ar%v      = mole fraction (%) Argon concentration (% by volume)
+
+  O2%v      = mole fraction (%) Molecular Oxygen concentration (% by volume)
+
+  CO%v      = mole fraction (%) Carbon Monoxide concentration (% by volume)
+
+  O%v       = mole fraction (%) Atomic Oxygen concentration (% by volume)
+
+  He%v      = mole fraction (%) Helium concentration (% by volume)
+
+  H2%v      = mole fraction (%) Molecular Hydrogen concentration (% by volume)
+
+  H%v       = mole fraction (%) Atomic Hydrogen concentration (% by volume)
+
+  H2O%v     = mole fraction (%) Water vapor concentration (% by volume)
+
+  LOGSCALE  = option controlling units of pressure output
+
+            
+Headers for Unit 23 'Winds.txt' are:
+
+  Var_X     = user-selected plot variable (determined by NVARX value)
+
+  Var_Y     = (Optional) user-selected plot variable (from NVARY value)
+
+  EWmean    = mean eastward wind component (m/s, positive eastward)
+
+  EWpert    = eastward wind perturbation (m/s)
+
+  EWtot     = total (mean plus perturbed) eastward wind (m/s)
+
+  NSmean    = mean northward wind component (m/s, positive northward)
+
+  NSpert    = northward wind perturbation (m/s)
+
+  NStot     = total (mean plus perturbed) northward wind (m/s)
+
+  VWpert    = vertical wind perturbation (m/s)
+
+  iupdate   = 1 if perturbations updated
+              0 if perturbations not updated but perturbation step updated
+             -1 if neither perturbations nor step updated

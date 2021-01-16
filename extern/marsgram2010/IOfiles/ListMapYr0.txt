@@ -1,0 +1,968 @@
+ Mars-GRAM 2010 (Version 1.0) - Nov 2010
+ LIST file= LIST.txt                                                                                           
+ OUTPUT file= OUTPUT.txt                                                                                         
+ Data directory= D:\Mars\Mars2010\Release1.0_Nov10\binFiles\                                                        
+ GCM  directory= D:\Mars\Mars2010\Release1.0_Nov10\binFiles\                                                        
+ Input time is Earth-Receive Time (ERT)
+ Input time is Coordinated Universal Time (UTC)
+ Date =  7/20/1976  Julian Day = 2442980.02083  Time = 12:30: 0.0
+ Input heights are planeto-centric, relative to MOLA areoid
+ Reference ellipsoid radii (km): Equator = 3396.19 Pole = 3376.20
+ Output heights are planeto-centric, except as noted.
+ Longitude & ephemeris use IAU 2000 rotational system.
+ F10.7 flux =  68.0 (1 AU)   25.0 (Mars)
+ Dust optical depth from NAMELIST input
+ Dustnu = 0.0030   Dustdiam =  5.00 E-6 meters   Dustdens =  3000.0 kg/m**3
+   Random seed =  1234  Dens.Pert.Scale Factor = 1.00   corlmin = 0.000
+   Wind.Pert.Scale Factor =  1.00    Wavelength Scale Factor =  1.00
+   Mean Wind Scale Factor =  1.00    Slope Wind Scale Factor =  1.00
+ A0,A1,phi1,A2,phi2,A3,phi3= 1.000 0.000    0.0 0.000    0.0 0.000    0.0
+   Wave Scale =    20.0 km.    Wave phases are in degrees of West Longitude
+ Time (rel. to T0) =       0.0 sec. (   0.000 sols)  Ls =  97.0  Dust = 0.30
+ Height Above MOLA (or Surface) =  -5.000 km (  -1.372 km)  OWLT = 19.01 Min
+ Topographic Height =   -3.628 km   Radius (Areoid) = 3387.954 (3392.954) km
+ Hgt Above Ellipsoid =  -5.292 km   Scale Hgt H(p)=  10.94 H(rho)=  10.94 km
+ Height Offset Parameters:   ibougher = 1    Local Height Offset =  0.000 km
+ Planeto-Centric Lat =   22.48 deg  Longitude =   47.97 W ( 312.03 E) deg.
+ Planeto-Graphic Lat =   22.72 deg  Planeto-Graphic Hgt (Ellps)=   -5.292 km
+ Planeto-Cent Sun Lat =  25.02 deg  Mars Orbital Radius = 1.649 AU
+ Sun Longitude =  108.69 deg.W      Local True Solar Time =  16.05 Mars hrs
+ Temperature =   241.8 K        Pressure = 8.953E+02 N/m**2   profwgt = 0.000
+ Density (Low, Avg., High) =   1.922E-02   1.960E-02   1.999E-02 kg/m**3 
+ Departure, COSPAR NH Mean =    -21.6 %     -20.0 %     -18.4 %  iupdate = 1
+ Tot.Dens. = 2.006E-02 kg/m**3   Dens.Pert. =   2.34% Wave =   0.00% of mean
+ Eastward Wind (Mean,Perturbed,Total) =    0.0   -1.1   -1.1 m/s    VertWind
+ Northward Wind(Mean,Perturbed,Total) =    0.0   -0.4   -0.4 m/s    -0.2 m/s
+ CO2=2.577E+23 N2=7.809E+21 Ar=4.685E+21 O2=3.692E+20 CO=2.840E+20 #/m**3
+        96.084        1.854        1.586        0.100        0.067 % by mass
+        94.445        2.862        1.717        0.135        0.104 % by volume
+ H2O=2.025E+21  O=0.000E+00 He=0.000E+00 H2=0.000E+00   Total=2.729E+23 #/m**3
+         0.308        0.000        0.000        0.000 % by mass  MolWgt=43.259
+         0.742        0.000        0.000        0.000 % volume (mole) fraction
+ -----------------------------------------------------------------------------
+ Time (rel. to T0) =     500.0 sec. (   0.006 sols)  Ls =  97.0  Dust = 0.30
+ Height Above MOLA (or Surface) =   0.000 km (   3.585 km)  OWLT = 19.01 Min
+ Topographic Height =   -3.585 km   Radius (Areoid) = 3392.852 (3392.852) km
+ Hgt Above Ellipsoid =  -0.268 km   Scale Hgt H(p)=  10.85 H(rho)=  12.96 km
+ Height Offset Parameters:   ibougher = 1    Local Height Offset =  0.000 km
+ Planeto-Centric Lat =   22.98 deg  Longitude =   48.47 W ( 311.53 E) deg.
+ Planeto-Graphic Lat =   23.22 deg  Planeto-Graphic Hgt (Ellps)=   -0.268 km
+ Planeto-Cent Sun Lat =  25.02 deg  Mars Orbital Radius = 1.649 AU
+ Sun Longitude =  110.72 deg.W      Local True Solar Time =  16.15 Mars hrs
+ Temperature =   227.5 K        Pressure = 5.670E+02 N/m**2   profwgt = 0.000
+ Density (Low, Avg., High) =   1.294E-02   1.320E-02   1.346E-02 kg/m**3 
+ Departure, COSPAR NH Mean =    -16.5 %     -14.9 %     -13.2 %  iupdate = 1
+ Tot.Dens. = 1.338E-02 kg/m**3   Dens.Pert. =   1.41% Wave =   0.00% of mean
+ Eastward Wind (Mean,Perturbed,Total) =    2.8    2.9    5.7 m/s    VertWind
+ Northward Wind(Mean,Perturbed,Total) =   -7.9   -2.5  -10.4 m/s    -0.7 m/s
+ CO2=1.739E+23 N2=5.267E+21 Ar=3.160E+21 O2=2.490E+20 CO=1.915E+20 #/m**3
+        96.290        1.857        1.589        0.100        0.068 % by mass
+        94.928        2.875        1.725        0.136        0.105 % by volume
+ H2O=4.244E+20  O=0.000E+00 He=0.000E+00 H2=0.000E+00   Total=1.832E+23 #/m**3
+         0.096        0.000        0.000        0.000 % by mass  MolWgt=43.386
+         0.232        0.000        0.000        0.000 % volume (mole) fraction
+ -----------------------------------------------------------------------------
+ Time (rel. to T0) =    1000.0 sec. (   0.011 sols)  Ls =  97.0  Dust = 0.30
+ Height Above MOLA (or Surface) =   5.000 km (   8.545 km)  OWLT = 19.01 Min
+ Topographic Height =   -3.545 km   Radius (Areoid) = 3397.749 (3392.749) km
+ Hgt Above Ellipsoid =   4.756 km   Scale Hgt H(p)=   9.92 H(rho)=  11.27 km
+ Height Offset Parameters:   ibougher = 1    Local Height Offset =  0.000 km
+ Planeto-Centric Lat =   23.48 deg  Longitude =   48.97 W ( 311.03 E) deg.
+ Planeto-Graphic Lat =   23.73 deg  Planeto-Graphic Hgt (Ellps)=    4.756 km
+ Planeto-Cent Sun Lat =  25.02 deg  Mars Orbital Radius = 1.649 AU
+ Sun Longitude =  112.74 deg.W      Local True Solar Time =  16.25 Mars hrs
+ Temperature =   211.0 K        Pressure = 3.577E+02 N/m**2   profwgt = 0.000
+ Density (Low, Avg., High) =   8.793E-03   8.969E-03   9.148E-03 kg/m**3 
+ Departure, COSPAR NH Mean =    -11.2 %      -9.4 %      -7.6 %  iupdate = 1
+ Tot.Dens. = 8.701E-03 kg/m**3   Dens.Pert. =  -2.99% Wave =   0.00% of mean
+ Eastward Wind (Mean,Perturbed,Total) =    2.5   -1.9    0.6 m/s    VertWind
+ Northward Wind(Mean,Perturbed,Total) =    3.0    1.3    4.3 m/s    -0.3 m/s
+ CO2=1.183E+23 N2=3.581E+21 Ar=2.149E+21 O2=1.693E+20 CO=1.302E+20 #/m**3
+        96.366        1.858        1.590        0.100        0.068 % by mass
+        95.107        2.880        1.728        0.136        0.105 % by volume
+ H2O=5.525E+19  O=0.000E+00 He=0.000E+00 H2=0.000E+00   Total=1.244E+23 #/m**3
+         0.018        0.000        0.000        0.000 % by mass  MolWgt=43.434
+         0.044        0.000        0.000        0.000 % volume (mole) fraction
+ -----------------------------------------------------------------------------
+ Time (rel. to T0) =    1500.0 sec. (   0.017 sols)  Ls =  97.0  Dust = 0.30
+ Height Above MOLA (or Surface) =  10.000 km (  13.513 km)  OWLT = 19.01 Min
+ Topographic Height =   -3.513 km   Radius (Areoid) = 3402.642 (3392.642) km
+ Hgt Above Ellipsoid =   9.778 km   Scale Hgt H(p)=   9.48 H(rho)=  10.60 km
+ Height Offset Parameters:   ibougher = 1    Local Height Offset =  0.000 km
+ Planeto-Centric Lat =   23.98 deg  Longitude =   49.47 W ( 310.53 E) deg.
+ Planeto-Graphic Lat =   24.23 deg  Planeto-Graphic Hgt (Ellps)=    9.778 km
+ Planeto-Cent Sun Lat =  25.02 deg  Mars Orbital Radius = 1.649 AU
+ Sun Longitude =  114.77 deg.W      Local True Solar Time =  16.35 Mars hrs
+ Temperature =   198.7 K        Pressure = 2.161E+02 N/m**2   profwgt = 0.000
+ Density (Low, Avg., High) =   5.624E-03   5.753E-03   5.885E-03 kg/m**3 
+ Departure, COSPAR NH Mean =    -13.1 %     -11.1 %      -9.0 %  iupdate = 1
+ Tot.Dens. = 5.749E-03 kg/m**3   Dens.Pert. =  -0.07% Wave =   0.00% of mean
+ Eastward Wind (Mean,Perturbed,Total) =  -16.4   -0.9  -17.3 m/s    VertWind
+ Northward Wind(Mean,Perturbed,Total) =    9.5    2.0   11.4 m/s    -0.8 m/s
+ CO2=7.588E+22 N2=2.297E+21 Ar=1.378E+21 O2=1.086E+20 CO=8.352E+19 #/m**3
+        96.380        1.857        1.589        0.100        0.068 % by mass
+        95.139        2.880        1.728        0.136        0.105 % by volume
+ H2O=9.639E+18  O=0.000E+00 He=0.000E+00 H2=0.000E+00   Total=7.975E+22 #/m**3
+         0.005        0.000        0.000        0.000 % by mass  MolWgt=43.442
+         0.012        0.000        0.000        0.000 % volume (mole) fraction
+ -----------------------------------------------------------------------------
+ Time (rel. to T0) =    2000.0 sec. (   0.023 sols)  Ls =  97.0  Dust = 0.30
+ Height Above MOLA (or Surface) =  15.000 km (  18.545 km)  OWLT = 19.01 Min
+ Topographic Height =   -3.545 km   Radius (Areoid) = 3407.533 (3392.533) km
+ Hgt Above Ellipsoid =  14.800 km   Scale Hgt H(p)=   9.08 H(rho)=  10.13 km
+ Height Offset Parameters:   ibougher = 1    Local Height Offset =  0.000 km
+ Planeto-Centric Lat =   24.48 deg  Longitude =   49.97 W ( 310.03 E) deg.
+ Planeto-Graphic Lat =   24.73 deg  Planeto-Graphic Hgt (Ellps)=   14.800 km
+ Planeto-Cent Sun Lat =  25.02 deg  Mars Orbital Radius = 1.649 AU
+ Sun Longitude =  116.80 deg.W      Local True Solar Time =  16.46 Mars hrs
+ Temperature =   188.3 K        Pressure = 1.276E+02 N/m**2   profwgt = 0.000
+ Density (Low, Avg., High) =   3.494E-03   3.587E-03   3.682E-03 kg/m**3 
+ Departure, COSPAR NH Mean =    -16.2 %     -14.0 %     -11.7 %  iupdate = 1
+ Tot.Dens. = 3.597E-03 kg/m**3   Dens.Pert. =   0.28% Wave =   0.00% of mean
+ Eastward Wind (Mean,Perturbed,Total) =  -19.7   -6.0  -25.7 m/s    VertWind
+ Northward Wind(Mean,Perturbed,Total) =   10.8    0.2   11.0 m/s     1.4 m/s
+ CO2=4.731E+22 N2=1.431E+21 Ar=8.589E+20 O2=6.767E+19 CO=5.205E+19 #/m**3
+        96.385        1.857        1.589        0.100        0.067 % by mass
+        95.149        2.879        1.727        0.136        0.105 % by volume
+ H2O=1.827E+18  O=0.000E+00 He=0.000E+00 H2=0.000E+00   Total=4.972E+22 #/m**3
+         0.002        0.000        0.000        0.000 % by mass  MolWgt=43.445
+         0.004        0.000        0.000        0.000 % volume (mole) fraction
+ -----------------------------------------------------------------------------
+ Time (rel. to T0) =    2500.0 sec. (   0.028 sols)  Ls =  97.0  Dust = 0.30
+ Height Above MOLA (or Surface) =  20.000 km (  23.571 km)  OWLT = 19.01 Min
+ Topographic Height =   -3.571 km   Radius (Areoid) = 3412.420 (3392.420) km
+ Hgt Above Ellipsoid =  19.821 km   Scale Hgt H(p)=   8.69 H(rho)=   9.71 km
+ Height Offset Parameters:   ibougher = 1    Local Height Offset =  0.000 km
+ Planeto-Centric Lat =   24.98 deg  Longitude =   50.47 W ( 309.53 E) deg.
+ Planeto-Graphic Lat =   25.24 deg  Planeto-Graphic Hgt (Ellps)=   19.821 km
+ Planeto-Cent Sun Lat =  25.02 deg  Mars Orbital Radius = 1.649 AU
+ Sun Longitude =  118.83 deg.W      Local True Solar Time =  16.56 Mars hrs
+ Temperature =   178.1 K        Pressure = 7.374E+01 N/m**2   profwgt = 0.000
+ Density (Low, Avg., High) =   2.125E-03   2.190E-03   2.257E-03 kg/m**3 
+ Departure, COSPAR NH Mean =    -19.2 %     -16.7 %     -14.2 %  iupdate = 1
+ Tot.Dens. = 2.229E-03 kg/m**3   Dens.Pert. =   1.78% Wave =   0.00% of mean
+ Eastward Wind (Mean,Perturbed,Total) =  -30.6   -0.7  -31.3 m/s    VertWind
+ Northward Wind(Mean,Perturbed,Total) =    8.2   -6.1    2.1 m/s    -0.3 m/s
+ CO2=2.888E+22 N2=8.737E+20 Ar=5.242E+20 O2=4.130E+19 CO=3.177E+19 #/m**3
+        96.388        1.856        1.588        0.100        0.067 % by mass
+        95.153        2.878        1.727        0.136        0.105 % by volume
+ H2O=3.014E+17  O=0.000E+00 He=0.000E+00 H2=0.000E+00   Total=3.036E+22 #/m**3
+         0.000        0.000        0.000        0.000 % by mass  MolWgt=43.446
+         0.001        0.000        0.000        0.000 % volume (mole) fraction
+ -----------------------------------------------------------------------------
+ Time (rel. to T0) =    3000.0 sec. (   0.034 sols)  Ls =  97.0  Dust = 0.30
+ Height Above MOLA (or Surface) =  25.000 km (  28.359 km)  OWLT = 19.01 Min
+ Topographic Height =   -3.359 km   Radius (Areoid) = 3417.305 (3392.305) km
+ Hgt Above Ellipsoid =  24.841 km   Scale Hgt H(p)=   8.34 H(rho)=   9.43 km
+ Height Offset Parameters:   ibougher = 1    Local Height Offset =  0.000 km
+ Planeto-Centric Lat =   25.48 deg  Longitude =   50.97 W ( 309.03 E) deg.
+ Planeto-Graphic Lat =   25.74 deg  Planeto-Graphic Hgt (Ellps)=   24.841 km
+ Planeto-Cent Sun Lat =  25.02 deg  Mars Orbital Radius = 1.649 AU
+ Sun Longitude =  120.85 deg.W      Local True Solar Time =  16.66 Mars hrs
+ Temperature =   168.0 K        Pressure = 4.160E+01 N/m**2   profwgt = 0.000
+ Density (Low, Avg., High) =   1.265E-03   1.310E-03   1.356E-03 kg/m**3 
+ Departure, COSPAR NH Mean =    -21.9 %     -19.1 %     -16.3 %  iupdate = 1
+ Tot.Dens. = 1.302E-03 kg/m**3   Dens.Pert. =  -0.63% Wave =   0.00% of mean
+ Eastward Wind (Mean,Perturbed,Total) =  -42.1    3.7  -38.5 m/s    VertWind
+ Northward Wind(Mean,Perturbed,Total) =    9.5    5.4   14.9 m/s     1.3 m/s
+ CO2=1.728E+22 N2=5.224E+20 Ar=3.134E+20 O2=2.469E+19 CO=1.900E+19 #/m**3
+        96.389        1.855        1.588        0.100        0.067 % by mass
+        95.156        2.877        1.726        0.136        0.105 % by volume
+ H2O=4.024E+16  O=0.000E+00 He=0.000E+00 H2=0.000E+00   Total=1.816E+22 #/m**3
+         0.000        0.000        0.000        0.000 % by mass  MolWgt=43.446
+         0.000        0.000        0.000        0.000 % volume (mole) fraction
+ -----------------------------------------------------------------------------
+ Time (rel. to T0) =    3500.0 sec. (   0.039 sols)  Ls =  97.0  Dust = 0.30
+ Height Above MOLA (or Surface) =  30.000 km (  33.384 km)  OWLT = 19.01 Min
+ Topographic Height =   -3.384 km   Radius (Areoid) = 3422.188 (3392.188) km
+ Hgt Above Ellipsoid =  29.861 km   Scale Hgt H(p)=   8.01 H(rho)=   8.72 km
+ Height Offset Parameters:   ibougher = 1    Local Height Offset =  0.000 km
+ Planeto-Centric Lat =   25.98 deg  Longitude =   51.47 W ( 308.53 E) deg.
+ Planeto-Graphic Lat =   26.25 deg  Planeto-Graphic Hgt (Ellps)=   29.861 km
+ Planeto-Cent Sun Lat =  25.02 deg  Mars Orbital Radius = 1.649 AU
+ Sun Longitude =  122.88 deg.W      Local True Solar Time =  16.76 Mars hrs
+ Temperature =   157.1 K        Pressure = 2.293E+01 N/m**2   profwgt = 0.000
+ Density (Low, Avg., High) =   7.418E-04   7.719E-04   8.032E-04 kg/m**3 
+ Departure, COSPAR NH Mean =    -24.3 %     -21.2 %     -18.0 %  iupdate = 1
+ Tot.Dens. = 7.296E-04 kg/m**3   Dens.Pert. =  -5.47% Wave =   0.00% of mean
+ Eastward Wind (Mean,Perturbed,Total) =  -60.3   -4.5  -64.8 m/s    VertWind
+ Northward Wind(Mean,Perturbed,Total) =   -4.5   -4.2   -8.8 m/s    -0.0 m/s
+ CO2=1.018E+22 N2=3.077E+20 Ar=1.846E+20 O2=1.455E+19 CO=1.119E+19 #/m**3
+        96.391        1.855        1.587        0.100        0.067 % by mass
+        95.158        2.876        1.726        0.136        0.105 % by volume
+ H2O=3.427E+15  O=0.000E+00 He=0.000E+00 H2=0.000E+00   Total=1.070E+22 #/m**3
+         0.000        0.000        0.000        0.000 % by mass  MolWgt=43.446
+         0.000        0.000        0.000        0.000 % volume (mole) fraction
+ -----------------------------------------------------------------------------
+ Time (rel. to T0) =    4000.0 sec. (   0.045 sols)  Ls =  97.0  Dust = 0.30
+ Height Above MOLA (or Surface) =  35.000 km (  38.545 km)  OWLT = 19.01 Min
+ Topographic Height =   -3.545 km   Radius (Areoid) = 3427.069 (3392.069) km
+ Hgt Above Ellipsoid =  34.882 km   Scale Hgt H(p)=   7.76 H(rho)=   8.72 km
+ Height Offset Parameters:   ibougher = 1    Local Height Offset =  0.000 km
+ Planeto-Centric Lat =   26.48 deg  Longitude =   51.97 W ( 308.03 E) deg.
+ Planeto-Graphic Lat =   26.75 deg  Planeto-Graphic Hgt (Ellps)=   34.881 km
+ Planeto-Cent Sun Lat =  25.02 deg  Mars Orbital Radius = 1.649 AU
+ Sun Longitude =  124.91 deg.W      Local True Solar Time =  16.86 Mars hrs
+ Temperature =   149.4 K        Pressure = 1.234E+01 N/m**2   profwgt = 0.000
+ Density (Low, Avg., High) =   4.175E-04   4.371E-04   4.576E-04 kg/m**3 
+ Departure, COSPAR NH Mean =    -28.3 %     -24.9 %     -21.4 %  iupdate = 1
+ Tot.Dens. = 4.215E-04 kg/m**3   Dens.Pert. =  -3.58% Wave =   0.00% of mean
+ Eastward Wind (Mean,Perturbed,Total) =  -84.4    4.2  -80.2 m/s    VertWind
+ Northward Wind(Mean,Perturbed,Total) =  -14.5    4.7   -9.7 m/s    -0.5 m/s
+ CO2=5.765E+21 N2=1.742E+20 Ar=1.045E+20 O2=8.234E+18 CO=6.334E+18 #/m**3
+        96.392        1.854        1.587        0.100        0.067 % by mass
+        95.160        2.875        1.725        0.136        0.105 % by volume
+ H2O=4.724E+14  O=0.000E+00 He=0.000E+00 H2=0.000E+00   Total=6.059E+21 #/m**3
+         0.000        0.000        0.000        0.000 % by mass  MolWgt=43.446
+         0.000        0.000        0.000        0.000 % volume (mole) fraction
+ -----------------------------------------------------------------------------
+ Time (rel. to T0) =    4500.0 sec. (   0.051 sols)  Ls =  97.0  Dust = 0.30
+ Height Above MOLA (or Surface) =  40.000 km (  43.648 km)  OWLT = 19.01 Min
+ Topographic Height =   -3.648 km   Radius (Areoid) = 3431.950 (3391.950) km
+ Hgt Above Ellipsoid =  39.903 km   Scale Hgt H(p)=   7.56 H(rho)=   8.12 km
+ Height Offset Parameters:   ibougher = 1    Local Height Offset =  0.000 km
+ Planeto-Centric Lat =   26.98 deg  Longitude =   52.47 W ( 307.53 E) deg.
+ Planeto-Graphic Lat =   27.25 deg  Planeto-Graphic Hgt (Ellps)=   39.903 km
+ Planeto-Cent Sun Lat =  25.02 deg  Mars Orbital Radius = 1.649 AU
+ Sun Longitude =  126.94 deg.W      Local True Solar Time =  16.96 Mars hrs
+ Temperature =   139.3 K        Pressure = 6.522E+00 N/m**2   profwgt = 0.000
+ Density (Low, Avg., High) =   2.350E-04   2.477E-04   2.610E-04 kg/m**3 
+ Departure, COSPAR NH Mean =    -30.9 %     -27.2 %     -23.2 %  iupdate = 1
+ Tot.Dens. = 2.232E-04 kg/m**3   Dens.Pert. =  -9.88% Wave =   0.00% of mean
+ Eastward Wind (Mean,Perturbed,Total) =  -89.0   -4.8  -93.7 m/s    VertWind
+ Northward Wind(Mean,Perturbed,Total) =   -9.0   -4.4  -13.4 m/s    -0.0 m/s
+ CO2=3.267E+21 N2=9.865E+19 Ar=5.919E+19 O2=4.663E+18 CO=3.587E+18 #/m**3
+        96.393        1.853        1.586        0.100        0.067 % by mass
+        95.162        2.874        1.724        0.136        0.105 % by volume
+ H2O=2.599E+13  O=0.000E+00 He=0.000E+00 H2=0.000E+00   Total=3.433E+21 #/m**3
+         0.000        0.000        0.000        0.000 % by mass  MolWgt=43.447
+         0.000        0.000        0.000        0.000 % volume (mole) fraction
+ -----------------------------------------------------------------------------
+ Time (rel. to T0) =    5000.0 sec. (   0.056 sols)  Ls =  97.0  Dust = 0.30
+ Height Above MOLA (or Surface) =  45.000 km (  48.628 km)  OWLT = 19.01 Min
+ Topographic Height =   -3.628 km   Radius (Areoid) = 3436.830 (3391.830) km
+ Hgt Above Ellipsoid =  44.926 km   Scale Hgt H(p)=   7.33 H(rho)=   7.41 km
+ Height Offset Parameters:   ibougher = 1    Local Height Offset =  0.000 km
+ Planeto-Centric Lat =   27.48 deg  Longitude =   52.97 W ( 307.03 E) deg.
+ Planeto-Graphic Lat =   27.75 deg  Planeto-Graphic Hgt (Ellps)=   44.926 km
+ Planeto-Cent Sun Lat =  25.02 deg  Mars Orbital Radius = 1.649 AU
+ Sun Longitude =  128.97 deg.W      Local True Solar Time =  17.07 Mars hrs
+ Temperature =   133.2 K        Pressure = 3.389E+00 N/m**2   profwgt = 0.000
+ Density (Low, Avg., High) =   1.267E-04   1.346E-04   1.430E-04 kg/m**3 
+ Departure, COSPAR NH Mean =    -34.7 %     -30.6 %     -26.3 %  iupdate = 1
+ Tot.Dens. = 1.225E-04 kg/m**3   Dens.Pert. =  -8.99% Wave =   0.00% of mean
+ Eastward Wind (Mean,Perturbed,Total) =  -86.7    1.6  -85.1 m/s    VertWind
+ Northward Wind(Mean,Perturbed,Total) =  -12.8    0.3  -12.4 m/s    -1.0 m/s
+ CO2=1.776E+21 N2=5.361E+19 Ar=3.216E+19 O2=2.534E+18 CO=1.949E+18 #/m**3
+        96.395        1.853        1.585        0.100        0.067 % by mass
+        95.163        2.873        1.724        0.136        0.104 % by volume
+ H2O=3.620E+12  O=0.000E+00 He=0.000E+00 H2=0.000E+00   Total=1.866E+21 #/m**3
+         0.000        0.000        0.000        0.000 % by mass  MolWgt=43.447
+         0.000        0.000        0.000        0.000 % volume (mole) fraction
+ -----------------------------------------------------------------------------
+ Time (rel. to T0) =    5500.0 sec. (   0.062 sols)  Ls =  97.0  Dust = 0.30
+ Height Above MOLA (or Surface) =  50.000 km (  53.523 km)  OWLT = 19.01 Min
+ Topographic Height =   -3.523 km   Radius (Areoid) = 3441.711 (3391.711) km
+ Hgt Above Ellipsoid =  49.951 km   Scale Hgt H(p)=   7.86 H(rho)=   7.21 km
+ Height Offset Parameters:   ibougher = 1    Local Height Offset =  0.000 km
+ Planeto-Centric Lat =   27.98 deg  Longitude =   53.47 W ( 306.53 E) deg.
+ Planeto-Graphic Lat =   28.26 deg  Planeto-Graphic Hgt (Ellps)=   49.951 km
+ Planeto-Cent Sun Lat =  25.02 deg  Mars Orbital Radius = 1.649 AU
+ Sun Longitude =  130.99 deg.W      Local True Solar Time =  17.17 Mars hrs
+ Temperature =   132.4 K        Pressure = 1.726E+00 N/m**2   profwgt = 0.000
+ Density (Low, Avg., High) =   6.440E-05   6.903E-05   7.399E-05 kg/m**3 
+ Departure, COSPAR NH Mean =    -40.4 %     -36.1 %     -31.5 %  iupdate = 1
+ Tot.Dens. = 6.888E-05 kg/m**3   Dens.Pert. =  -0.21% Wave =   0.00% of mean
+ Eastward Wind (Mean,Perturbed,Total) =  -86.4    0.5  -86.0 m/s    VertWind
+ Northward Wind(Mean,Perturbed,Total) =   12.2    7.8   20.0 m/s    -0.5 m/s
+ CO2=9.105E+20 N2=2.747E+19 Ar=1.648E+19 O2=1.299E+18 CO=9.990E+17 #/m**3
+        96.396        1.852        1.585        0.100        0.067 % by mass
+        95.165        2.872        1.723        0.136        0.104 % by volume
+ H2O=2.765E+12  O=0.000E+00 He=0.000E+00 H2=0.000E+00   Total=9.568E+20 #/m**3
+         0.000        0.000        0.000        0.000 % by mass  MolWgt=43.447
+         0.000        0.000        0.000        0.000 % volume (mole) fraction
+ -----------------------------------------------------------------------------
+ Time (rel. to T0) =    6000.0 sec. (   0.068 sols)  Ls =  97.0  Dust = 0.30
+ Height Above MOLA (or Surface) =  55.000 km (  58.286 km)  OWLT = 19.01 Min
+ Topographic Height =   -3.286 km   Radius (Areoid) = 3446.592 (3391.592) km
+ Hgt Above Ellipsoid =  54.978 km   Scale Hgt H(p)=   9.17 H(rho)=   8.50 km
+ Height Offset Parameters:   ibougher = 1    Local Height Offset =  0.000 km
+ Planeto-Centric Lat =   28.48 deg  Longitude =   53.97 W ( 306.03 E) deg.
+ Planeto-Graphic Lat =   28.76 deg  Planeto-Graphic Hgt (Ellps)=   54.978 km
+ Planeto-Cent Sun Lat =  25.02 deg  Mars Orbital Radius = 1.649 AU
+ Sun Longitude =  133.02 deg.W      Local True Solar Time =  17.27 Mars hrs
+ Temperature =   140.4 K        Pressure = 9.204E-01 N/m**2   profwgt = 0.000
+ Density (Low, Avg., High) =   3.209E-05   3.475E-05   3.764E-05 kg/m**3 
+ Departure, COSPAR NH Mean =    -45.8 %     -41.3 %     -36.4 %  iupdate = 1
+ Tot.Dens. = 2.639E-05 kg/m**3   Dens.Pert. = -24.06% Wave =   0.00% of mean
+ Eastward Wind (Mean,Perturbed,Total) =  -68.2   -6.4  -74.6 m/s    VertWind
+ Northward Wind(Mean,Perturbed,Total) =   -1.9    1.7   -0.1 m/s    -4.6 m/s
+ CO2=4.584E+20 N2=1.383E+19 Ar=8.296E+18 O2=6.536E+17 CO=5.028E+17 #/m**3
+        96.398        1.851        1.584        0.100        0.067 % by mass
+        95.167        2.870        1.722        0.136        0.104 % by volume
+ H2O=3.607E+13  O=0.000E+00 He=0.000E+00 H2=0.000E+00   Total=4.817E+20 #/m**3
+         0.000        0.000        0.000        0.000 % by mass  MolWgt=43.447
+         0.000        0.000        0.000        0.000 % volume (mole) fraction
+ -----------------------------------------------------------------------------
+ Time (rel. to T0) =    6500.0 sec. (   0.073 sols)  Ls =  97.0  Dust = 0.30
+ Height Above MOLA (or Surface) =  60.000 km (  63.123 km)  OWLT = 19.01 Min
+ Topographic Height =   -3.123 km   Radius (Areoid) = 3451.473 (3391.473) km
+ Hgt Above Ellipsoid =  60.007 km   Scale Hgt H(p)=  12.00 H(rho)=  11.87 km
+ Height Offset Parameters:   ibougher = 1    Local Height Offset =  0.000 km
+ Planeto-Centric Lat =   28.98 deg  Longitude =   54.47 W ( 305.53 E) deg.
+ Planeto-Graphic Lat =   29.26 deg  Planeto-Graphic Hgt (Ellps)=   60.006 km
+ Planeto-Cent Sun Lat =  25.02 deg  Mars Orbital Radius = 1.649 AU
+ Sun Longitude =  135.05 deg.W      Local True Solar Time =  17.37 Mars hrs
+ Temperature =   146.6 K        Pressure = 5.372E-01 N/m**2   profwgt = 0.000
+ Density (Low, Avg., High) =   1.774E-05   1.943E-05   2.129E-05 kg/m**3 
+ Departure, COSPAR NH Mean =    -44.2 %     -38.9 %     -33.0 %  iupdate = 1
+ Tot.Dens. = 1.943E-05 kg/m**3   Dens.Pert. =   0.01% Wave =   0.00% of mean
+ Eastward Wind (Mean,Perturbed,Total) =  -45.7    2.1  -43.6 m/s    VertWind
+ Northward Wind(Mean,Perturbed,Total) =  -12.5   -2.2  -14.7 m/s    -2.0 m/s
+ CO2=2.563E+20 N2=7.728E+18 Ar=4.637E+18 O2=3.653E+17 CO=2.810E+17 #/m**3
+        96.399        1.850        1.583        0.100        0.067 % by mass
+        95.169        2.869        1.721        0.136        0.104 % by volume
+ H2O=2.233E+14  O=0.000E+00 He=0.000E+00 H2=0.000E+00   Total=2.693E+20 #/m**3
+         0.000        0.000        0.000        0.000 % by mass  MolWgt=43.448
+         0.000        0.000        0.000        0.000 % volume (mole) fraction
+ -----------------------------------------------------------------------------
+ Time (rel. to T0) =    7000.0 sec. (   0.079 sols)  Ls =  97.0  Dust = 0.30
+ Height Above MOLA (or Surface) =  65.000 km (  68.349 km)  OWLT = 19.02 Min
+ Topographic Height =   -3.349 km   Radius (Areoid) = 3456.354 (3391.354) km
+ Hgt Above Ellipsoid =  65.038 km   Scale Hgt H(p)=   9.35 H(rho)=   9.59 km
+ Height Offset Parameters:   ibougher = 1    Local Height Offset =  0.498 km
+ Planeto-Centric Lat =   29.48 deg  Longitude =   54.97 W ( 305.03 E) deg.
+ Planeto-Graphic Lat =   29.77 deg  Planeto-Graphic Hgt (Ellps)=   65.037 km
+ Planeto-Cent Sun Lat =  25.02 deg  Mars Orbital Radius = 1.649 AU
+ Sun Longitude =  137.08 deg.W      Local True Solar Time =  17.47 Mars hrs
+ Temperature =   147.0 K        Pressure = 3.605E-01 N/m**2   profwgt = 0.000
+ Density (Low, Avg., High) =   1.170E-05   1.299E-05   1.443E-05 kg/m**3 
+ Departure, COSPAR NH Mean =    -30.3 %     -22.7 %     -14.1 %  iupdate = 1
+ Tot.Dens. = 1.228E-05 kg/m**3   Dens.Pert. =  -5.46% Wave =   0.00% of mean
+ Eastward Wind (Mean,Perturbed,Total) =  -29.4    7.5  -21.9 m/s    VertWind
+ Northward Wind(Mean,Perturbed,Total) =  -23.0   -9.5  -32.6 m/s    -2.1 m/s
+ CO2=1.714E+20 N2=5.165E+18 Ar=3.099E+18 O2=2.442E+17 CO=1.878E+17 #/m**3
+        96.401        1.849        1.583        0.100        0.067 % by mass
+        95.171        2.868        1.721        0.136        0.104 % by volume
+ H2O=2.476E+14  O=0.000E+00 He=0.000E+00 H2=0.000E+00   Total=1.801E+20 #/m**3
+         0.000        0.000        0.000        0.000 % by mass  MolWgt=43.448
+         0.000        0.000        0.000        0.000 % volume (mole) fraction
+ -----------------------------------------------------------------------------
+ Time (rel. to T0) =    7500.0 sec. (   0.084 sols)  Ls =  97.0  Dust = 0.30
+ Height Above MOLA (or Surface) =  70.000 km (  73.223 km)  OWLT = 19.02 Min
+ Topographic Height =   -3.223 km   Radius (Areoid) = 3461.234 (3391.234) km
+ Hgt Above Ellipsoid =  70.069 km   Scale Hgt H(p)=   7.91 H(rho)=   8.18 km
+ Height Offset Parameters:   ibougher = 1    Local Height Offset =  0.993 km
+ Planeto-Centric Lat =   29.98 deg  Longitude =   55.47 W ( 304.53 E) deg.
+ Planeto-Graphic Lat =   30.27 deg  Planeto-Graphic Hgt (Ellps)=   70.068 km
+ Planeto-Cent Sun Lat =  25.02 deg  Mars Orbital Radius = 1.649 AU
+ Sun Longitude =  139.10 deg.W      Local True Solar Time =  17.58 Mars hrs
+ Temperature =   144.6 K        Pressure = 2.166E-01 N/m**2   profwgt = 0.000
+ Density (Low, Avg., High) =   7.027E-06   7.922E-06   8.931E-06 kg/m**3 
+ Departure, COSPAR NH Mean =    -19.5 %      -9.3 %       2.3 %  iupdate = 1
+ Tot.Dens. = 7.945E-06 kg/m**3   Dens.Pert. =   0.29% Wave =   0.00% of mean
+ Eastward Wind (Mean,Perturbed,Total) =  -48.9   -9.9  -58.8 m/s    VertWind
+ Northward Wind(Mean,Perturbed,Total) =  -39.0   -6.5  -45.5 m/s    -1.5 m/s
+ CO2=1.045E+20 N2=3.148E+18 Ar=1.889E+18 O2=1.488E+17 CO=1.145E+17 #/m**3
+        96.402        1.849        1.582        0.100        0.067 % by mass
+        95.173        2.867        1.720        0.136        0.104 % by volume
+ H2O=1.255E+14  O=0.000E+00 He=0.000E+00 H2=0.000E+00   Total=1.098E+20 #/m**3
+         0.000        0.000        0.000        0.000 % by mass  MolWgt=43.448
+         0.000        0.000        0.000        0.000 % volume (mole) fraction
+ -----------------------------------------------------------------------------
+ Time (rel. to T0) =    8000.0 sec. (   0.090 sols)  Ls =  97.0  Dust = 0.30
+ Height Above MOLA (or Surface) =  75.000 km (  77.908 km)  OWLT = 19.02 Min
+ Topographic Height =   -2.908 km   Radius (Areoid) = 3466.114 (3391.114) km
+ Hgt Above Ellipsoid =  75.101 km   Scale Hgt H(p)=   6.87 H(rho)=   7.12 km
+ Height Offset Parameters:   ibougher = 1    Local Height Offset =  1.481 km
+ Planeto-Centric Lat =   30.48 deg  Longitude =   55.97 W ( 304.03 E) deg.
+ Planeto-Graphic Lat =   30.77 deg  Planeto-Graphic Hgt (Ellps)=   75.100 km
+ Planeto-Cent Sun Lat =  25.02 deg  Mars Orbital Radius = 1.649 AU
+ Sun Longitude =  141.13 deg.W      Local True Solar Time =  17.68 Mars hrs
+ Temperature =   141.2 K        Pressure = 1.160E-01 N/m**2   profwgt = 0.000
+ Density (Low, Avg., High) =   3.779E-06   4.334E-06   4.971E-06 kg/m**3 
+ Departure, COSPAR NH Mean =    -15.5 %      -3.0 %      11.2 %  iupdate = 1
+ Tot.Dens. = 4.403E-06 kg/m**3   Dens.Pert. =   1.59% Wave =   0.00% of mean
+ Eastward Wind (Mean,Perturbed,Total) =  -47.9  -10.4  -58.2 m/s    VertWind
+ Northward Wind(Mean,Perturbed,Total) =  -19.0  -13.1  -32.1 m/s     0.2 m/s
+ CO2=5.718E+19 N2=1.721E+18 Ar=1.033E+18 O2=8.138E+16 CO=6.260E+16 #/m**3
+        96.404        1.848        1.581        0.100        0.067 % by mass
+        95.176        2.865        1.719        0.135        0.104 % by volume
+ H2O=4.693E+13  O=0.000E+00 He=0.000E+00 H2=0.000E+00   Total=6.008E+19 #/m**3
+         0.000        0.000        0.000        0.000 % by mass  MolWgt=43.448
+         0.000        0.000        0.000        0.000 % volume (mole) fraction
+ -----------------------------------------------------------------------------
+ Time (rel. to T0) =    8500.0 sec. (   0.096 sols)  Ls =  97.0  Dust = 0.30
+ Height Above MOLA (or Surface) =  80.000 km (  82.699 km)  OWLT = 19.02 Min
+ Topographic Height =   -2.699 km   Radius (Areoid) = 3470.992 (3390.992) km
+ Hgt Above Ellipsoid =  80.133 km   Scale Hgt H(p)=   6.87 H(rho)=   7.11 km
+ Height Offset Parameters:   ibougher = 1    Local Height Offset =  1.961 km
+ Planeto-Centric Lat =   30.98 deg  Longitude =   56.47 W ( 303.53 E) deg.
+ Planeto-Graphic Lat =   31.27 deg  Planeto-Graphic Hgt (Ellps)=   80.132 km
+ Planeto-Cent Sun Lat =  25.02 deg  Mars Orbital Radius = 1.649 AU
+ Sun Longitude =  143.16 deg.W      Local True Solar Time =  17.78 Mars hrs
+ Temperature =   133.8 K        Pressure = 5.632E-02 N/m**2   profwgt = 0.000
+ Density (Low, Avg., High) =   1.843E-06   2.155E-06   2.521E-06 kg/m**3 
+ Departure, COSPAR NH Mean =    -19.5 %      -5.9 %      10.1 %  iupdate = 1
+ Tot.Dens. = 2.363E-06 kg/m**3   Dens.Pert. =   9.61% Wave =   0.00% of mean
+ Eastward Wind (Mean,Perturbed,Total) =  -10.7    3.3   -7.5 m/s    VertWind
+ Northward Wind(Mean,Perturbed,Total) =  -10.3  -13.9  -24.2 m/s    -0.1 m/s
+ CO2=2.843E+19 N2=8.557E+17 Ar=5.134E+17 O2=4.045E+16 CO=3.111E+16 #/m**3
+        96.406        1.847        1.581        0.100        0.067 % by mass
+        95.178        2.864        1.718        0.135        0.104 % by volume
+ H2O=4.214E+12  O=0.000E+00 He=0.000E+00 H2=0.000E+00   Total=2.987E+19 #/m**3
+         0.000        0.000        0.000        0.000 % by mass  MolWgt=43.449
+         0.000        0.000        0.000        0.000 % volume (mole) fraction
+ -----------------------------------------------------------------------------
+ Time (rel. to T0) =    9000.0 sec. (   0.101 sols)  Ls =  97.0  Dust = 0.30
+ Height Above MOLA (or Surface) =  85.000 km (  87.133 km)  OWLT = 19.02 Min
+ Topographic Height =   -2.133 km   Radius (Areoid) = 3475.868 (3390.868) km
+ Hgt Above Ellipsoid =  85.164 km   Scale Hgt H(p)=   6.18 H(rho)=   6.31 km
+ Height Offset Parameters:   ibougher = 1    Local Height Offset =  2.280 km
+ Planeto-Centric Lat =   31.48 deg  Longitude =   56.97 W ( 303.03 E) deg.
+ Planeto-Graphic Lat =   31.77 deg  Planeto-Graphic Hgt (Ellps)=   85.163 km
+ Planeto-Cent Sun Lat =  25.02 deg  Mars Orbital Radius = 1.649 AU
+ Sun Longitude =  145.19 deg.W      Local True Solar Time =  17.88 Mars hrs
+ Exospheric Temp. =  186.9 K        Tbase =  149.1 K    Zbase =  123.1 km
+ Solar Zenith Angle =  75.8 deg     F1 peak = 134.1 km
+ Temperature =   128.6 K        Pressure = 2.617E-02 N/m**2   profwgt = 0.000
+ Density (Low, Avg., High) =   8.547E-07   1.022E-06   1.221E-06 kg/m**3 
+ Departure, COSPAR NH Mean =    -27.0 %     -12.7 %       4.4 %  iupdate = 1
+ Tot.Dens. = 8.968E-07 kg/m**3   Dens.Pert. = -12.23% Wave =   0.00% of mean
+ Eastward Wind (Mean,Perturbed,Total) =    7.9  -13.0   -5.1 m/s    VertWind
+ Northward Wind(Mean,Perturbed,Total) =   -7.9  -16.0  -23.9 m/s    -0.3 m/s
+ CO2=1.313E+19 N2=4.190E+17 Ar=2.510E+17 O2=2.104E+16 CO=3.575E+16 #/m**3
+        93.902        1.908        1.630        0.109        0.163 % by mass
+        89.097        2.843        1.704        0.143        0.243 % by volume
+   O=8.797E+17 He=0.000E+00 H2=0.000E+00  H=0.000E+00   Total=1.474E+19 #/m**3
+         2.287        0.000        0.000        0.000 % by mass  MolWgt=41.757
+         5.970        0.000        0.000        0.000 % volume (mole) fraction
+ -----------------------------------------------------------------------------
+ Time (rel. to T0) =    9500.0 sec. (   0.107 sols)  Ls =  97.0  Dust = 0.30
+ Height Above MOLA (or Surface) =  90.000 km (  90.974 km)  OWLT = 19.02 Min
+ Topographic Height =   -0.974 km   Radius (Areoid) = 3480.742 (3390.742) km
+ Hgt Above Ellipsoid =  90.195 km   Scale Hgt H(p)=   6.04 H(rho)=   6.19 km
+ Height Offset Parameters:   ibougher = 1    Local Height Offset =  2.280 km
+ Planeto-Centric Lat =   31.98 deg  Longitude =   57.47 W ( 302.53 E) deg.
+ Planeto-Graphic Lat =   32.28 deg  Planeto-Graphic Hgt (Ellps)=   90.194 km
+ Planeto-Cent Sun Lat =  25.02 deg  Mars Orbital Radius = 1.649 AU
+ Sun Longitude =  147.22 deg.W      Local True Solar Time =  17.98 Mars hrs
+ Exospheric Temp. =  186.4 K        Tbase =  148.8 K    Zbase =  123.2 km
+ Solar Zenith Angle =  76.9 deg     F1 peak = 134.7 km
+ Temperature =   126.3 K        Pressure = 1.163E-02 N/m**2   profwgt = 0.000
+ Density (Low, Avg., High) =   3.765E-07   4.613E-07   5.654E-07 kg/m**3 
+ Departure, COSPAR NH Mean =    -37.4 %     -23.2 %      -5.9 %  iupdate = 1
+ Tot.Dens. = 4.314E-07 kg/m**3   Dens.Pert. =  -6.48% Wave =   0.00% of mean
+ Eastward Wind (Mean,Perturbed,Total) =    8.6    4.9   13.5 m/s    VertWind
+ Northward Wind(Mean,Perturbed,Total) =  -12.5  -12.2  -24.7 m/s     0.3 m/s
+ CO2=5.917E+18 N2=1.882E+17 Ar=1.126E+17 O2=1.001E+16 CO=2.537E+16 #/m**3
+        93.730        1.898        1.620        0.115        0.256 % by mass
+        88.755        2.823        1.689        0.150        0.381 % by volume
+   O=4.135E+17 He=0.000E+00 H2=0.000E+00  H=0.000E+00   Total=6.667E+18 #/m**3
+         2.381        0.000        0.000        0.000 % by mass  MolWgt=41.673
+         6.202        0.000        0.000        0.000 % volume (mole) fraction
+ -----------------------------------------------------------------------------
+ Time (rel. to T0) =   10000.0 sec. (   0.113 sols)  Ls =  97.0  Dust = 0.30
+ Height Above MOLA (or Surface) =  95.000 km (  95.839 km)  OWLT = 19.02 Min
+ Topographic Height =   -0.839 km   Radius (Areoid) = 3485.614 (3390.614) km
+ Hgt Above Ellipsoid =  95.225 km   Scale Hgt H(p)=   6.14 H(rho)=   6.11 km
+ Height Offset Parameters:   ibougher = 1    Local Height Offset =  2.280 km
+ Planeto-Centric Lat =   32.48 deg  Longitude =   57.97 W ( 302.03 E) deg.
+ Planeto-Graphic Lat =   32.78 deg  Planeto-Graphic Hgt (Ellps)=   95.224 km
+ Planeto-Cent Sun Lat =  25.02 deg  Mars Orbital Radius = 1.649 AU
+ Sun Longitude =  149.24 deg.W      Local True Solar Time =  18.08 Mars hrs
+ Exospheric Temp. =  185.9 K        Tbase =  148.6 K    Zbase =  123.3 km
+ Solar Zenith Angle =  77.9 deg     F1 peak = 135.3 km
+ Temperature =   125.7 K        Pressure = 5.170E-03 N/m**2   profwgt = 0.000
+ Density (Low, Avg., High) =   1.636E-07   2.061E-07   2.597E-07 kg/m**3 
+ Departure, COSPAR NH Mean =    -47.1 %     -33.3 %     -16.0 %  iupdate = 1
+ Tot.Dens. = 2.028E-07 kg/m**3   Dens.Pert. =  -1.62% Wave =   0.00% of mean
+ Eastward Wind (Mean,Perturbed,Total) =    6.7   -1.0    5.7 m/s    VertWind
+ Northward Wind(Mean,Perturbed,Total) =  -19.0   -3.5  -22.5 m/s     0.0 m/s
+ CO2=2.641E+18 N2=8.355E+16 Ar=4.992E+16 O2=4.696E+15 CO=1.543E+16 #/m**3
+        93.638        1.886        1.607        0.121        0.348 % by mass
+        88.602        2.803        1.675        0.158        0.518 % by volume
+   O=1.861E+17 He=0.000E+00 H2=0.000E+00  H=0.000E+00   Total=2.980E+18 #/m**3
+         2.399        0.000        0.000        0.000 % by mass  MolWgt=41.642
+         6.245        0.000        0.000        0.000 % volume (mole) fraction
+ -----------------------------------------------------------------------------
+ Time (rel. to T0) =   10500.0 sec. (   0.118 sols)  Ls =  97.0  Dust = 0.30
+ Height Above MOLA (or Surface) = 100.000 km ( 100.979 km)  OWLT = 19.02 Min
+ Topographic Height =   -0.979 km   Radius (Areoid) = 3490.485 (3390.485) km
+ Hgt Above Ellipsoid = 100.255 km   Scale Hgt H(p)=   6.10 H(rho)=   6.17 km
+ Height Offset Parameters:   ibougher = 1    Local Height Offset =  2.280 km
+ Planeto-Centric Lat =   32.98 deg  Longitude =   58.47 W ( 301.53 E) deg.
+ Planeto-Graphic Lat =   33.28 deg  Planeto-Graphic Hgt (Ellps)=  100.253 km
+ Planeto-Cent Sun Lat =  25.02 deg  Mars Orbital Radius = 1.649 AU
+ Sun Longitude =  151.27 deg.W      Local True Solar Time =  18.19 Mars hrs
+ Exospheric Temp. =  185.3 K        Tbase =  148.3 K    Zbase =  123.4 km
+ Solar Zenith Angle =  78.9 deg     F1 peak = 136.0 km
+ Temperature =   126.1 K        Pressure = 2.316E-03 N/m**2   profwgt = 0.000
+ Density (Low, Avg., High) =   7.110E-08   9.243E-08   1.202E-07 kg/m**3 
+ Departure, COSPAR NH Mean =    -55.3 %     -41.9 %     -24.4 %  iupdate = 1
+ Tot.Dens. = 6.524E-08 kg/m**3   Dens.Pert. = -29.42% Wave =   0.00% of mean
+ Eastward Wind (Mean,Perturbed,Total) =    1.9    1.5    3.4 m/s    VertWind
+ Northward Wind(Mean,Perturbed,Total) =  -26.4    1.5  -24.9 m/s     2.4 m/s
+ CO2=1.188E+18 N2=3.703E+16 Ar=2.210E+16 O2=2.194E+15 CO=8.707E+15 #/m**3
+        93.892        1.864        1.586        0.126        0.438 % by mass
+        89.262        2.784        1.661        0.165        0.654 % by volume
+   O=7.283E+16 He=0.000E+00 H2=0.000E+00  H=0.000E+00   Total=1.330E+18 #/m**3
+         2.093        0.000        0.000        0.000 % by mass  MolWgt=41.839
+         5.474        0.000        0.000        0.000 % volume (mole) fraction
+ -----------------------------------------------------------------------------
+ Time (rel. to T0) =   11000.0 sec. (   0.124 sols)  Ls =  97.0  Dust = 0.30
+ Height Above MOLA (or Surface) = 105.000 km ( 106.163 km)  OWLT = 19.02 Min
+ Topographic Height =   -1.163 km   Radius (Areoid) = 3495.353 (3390.353) km
+ Hgt Above Ellipsoid = 105.284 km   Scale Hgt H(p)=   6.61 H(rho)=   6.41 km
+ Height Offset Parameters:   ibougher = 1    Local Height Offset =  2.280 km
+ Planeto-Centric Lat =   33.48 deg  Longitude =   58.97 W ( 301.03 E) deg.
+ Planeto-Graphic Lat =   33.78 deg  Planeto-Graphic Hgt (Ellps)=  105.282 km
+ Planeto-Cent Sun Lat =  25.02 deg  Mars Orbital Radius = 1.649 AU
+ Sun Longitude =  153.30 deg.W      Local True Solar Time =  18.29 Mars hrs
+ Exospheric Temp. =  184.8 K        Tbase =  148.0 K    Zbase =  123.5 km
+ Solar Zenith Angle =  79.8 deg     F1 peak = 136.7 km
+ Temperature =   127.2 K        Pressure = 1.072E-03 N/m**2   profwgt = 0.000
+ Density (Low, Avg., High) =   3.196E-08   4.235E-08   5.612E-08 kg/m**3 
+ Departure, COSPAR NH Mean =    -60.1 %     -47.1 %     -29.9 %  iupdate = 1
+ Tot.Dens. = 2.125E-08 kg/m**3   Dens.Pert. = -49.83% Wave =   0.00% of mean
+ Eastward Wind (Mean,Perturbed,Total) =   -5.4   -3.1   -8.5 m/s    VertWind
+ Northward Wind(Mean,Perturbed,Total) =  -32.9   15.8  -17.0 m/s     1.4 m/s
+ CO2=5.435E+17 N2=1.687E+16 Ar=1.005E+16 O2=1.051E+15 CO=4.824E+15 #/m**3
+        93.787        1.853        1.575        0.132        0.530 % by mass
+        89.077        2.765        1.647        0.172        0.791 % by volume
+   O=3.386E+16 He=0.000E+00 H2=0.000E+00  H=0.000E+00   Total=6.102E+17 #/m**3
+         2.124        0.000        0.000        0.000 % by mass  MolWgt=41.799
+         5.548        0.000        0.000        0.000 % volume (mole) fraction
+ -----------------------------------------------------------------------------
+ Time (rel. to T0) =   11500.0 sec. (   0.130 sols)  Ls =  97.0  Dust = 0.30
+ Height Above MOLA (or Surface) = 110.000 km ( 111.266 km)  OWLT = 19.02 Min
+ Topographic Height =   -1.266 km   Radius (Areoid) = 3500.219 (3390.219) km
+ Hgt Above Ellipsoid = 110.312 km   Scale Hgt H(p)=   6.48 H(rho)=   6.43 km
+ Height Offset Parameters:   ibougher = 1    Local Height Offset =  2.280 km
+ Planeto-Centric Lat =   33.98 deg  Longitude =   59.47 W ( 300.53 E) deg.
+ Planeto-Graphic Lat =   34.28 deg  Planeto-Graphic Hgt (Ellps)=  110.310 km
+ Planeto-Cent Sun Lat =  25.02 deg  Mars Orbital Radius = 1.649 AU
+ Sun Longitude =  155.33 deg.W      Local True Solar Time =  18.39 Mars hrs
+ Exospheric Temp. =  184.3 K        Tbase =  147.8 K    Zbase =  123.6 km
+ Solar Zenith Angle =  80.8 deg     F1 peak = 137.5 km
+ Temperature =   129.4 K        Pressure = 5.056E-04 N/m**2   profwgt = 0.000
+ Density (Low, Avg., High) =   1.459E-08   1.970E-08   2.660E-08 kg/m**3 
+ Departure, COSPAR NH Mean =    -64.8 %     -52.4 %     -35.8 %  iupdate = 1
+ Tot.Dens. = 1.592E-08 kg/m**3   Dens.Pert. = -19.19% Wave =   0.00% of mean
+ Eastward Wind (Mean,Perturbed,Total) =  -13.7   -8.5  -22.2 m/s    VertWind
+ Northward Wind(Mean,Perturbed,Total) =  -36.3    7.7  -28.6 m/s     0.4 m/s
+ CO2=2.532E+17 N2=7.770E+15 Ar=4.623E+15 O2=5.081E+14 CO=2.621E+15 #/m**3
+        93.931        1.835        1.557        0.137        0.619 % by mass
+        89.481        2.746        1.634        0.180        0.926 % by volume
+   O=1.424E+16 He=0.000E+00 H2=0.000E+00  H=0.000E+00   Total=2.830E+17 #/m**3
+         1.921        0.000        0.000        0.000 % by mass  MolWgt=41.924
+         5.034        0.000        0.000        0.000 % volume (mole) fraction
+ -----------------------------------------------------------------------------
+ Time (rel. to T0) =   12000.0 sec. (   0.135 sols)  Ls =  97.0  Dust = 0.30
+ Height Above MOLA (or Surface) = 115.000 km ( 116.271 km)  OWLT = 19.02 Min
+ Topographic Height =   -1.271 km   Radius (Areoid) = 3505.084 (3390.084) km
+ Hgt Above Ellipsoid = 115.339 km   Scale Hgt H(p)=   6.94 H(rho)=   6.41 km
+ Height Offset Parameters:   ibougher = 1    Local Height Offset =  2.280 km
+ Planeto-Centric Lat =   34.48 deg  Longitude =   59.97 W ( 300.03 E) deg.
+ Planeto-Graphic Lat =   34.79 deg  Planeto-Graphic Hgt (Ellps)=  115.338 km
+ Planeto-Cent Sun Lat =  25.02 deg  Mars Orbital Radius = 1.649 AU
+ Sun Longitude =  157.35 deg.W      Local True Solar Time =  18.49 Mars hrs
+ Exospheric Temp. =  183.7 K        Tbase =  147.5 K    Zbase =  123.7 km
+ Solar Zenith Angle =  81.8 deg     F1 peak = 138.2 km
+ Temperature =   133.9 K        Pressure = 2.434E-04 N/m**2   profwgt = 0.000
+ Density (Low, Avg., High) =   6.659E-09   9.156E-09   1.259E-08 kg/m**3 
+ Departure, COSPAR NH Mean =    -69.7 %     -58.4 %     -42.8 %  iupdate = 1
+ Tot.Dens. = 8.091E-09 kg/m**3   Dens.Pert. = -11.64% Wave =   0.00% of mean
+ Eastward Wind (Mean,Perturbed,Total) =  -22.0   -4.4  -26.5 m/s    VertWind
+ Northward Wind(Mean,Perturbed,Total) =  -36.9   -6.4  -43.3 m/s     0.4 m/s
+ CO2=1.176E+17 N2=3.591E+15 Ar=2.133E+15 O2=2.460E+14 CO=1.397E+15 #/m**3
+        93.823        1.825        1.546        0.143        0.710 % by mass
+        89.289        2.727        1.620        0.187        1.061 % by volume
+   O=6.734E+15 He=0.000E+00 H2=0.000E+00  H=0.000E+00   Total=1.317E+17 #/m**3
+         1.954        0.000        0.000        0.000 % by mass  MolWgt=41.882
+         5.115        0.000        0.000        0.000 % volume (mole) fraction
+ -----------------------------------------------------------------------------
+ Time (rel. to T0) =   12500.0 sec. (   0.141 sols)  Ls =  97.0  Dust = 0.30
+ Height Above MOLA (or Surface) = 120.000 km ( 121.331 km)  OWLT = 19.02 Min
+ Topographic Height =   -1.331 km   Radius (Areoid) = 3509.947 (3389.947) km
+ Hgt Above Ellipsoid = 120.366 km   Scale Hgt H(p)=   7.21 H(rho)=   6.65 km
+ Height Offset Parameters:   ibougher = 1    Local Height Offset =  2.280 km
+ Planeto-Centric Lat =   34.98 deg  Longitude =   60.47 W ( 299.53 E) deg.
+ Planeto-Graphic Lat =   35.29 deg  Planeto-Graphic Hgt (Ellps)=  120.364 km
+ Planeto-Cent Sun Lat =  25.02 deg  Mars Orbital Radius = 1.649 AU
+ Sun Longitude =  159.38 deg.W      Local True Solar Time =  18.59 Mars hrs
+ Exospheric Temp. =  183.2 K        Tbase =  147.2 K    Zbase =  123.7 km
+ Solar Zenith Angle =  82.7 deg     F1 peak = 139.1 km
+ Temperature =   140.8 K        Pressure = 1.213E-04 N/m**2   profwgt = 0.000
+ Density (Low, Avg., High) =   3.078E-09   4.309E-09   6.033E-09 kg/m**3 
+ Departure, COSPAR NH Mean =    -74.1 %     -63.8 %     -49.3 %  iupdate = 1
+ Tot.Dens. = 8.499E-09 kg/m**3   Dens.Pert. =  97.23% Wave =   0.00% of mean
+ Eastward Wind (Mean,Perturbed,Total) =  -27.9    2.7  -25.2 m/s    VertWind
+ Northward Wind(Mean,Perturbed,Total) =  -35.7  -17.8  -53.5 m/s    -1.5 m/s
+ CO2=5.504E+16 N2=1.690E+15 Ar=1.003E+15 O2=1.211E+14 CO=7.461E+14 #/m**3
+        93.343        1.825        1.544        0.149        0.805 % by mass
+        88.228        2.709        1.607        0.194        1.196 % by volume
+   O=3.784E+15 He=0.000E+00 H2=0.000E+00  H=0.000E+00   Total=6.239E+16 #/m**3
+         2.333        0.000        0.000        0.000 % by mass  MolWgt=41.597
+         6.066        0.000        0.000        0.000 % volume (mole) fraction
+ -----------------------------------------------------------------------------
+ Time (rel. to T0) =   13000.0 sec. (   0.146 sols)  Ls =  97.0  Dust = 0.30
+ Height Above MOLA (or Surface) = 125.000 km ( 126.297 km)  OWLT = 19.02 Min
+ Topographic Height =   -1.297 km   Radius (Areoid) = 3514.808 (3389.808) km
+ Hgt Above Ellipsoid = 125.392 km   Scale Hgt H(p)=   7.62 H(rho)=   7.00 km
+ Height Offset Parameters:   ibougher = 1    Local Height Offset =  2.280 km
+ Planeto-Centric Lat =   35.48 deg  Longitude =   60.97 W ( 299.03 E) deg.
+ Planeto-Graphic Lat =   35.79 deg  Planeto-Graphic Hgt (Ellps)=  125.390 km
+ Planeto-Cent Sun Lat =  25.02 deg  Mars Orbital Radius = 1.649 AU
+ Sun Longitude =  161.41 deg.W      Local True Solar Time =  18.70 Mars hrs
+ Exospheric Temp. =  182.7 K        Tbase =  146.9 K    Zbase =  123.8 km
+ Solar Zenith Angle =  83.6 deg     F1 peak = 140.0 km
+ Temperature =   149.0 K        Pressure = 6.236E-05 N/m**2   profwgt = 0.000
+ Density (Low, Avg., High) =   1.468E-09   2.091E-09   2.980E-09 kg/m**3 
+ Departure, COSPAR NH Mean =    -77.9 %     -68.5 %     -55.1 %  iupdate = 1
+ Tot.Dens. = 3.509E-09 kg/m**3   Dens.Pert. =  67.79% Wave =   0.00% of mean
+ Eastward Wind (Mean,Perturbed,Total) =  -30.2    2.7  -27.4 m/s    VertWind
+ Northward Wind(Mean,Perturbed,Total) =  -35.8  -21.3  -57.1 m/s    -2.4 m/s
+ CO2=2.665E+16 N2=8.580E+14 Ar=4.889E+14 O2=6.273E+13 CO=4.131E+14 #/m**3
+        93.136        1.909        1.551        0.159        0.919 % by mass
+        87.940        2.831        1.613        0.207        1.363 % by volume
+   O=1.830E+15 He=1.645E+12 H2=6.592E+10  H=1.925E+11   Total=3.031E+16 #/m**3
+         2.325        0.001        0.000        0.000 % by mass  MolWgt=41.554
+         6.039        0.005        0.000        0.001 % volume (mole) fraction
+ -----------------------------------------------------------------------------
+ Time (rel. to T0) =   13500.0 sec. (   0.152 sols)  Ls =  97.0  Dust = 0.30
+ Height Above MOLA (or Surface) = 130.000 km ( 131.276 km)  OWLT = 19.02 Min
+ Topographic Height =   -1.276 km   Radius (Areoid) = 3519.668 (3389.668) km
+ Hgt Above Ellipsoid = 130.418 km   Scale Hgt H(p)=   8.18 H(rho)=   7.42 km
+ Height Offset Parameters:   ibougher = 1    Local Height Offset =  2.280 km
+ Planeto-Centric Lat =   35.98 deg  Longitude =   61.47 W ( 298.53 E) deg.
+ Planeto-Graphic Lat =   36.29 deg  Planeto-Graphic Hgt (Ellps)=  130.416 km
+ Planeto-Cent Sun Lat =  25.02 deg  Mars Orbital Radius = 1.649 AU
+ Sun Longitude =  163.44 deg.W      Local True Solar Time =  18.80 Mars hrs
+ Exospheric Temp. =  182.2 K        Tbase =  146.7 K    Zbase =  123.9 km
+ Solar Zenith Angle =  84.5 deg     F1 peak = 141.0 km
+ Temperature =   157.1 K        Pressure = 3.331E-05 N/m**2   profwgt = 0.000
+ Density (Low, Avg., High) =   7.256E-10   1.052E-09   1.526E-09 kg/m**3 
+ Departure, COSPAR NH Mean =    -80.7 %     -72.0 %     -59.4 %  iupdate = 1
+ Tot.Dens. = 2.051E-09 kg/m**3   Dens.Pert. =  94.97% Wave =   0.00% of mean
+ Eastward Wind (Mean,Perturbed,Total) =  -29.5   31.2    1.7 m/s    VertWind
+ Northward Wind(Mean,Perturbed,Total) =  -38.0  -18.7  -56.7 m/s    -1.5 m/s
+ CO2=1.327E+16 N2=5.269E+14 Ar=2.569E+14 O2=3.657E+13 CO=2.537E+14 #/m**3
+        92.205        2.330        1.620        0.185        1.122 % by mass
+        86.451        3.431        1.673        0.238        1.652 % by volume
+   O=1.005E+15 He=1.378E+12 H2=5.683E+10  H=1.689E+11   Total=1.535E+16 #/m**3
+         2.537        0.001        0.000        0.000 % by mass  MolWgt=41.263
+         6.543        0.009        0.000        0.001 % volume (mole) fraction
+ -----------------------------------------------------------------------------
+ Time (rel. to T0) =   14000.0 sec. (   0.158 sols)  Ls =  97.0  Dust = 0.30
+ Height Above MOLA (or Surface) = 135.000 km ( 136.272 km)  OWLT = 19.02 Min
+ Topographic Height =   -1.272 km   Radius (Areoid) = 3524.526 (3389.526) km
+ Hgt Above Ellipsoid = 135.443 km   Scale Hgt H(p)=   8.69 H(rho)=   8.00 km
+ Height Offset Parameters:   ibougher = 1    Local Height Offset =  2.280 km
+ Planeto-Centric Lat =   36.48 deg  Longitude =   61.97 W ( 298.03 E) deg.
+ Planeto-Graphic Lat =   36.79 deg  Planeto-Graphic Hgt (Ellps)=  135.440 km
+ Planeto-Cent Sun Lat =  25.01 deg  Mars Orbital Radius = 1.649 AU
+ Sun Longitude =  165.46 deg.W      Local True Solar Time =  18.90 Mars hrs
+ Exospheric Temp. =  181.7 K        Tbase =  146.4 K    Zbase =  124.0 km
+ Solar Zenith Angle =  85.3 deg     F1 peak = 142.1 km
+ Temperature =   163.9 K        Pressure = 1.843E-05 N/m**2   profwgt = 0.000
+ Density (Low, Avg., High) =   3.803E-10   5.515E-10   7.996E-10 kg/m**3 
+ Departure, COSPAR NH Mean =    -80.1 %     -71.2 %     -58.2 %  iupdate = 1
+ Tot.Dens. = 9.922E-10 kg/m**3   Dens.Pert. =  79.92% Wave =   0.00% of mean
+ Eastward Wind (Mean,Perturbed,Total) =  -26.7   -1.7  -28.4 m/s    VertWind
+ Northward Wind(Mean,Perturbed,Total) =  -40.7  -25.3  -66.0 m/s    -2.0 m/s
+ CO2=6.861E+15 N2=3.338E+14 Ar=1.405E+14 O2=2.206E+13 CO=1.608E+14 #/m**3
+        90.923        2.816        1.690        0.213        1.356 % by mass
+        84.264        4.099        1.725        0.271        1.974 % by volume
+   O=6.229E+14 He=1.171E+12 H2=4.963E+10  H=1.501E+11   Total=8.143E+15 #/m**3
+         3.001        0.001        0.000        0.000 % by mass  MolWgt=40.786
+         7.650        0.014        0.001        0.002 % volume (mole) fraction
+ -----------------------------------------------------------------------------
+ Time (rel. to T0) =   14500.0 sec. (   0.163 sols)  Ls =  97.0  Dust = 0.30
+ Height Above MOLA (or Surface) = 140.000 km ( 141.237 km)  OWLT = 19.02 Min
+ Topographic Height =   -1.237 km   Radius (Areoid) = 3529.383 (3389.383) km
+ Hgt Above Ellipsoid = 140.467 km   Scale Hgt H(p)=   9.75 H(rho)=   8.91 km
+ Height Offset Parameters:   ibougher = 1    Local Height Offset =  2.280 km
+ Planeto-Centric Lat =   36.98 deg  Longitude =   62.47 W ( 297.53 E) deg.
+ Planeto-Graphic Lat =   37.29 deg  Planeto-Graphic Hgt (Ellps)=  140.465 km
+ Planeto-Cent Sun Lat =  25.01 deg  Mars Orbital Radius = 1.649 AU
+ Sun Longitude =  167.49 deg.W      Local True Solar Time =  19.00 Mars hrs
+ Exospheric Temp. =  181.2 K        Tbase =  146.2 K    Zbase =  124.1 km
+ Solar Zenith Angle =  86.2 deg     F1 peak = 143.2 km
+ Temperature =   169.0 K        Pressure = 1.069E-05 N/m**2   profwgt = 0.000
+ Density (Low, Avg., High) =   2.104E-10   3.051E-10   4.423E-10 kg/m**3 
+ Departure, COSPAR NH Mean =    -80.7 %     -72.0 %     -59.4 %  iupdate = 1
+ Tot.Dens. = 4.091E-10 kg/m**3   Dens.Pert. =  34.10% Wave =   0.00% of mean
+ Eastward Wind (Mean,Perturbed,Total) =  -22.8   -6.1  -28.9 m/s    VertWind
+ Northward Wind(Mean,Perturbed,Total) =  -44.5  -17.2  -61.7 m/s    -1.6 m/s
+ CO2=3.722E+15 N2=2.222E+14 Ar=8.106E+13 O2=1.400E+13 CO=1.070E+14 #/m**3
+        89.174        3.389        1.763        0.244        1.632 % by mass
+        81.209        4.847        1.768        0.305        2.335 % by volume
+   O=4.358E+14 He=1.036E+12 H2=4.507E+10  H=1.386E+11   Total=4.584E+15 #/m**3
+         3.796        0.002        0.000        0.000 % by mass  MolWgt=40.078
+         9.508        0.023        0.001        0.003 % volume (mole) fraction
+ -----------------------------------------------------------------------------
+ Time (rel. to T0) =   15000.0 sec. (   0.169 sols)  Ls =  97.0  Dust = 0.30
+ Height Above MOLA (or Surface) = 145.000 km ( 146.335 km)  OWLT = 19.02 Min
+ Topographic Height =   -1.335 km   Radius (Areoid) = 3534.239 (3389.239) km
+ Hgt Above Ellipsoid = 145.492 km   Scale Hgt H(p)=  10.14 H(rho)=   9.20 km
+ Height Offset Parameters:   ibougher = 1    Local Height Offset =  2.280 km
+ Planeto-Centric Lat =   37.48 deg  Longitude =   62.97 W ( 297.03 E) deg.
+ Planeto-Graphic Lat =   37.79 deg  Planeto-Graphic Hgt (Ellps)=  145.490 km
+ Planeto-Cent Sun Lat =  25.01 deg  Mars Orbital Radius = 1.649 AU
+ Sun Longitude =  169.52 deg.W      Local True Solar Time =  19.10 Mars hrs
+ Exospheric Temp. =  180.7 K        Tbase =  145.9 K    Zbase =  124.1 km
+ Solar Zenith Angle =  87.0 deg     F1 peak = 144.5 km
+ Temperature =   172.7 K        Pressure = 6.444E-06 N/m**2   profwgt = 0.000
+ Density (Low, Avg., High) =   1.208E-10   1.752E-10   2.540E-10 kg/m**3 
+ Departure, COSPAR NH Mean =    -82.9 %     -75.2 %     -64.0 %  iupdate = 1
+ Tot.Dens. = 2.445E-10 kg/m**3   Dens.Pert. =  39.54% Wave =   0.00% of mean
+ Eastward Wind (Mean,Perturbed,Total) =  -19.2   -7.0  -26.2 m/s    VertWind
+ Northward Wind(Mean,Perturbed,Total) =  -49.3   -5.6  -54.9 m/s    -0.6 m/s
+ CO2=2.079E+15 N2=1.535E+14 Ar=4.868E+13 O2=9.234E+12 CO=7.396E+13 #/m**3
+        86.732        4.077        1.844        0.280        1.963 % by mass
+        76.952        5.682        1.802        0.342        2.737 % by volume
+   O=3.362E+14 He=9.462E+11 H2=4.226E+10  H=1.320E+11   Total=2.702E+15 #/m**3
+         5.099        0.004        0.000        0.000 % by mass  MolWgt=39.046
+        12.444        0.035        0.002        0.005 % volume (mole) fraction
+ -----------------------------------------------------------------------------
+ Time (rel. to T0) =   15500.0 sec. (   0.175 sols)  Ls =  97.1  Dust = 0.30
+ Height Above MOLA (or Surface) = 150.000 km ( 151.272 km)  OWLT = 19.02 Min
+ Topographic Height =   -1.272 km   Radius (Areoid) = 3539.095 (3389.095) km
+ Hgt Above Ellipsoid = 150.517 km   Scale Hgt H(p)=  10.31 H(rho)=   9.58 km
+ Height Offset Parameters:   ibougher = 1    Local Height Offset =  2.280 km
+ Planeto-Centric Lat =   37.98 deg  Longitude =   63.47 W ( 296.53 E) deg.
+ Planeto-Graphic Lat =   38.29 deg  Planeto-Graphic Hgt (Ellps)=  150.514 km
+ Planeto-Cent Sun Lat =  25.01 deg  Mars Orbital Radius = 1.649 AU
+ Sun Longitude =  171.55 deg.W      Local True Solar Time =  19.21 Mars hrs
+ Exospheric Temp. =  180.1 K        Tbase =  145.7 K    Zbase =  124.2 km
+ Solar Zenith Angle =  87.8 deg     F1 peak = 146.0 km
+ Temperature =   175.0 K        Pressure = 3.962E-06 N/m**2   profwgt = 0.000
+ Density (Low, Avg., High) =   7.125E-11   1.033E-10   1.498E-10 kg/m**3 
+ Departure, COSPAR NH Mean =    -84.9 %     -78.2 %     -68.3 %  iupdate = 1
+ Tot.Dens. = 1.792E-10 kg/m**3   Dens.Pert. =  73.48% Wave =   0.00% of mean
+ Eastward Wind (Mean,Perturbed,Total) =  -15.5   -8.1  -23.6 m/s    VertWind
+ Northward Wind(Mean,Perturbed,Total) =  -53.6  -14.6  -68.2 m/s     2.9 m/s
+ CO2=1.187E+15 N2=1.083E+14 Ar=2.989E+13 O2=6.219E+12 CO=5.218E+13 #/m**3
+        83.980        4.878        1.920        0.320        2.349 % by mass
+        72.413        6.607        1.823        0.379        3.183 % by volume
+   O=2.546E+14 He=8.800E+11 H2=4.035E+10  H=1.282E+11   Total=1.640E+15 #/m**3
+         6.548        0.006        0.000        0.000 % by mass  MolWgt=37.948
+        15.531        0.054        0.002        0.008 % volume (mole) fraction
+ -----------------------------------------------------------------------------
+ Time (rel. to T0) =   16000.0 sec. (   0.180 sols)  Ls =  97.1  Dust = 0.30
+ Height Above MOLA (or Surface) = 155.000 km ( 156.136 km)  OWLT = 19.02 Min
+ Topographic Height =   -1.136 km   Radius (Areoid) = 3543.950 (3388.950) km
+ Hgt Above Ellipsoid = 155.542 km   Scale Hgt H(p)=  10.81 H(rho)=   9.89 km
+ Height Offset Parameters:   ibougher = 1    Local Height Offset =  2.280 km
+ Planeto-Centric Lat =   38.48 deg  Longitude =   63.97 W ( 296.03 E) deg.
+ Planeto-Graphic Lat =   38.80 deg  Planeto-Graphic Hgt (Ellps)=  155.540 km
+ Planeto-Cent Sun Lat =  25.01 deg  Mars Orbital Radius = 1.649 AU
+ Sun Longitude =  173.58 deg.W      Local True Solar Time =  19.31 Mars hrs
+ Exospheric Temp. =  179.5 K        Tbase =  145.4 K    Zbase =  124.3 km
+ Solar Zenith Angle =  88.6 deg     F1 peak = 147.6 km
+ Temperature =   176.2 K        Pressure = 2.474E-06 N/m**2   profwgt = 0.000
+ Density (Low, Avg., High) =   4.275E-11   6.198E-11   8.987E-11 kg/m**3 
+ Departure, COSPAR NH Mean =    -87.3 %     -81.6 %     -73.3 %  iupdate = 1
+ Tot.Dens. = 1.247E-10 kg/m**3   Dens.Pert. = 101.12% Wave =   0.00% of mean
+ Eastward Wind (Mean,Perturbed,Total) =  -11.7   -9.2  -20.9 m/s    VertWind
+ Northward Wind(Mean,Perturbed,Total) =  -57.6  -18.4  -75.9 m/s     3.1 m/s
+ CO2=6.844E+14 N2=7.744E+13 Ar=1.861E+13 O2=4.246E+12 CO=3.731E+13 #/m**3
+        80.695        5.813        1.992        0.364        2.799 % by mass
+        67.278        7.612        1.829        0.417        3.667 % by volume
+   O=1.943E+14 He=8.284E+11 H2=3.899E+10  H=1.259E+11   Total=1.017E+15 #/m**3
+         8.328        0.009        0.000        0.000 % by mass  MolWgt=36.692
+        19.099        0.081        0.004        0.012 % volume (mole) fraction
+ -----------------------------------------------------------------------------
+ Time (rel. to T0) =   16500.0 sec. (   0.186 sols)  Ls =  97.1  Dust = 0.30
+ Height Above MOLA (or Surface) = 160.000 km ( 160.950 km)  OWLT = 19.02 Min
+ Topographic Height =   -0.950 km   Radius (Areoid) = 3548.806 (3388.806) km
+ Hgt Above Ellipsoid = 160.568 km   Scale Hgt H(p)=  11.25 H(rho)=  10.06 km
+ Height Offset Parameters:   ibougher = 1    Local Height Offset =  2.280 km
+ Planeto-Centric Lat =   38.98 deg  Longitude =   64.47 W ( 295.53 E) deg.
+ Planeto-Graphic Lat =   39.30 deg  Planeto-Graphic Hgt (Ellps)=  160.566 km
+ Planeto-Cent Sun Lat =  25.01 deg  Mars Orbital Radius = 1.649 AU
+ Sun Longitude =  175.60 deg.W      Local True Solar Time =  19.41 Mars hrs
+ Exospheric Temp. =  179.0 K        Tbase =  145.2 K    Zbase =  124.3 km
+ Solar Zenith Angle =  89.3 deg     F1 peak = 149.3 km
+ Temperature =   176.7 K        Pressure = 1.577E-06 N/m**2   profwgt = 0.000
+ Density (Low, Avg., High) =   2.591E-11   3.757E-11   5.447E-11 kg/m**3 
+ Departure, COSPAR NH Mean =    -89.3 %     -84.5 %     -77.6 %  iupdate = 1
+ Tot.Dens. = 6.128E-11 kg/m**3   Dens.Pert. =  63.11% Wave =   0.00% of mean
+ Eastward Wind (Mean,Perturbed,Total) =   -8.5    6.0   -2.5 m/s    VertWind
+ Northward Wind(Mean,Perturbed,Total) =  -61.5  -36.3  -97.8 m/s    -6.1 m/s
+ CO2=3.917E+14 N2=5.610E+13 Ar=1.174E+13 O2=2.937E+12 CO=2.703E+13 #/m**3
+        76.187        6.947        2.073        0.415        3.346 % by mass
+        60.610        8.681        1.817        0.455        4.182 % by volume
+   O=1.558E+14 He=7.899E+11 H2=3.815E+10  H=1.253E+11   Total=6.462E+14 #/m**3
+        11.017        0.014        0.000        0.001 % by mass  MolWgt=35.011
+        24.108        0.122        0.006        0.019 % volume (mole) fraction
+ -----------------------------------------------------------------------------
+ Time (rel. to T0) =   17000.0 sec. (   0.191 sols)  Ls =  97.1  Dust = 0.30
+ Height Above MOLA (or Surface) = 165.000 km ( 165.854 km)  OWLT = 19.02 Min
+ Topographic Height =   -0.854 km   Radius (Areoid) = 3553.661 (3388.661) km
+ Hgt Above Ellipsoid = 165.595 km   Scale Hgt H(p)=  11.63 H(rho)=  10.40 km
+ Height Offset Parameters:   ibougher = 1    Local Height Offset =  2.280 km
+ Planeto-Centric Lat =   39.48 deg  Longitude =   64.97 W ( 295.03 E) deg.
+ Planeto-Graphic Lat =   39.80 deg  Planeto-Graphic Hgt (Ellps)=  165.592 km
+ Planeto-Cent Sun Lat =  25.01 deg  Mars Orbital Radius = 1.649 AU
+ Sun Longitude =  177.63 deg.W      Local True Solar Time =  19.51 Mars hrs
+ Exospheric Temp. =  178.5 K        Tbase =  144.9 K    Zbase =  124.4 km
+ Solar Zenith Angle =  90.0 deg     F1 peak = 999.9 km
+ Temperature =   177.0 K        Pressure = 1.020E-06 N/m**2   profwgt = 0.000
+ Density (Low, Avg., High) =   1.590E-11   2.305E-11   3.342E-11 kg/m**3 
+ Departure, COSPAR NH Mean =    -91.2 %     -87.2 %     -81.5 %  iupdate = 1
+ Tot.Dens. = 3.656E-11 kg/m**3   Dens.Pert. =  58.62% Wave =   0.00% of mean
+ Eastward Wind (Mean,Perturbed,Total) =   -6.1    0.7   -5.4 m/s    VertWind
+ Northward Wind(Mean,Perturbed,Total) =  -65.4  -14.4  -79.8 m/s    -4.3 m/s
+ CO2=2.240E+14 N2=4.084E+13 Ar=7.443E+12 O2=2.042E+12 CO=1.968E+13 #/m**3
+        71.020        8.243        2.143        0.471        3.971 % by mass
+        53.651        9.781        1.783        0.489        4.713 % by volume
+   O=1.226E+14 He=7.571E+11 H2=3.753E+10  H=1.252E+11   Total=4.175E+14 #/m**3
+        14.130        0.022        0.001        0.001 % by mass  MolWgt=33.246
+        29.363        0.181        0.009        0.030 % volume (mole) fraction
+ -----------------------------------------------------------------------------
+ Time (rel. to T0) =   17500.0 sec. (   0.197 sols)  Ls =  97.1  Dust = 0.30
+ Height Above MOLA (or Surface) = 170.000 km ( 170.917 km)  OWLT = 19.02 Min
+ Topographic Height =   -0.917 km   Radius (Areoid) = 3558.517 (3388.517) km
+ Hgt Above Ellipsoid = 170.623 km   Scale Hgt H(p)=  12.23 H(rho)=  10.72 km
+ Height Offset Parameters:   ibougher = 1    Local Height Offset =  2.280 km
+ Planeto-Centric Lat =   39.98 deg  Longitude =   65.47 W ( 294.53 E) deg.
+ Planeto-Graphic Lat =   40.30 deg  Planeto-Graphic Hgt (Ellps)=  170.620 km
+ Planeto-Cent Sun Lat =  25.01 deg  Mars Orbital Radius = 1.648 AU
+ Sun Longitude =  179.66 deg.W      Local True Solar Time =  19.61 Mars hrs
+ Exospheric Temp. =  177.9 K        Tbase =  144.7 K    Zbase =  124.4 km
+ Solar Zenith Angle =  90.7 deg     F1 peak = 999.9 km
+ Temperature =   177.1 K        Pressure = 6.716E-07 N/m**2   profwgt = 0.000
+ Density (Low, Avg., High) =   9.886E-12   1.434E-11   2.079E-11 kg/m**3 
+ Departure, COSPAR NH Mean =    -92.7 %     -89.4 %     -84.6 %  iupdate = 1
+ Tot.Dens. = 1.551E-11 kg/m**3   Dens.Pert. =   8.21% Wave =   0.00% of mean
+ Eastward Wind (Mean,Perturbed,Total) =   -3.9    9.6    5.7 m/s    VertWind
+ Northward Wind(Mean,Perturbed,Total) =  -69.0  -41.7 -110.7 m/s     0.9 m/s
+ CO2=1.279E+14 N2=2.985E+13 Ar=4.737E+12 O2=1.425E+12 CO=1.438E+13 #/m**3
+        65.184        9.688        2.193        0.528        4.667 % by mass
+        46.551       10.867        1.724        0.519        5.237 % by volume
+   O=9.553E+13 He=7.288E+11 H2=3.708E+10  H=1.258E+11   Total=2.747E+14 #/m**3
+        17.704        0.034        0.001        0.001 % by mass  MolWgt=31.429
+        34.778        0.265        0.013        0.046 % volume (mole) fraction
+ -----------------------------------------------------------------------------
+ Time (rel. to T0) =   18000.0 sec. (   0.203 sols)  Ls =  97.1  Dust = 0.30
+ Height Above MOLA (or Surface) = 175.000 km ( 175.556 km)  OWLT = 19.02 Min
+ Topographic Height =   -0.556 km   Radius (Areoid) = 3563.373 (3388.373) km
+ Hgt Above Ellipsoid = 175.651 km   Scale Hgt H(p)=  12.56 H(rho)=  11.25 km
+ Height Offset Parameters:   ibougher = 1    Local Height Offset =  2.280 km
+ Planeto-Centric Lat =   40.48 deg  Longitude =   65.97 W ( 294.03 E) deg.
+ Planeto-Graphic Lat =   40.80 deg  Planeto-Graphic Hgt (Ellps)=  175.648 km
+ Planeto-Cent Sun Lat =  25.01 deg  Mars Orbital Radius = 1.648 AU
+ Sun Longitude =  181.69 deg.W      Local True Solar Time =  19.71 Mars hrs
+ Exospheric Temp. =  177.4 K        Tbase =  144.5 K    Zbase =  124.5 km
+ Solar Zenith Angle =  91.4 deg     F1 peak = 999.9 km
+ Temperature =   177.1 K        Pressure = 4.470E-07 N/m**2   profwgt = 0.000
+ Density (Low, Avg., High) =   6.284E-12   9.113E-12   1.321E-11 kg/m**3 
+ Departure, COSPAR NH Mean =    -93.9 %     -91.2 %     -87.2 %  iupdate = 1
+ Tot.Dens. = 9.602E-12 kg/m**3   Dens.Pert. =   5.37% Wave =   0.00% of mean
+ Eastward Wind (Mean,Perturbed,Total) =   -2.6    2.6    0.0 m/s    VertWind
+ Northward Wind(Mean,Perturbed,Total) =  -71.4  -23.2  -94.6 m/s     2.8 m/s
+ CO2=7.495E+13 N2=2.172E+13 Ar=3.000E+12 O2=9.901E+11 CO=1.047E+13 #/m**3
+        60.104       11.087        2.184        0.577        5.342 % by mass
+        40.997       11.879        1.641        0.542        5.725 % by volume
+   O=7.083E+13 He=6.988E+11 H2=3.649E+10  H=1.258E+11   Total=1.828E+14 #/m**3
+        20.651        0.051        0.001        0.002 % by mass  MolWgt=30.018
+        38.746        0.382        0.020        0.069 % volume (mole) fraction
+ -----------------------------------------------------------------------------
+ Time (rel. to T0) =   18500.0 sec. (   0.208 sols)  Ls =  97.1  Dust = 0.30
+ Height Above MOLA (or Surface) = 180.000 km ( 180.274 km)  OWLT = 19.02 Min
+ Topographic Height =   -0.274 km   Radius (Areoid) = 3568.229 (3388.229) km
+ Hgt Above Ellipsoid = 180.679 km   Scale Hgt H(p)=  13.20 H(rho)=  11.60 km
+ Height Offset Parameters:   ibougher = 1    Local Height Offset =  2.280 km
+ Planeto-Centric Lat =   40.98 deg  Longitude =   66.47 W ( 293.53 E) deg.
+ Planeto-Graphic Lat =   41.30 deg  Planeto-Graphic Hgt (Ellps)=  180.676 km
+ Planeto-Cent Sun Lat =  25.01 deg  Mars Orbital Radius = 1.648 AU
+ Sun Longitude =  183.71 deg.W      Local True Solar Time =  19.82 Mars hrs
+ Exospheric Temp. =  176.9 K        Tbase =  144.3 K    Zbase =  124.5 km
+ Solar Zenith Angle =  92.1 deg     F1 peak = 999.9 km
+ Temperature =   176.7 K        Pressure = 3.027E-07 N/m**2   profwgt = 0.000
+ Density (Low, Avg., High) =   4.040E-12   5.858E-12   8.495E-12 kg/m**3 
+ Departure, COSPAR NH Mean =    -94.9 %     -92.6 %     -89.2 %  iupdate = 1
+ Tot.Dens. = 9.702E-12 kg/m**3   Dens.Pert. =  65.60% Wave =   0.00% of mean
+ Eastward Wind (Mean,Perturbed,Total) =   -1.4   12.9   11.5 m/s    VertWind
+ Northward Wind(Mean,Perturbed,Total) =  -73.9    0.8  -73.1 m/s    -2.8 m/s
+ CO2=4.338E+13 N2=1.582E+13 Ar=1.902E+12 O2=6.887E+11 CO=7.626E+12 #/m**3
+        54.107       12.564        2.154        0.625        6.054 % by mass
+        34.957       12.750        1.533        0.555        6.146 % by volume
+   O=5.384E+13 He=6.714E+11 H2=3.598E+10  H=1.261E+11   Total=1.241E+14 #/m**3
+        24.414        0.076        0.002        0.004 % by mass  MolWgt=28.433
+        43.388        0.541        0.029        0.102 % volume (mole) fraction
+ -----------------------------------------------------------------------------
+ Time (rel. to T0) =   19000.0 sec. (   0.214 sols)  Ls =  97.1  Dust = 0.30
+ Height Above MOLA (or Surface) = 185.000 km ( 185.015 km)  OWLT = 19.02 Min
+ Topographic Height =   -0.015 km   Radius (Areoid) = 3573.084 (3388.084) km
+ Hgt Above Ellipsoid = 185.708 km   Scale Hgt H(p)=  13.96 H(rho)=  12.02 km
+ Height Offset Parameters:   ibougher = 1    Local Height Offset =  2.280 km
+ Planeto-Centric Lat =   41.48 deg  Longitude =   66.97 W ( 293.03 E) deg.
+ Planeto-Graphic Lat =   41.80 deg  Planeto-Graphic Hgt (Ellps)=  185.705 km
+ Planeto-Cent Sun Lat =  25.01 deg  Mars Orbital Radius = 1.648 AU
+ Sun Longitude =  185.74 deg.W      Local True Solar Time =  19.92 Mars hrs
+ Exospheric Temp. =  176.4 K        Tbase =  144.1 K    Zbase =  124.6 km
+ Solar Zenith Angle =  92.7 deg     F1 peak = 999.9 km
+ Temperature =   176.3 K        Pressure = 2.090E-07 N/m**2   profwgt = 0.000
+ Density (Low, Avg., High) =   2.632E-12   3.816E-12   5.534E-12 kg/m**3 
+ Departure, COSPAR NH Mean =    -95.7 %     -93.8 %     -90.9 %  iupdate = 1
+ Tot.Dens. = 5.493E-12 kg/m**3   Dens.Pert. =  43.92% Wave =   0.00% of mean
+ Eastward Wind (Mean,Perturbed,Total) =   -0.2  -13.4  -13.7 m/s    VertWind
+ Northward Wind(Mean,Perturbed,Total) =  -76.4   24.1  -52.3 m/s     0.4 m/s
+ CO2=2.474E+13 N2=1.152E+13 Ar=1.205E+12 O2=4.787E+11 CO=5.553E+12 #/m**3
+        47.366       14.044        2.094        0.666        6.768 % by mass
+        28.805       13.415        1.403        0.557        6.466 % by volume
+   O=4.158E+13 He=6.452E+11 H2=3.549E+10  H=1.263E+11   Total=8.588E+13 #/m**3
+        28.941        0.112        0.003        0.006 % by mass  MolWgt=26.764
+        48.414        0.751        0.041        0.147 % volume (mole) fraction
+ -----------------------------------------------------------------------------
+ Time (rel. to T0) =   19500.0 sec. (   0.220 sols)  Ls =  97.1  Dust = 0.30
+ Height Above MOLA (or Surface) = 190.000 km ( 189.754 km)  OWLT = 19.02 Min
+ Topographic Height =    0.246 km   Radius (Areoid) = 3577.940 (3387.940) km
+ Hgt Above Ellipsoid = 190.737 km   Scale Hgt H(p)=  14.85 H(rho)=  12.53 km
+ Height Offset Parameters:   ibougher = 1    Local Height Offset =  2.280 km
+ Planeto-Centric Lat =   41.98 deg  Longitude =   67.47 W ( 292.53 E) deg.
+ Planeto-Graphic Lat =   42.30 deg  Planeto-Graphic Hgt (Ellps)=  190.733 km
+ Planeto-Cent Sun Lat =  25.01 deg  Mars Orbital Radius = 1.648 AU
+ Sun Longitude =  187.77 deg.W      Local True Solar Time =  20.02 Mars hrs
+ Exospheric Temp. =  175.9 K        Tbase =  143.9 K    Zbase =  124.6 km
+ Solar Zenith Angle =  93.3 deg     F1 peak = 999.9 km
+ Temperature =   175.8 K        Pressure = 1.473E-07 N/m**2   profwgt = 0.000
+ Density (Low, Avg., High) =   1.741E-12   2.524E-12   3.660E-12 kg/m**3 
+ Departure, COSPAR NH Mean =    -96.3 %     -94.7 %     -92.3 %  iupdate = 1
+ Tot.Dens. = 3.176E-12 kg/m**3   Dens.Pert. =  25.83% Wave =   0.00% of mean
+ Eastward Wind (Mean,Perturbed,Total) =    0.7   -9.5   -8.8 m/s    VertWind
+ Northward Wind(Mean,Perturbed,Total) =  -79.0   13.9  -65.1 m/s    -0.5 m/s
+ CO2=1.380E+13 N2=8.383E+12 Ar=7.622E+11 O2=3.325E+11 CO=4.041E+12 #/m**3
+        39.955       15.450        2.004        0.700        7.446 % by mass
+        22.751       13.819        1.256        0.548        6.662 % by volume
+   O=3.256E+13 He=6.201E+11 H2=3.500E+10  H=1.266E+11   Total=6.066E+13 #/m**3
+        34.269        0.163        0.005        0.008 % by mass  MolWgt=25.059
+        53.676        1.022        0.058        0.209 % volume (mole) fraction
+ -----------------------------------------------------------------------------
+ Time (rel. to T0) =   20000.0 sec. (   0.225 sols)  Ls =  97.1  Dust = 0.30
+ Height Above MOLA (or Surface) = 195.000 km ( 194.639 km)  OWLT = 19.02 Min
+ Topographic Height =    0.361 km   Radius (Areoid) = 3582.794 (3387.794) km
+ Hgt Above Ellipsoid = 195.765 km   Scale Hgt H(p)=  15.85 H(rho)=  13.15 km
+ Height Offset Parameters:   ibougher = 1    Local Height Offset =  2.280 km
+ Planeto-Centric Lat =   42.48 deg  Longitude =   67.97 W ( 292.03 E) deg.
+ Planeto-Graphic Lat =   42.80 deg  Planeto-Graphic Hgt (Ellps)=  195.762 km
+ Planeto-Cent Sun Lat =  25.01 deg  Mars Orbital Radius = 1.648 AU
+ Sun Longitude =  189.80 deg.W      Local True Solar Time =  20.12 Mars hrs
+ Exospheric Temp. =  175.5 K        Tbase =  143.7 K    Zbase =  124.6 km
+ Solar Zenith Angle =  93.8 deg     F1 peak = 999.9 km
+ Temperature =   175.4 K        Pressure = 1.060E-07 N/m**2   profwgt = 0.000
+ Density (Low, Avg., High) =   1.171E-12   1.699E-12   2.463E-12 kg/m**3 
+ Departure, COSPAR NH Mean =    -96.8 %     -95.4 %     -93.4 %  iupdate = 1
+ Tot.Dens. = 1.686E-12 kg/m**3   Dens.Pert. =  -0.73% Wave =   0.00% of mean
+ Eastward Wind (Mean,Perturbed,Total) =    1.6    4.2    5.8 m/s    VertWind
+ Northward Wind(Mean,Perturbed,Total) =  -81.6    1.2  -80.4 m/s     0.0 m/s
+ CO2=7.443E+12 N2=6.096E+12 Ar=4.819E+11 O2=2.308E+11 CO=2.939E+12 #/m**3
+        32.021       16.697        1.882        0.722        8.048 % by mass
+        17.007       13.930        1.101        0.527        6.716 % by volume
+   O=2.581E+13 He=5.960E+11 H2=3.453E+10  H=1.269E+11   Total=4.376E+13 #/m**3
+        40.377        0.233        0.007        0.013 % by mass  MolWgt=23.374
+        58.989        1.362        0.079        0.290 % volume (mole) fraction
+ -----------------------------------------------------------------------------

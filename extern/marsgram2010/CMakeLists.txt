@@ -1,0 +1,24 @@
+
+# Treetops library.
+ADD_LIBRARY(MarsGRAM2010 STATIC)
+
+TARGET_INCLUDE_DIRECTORIES(MarsGRAM2010 PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/Code)
+
+# GRAM2010 files:
+SET(GRAM2010f  
+    Cfiles_M10_C.f90
+    Ifiles_M10_I.f90
+    marssubs_M10.f90
+    setup_M10.f90
+    TESsubs_M10.f90
+    wrapper_M10.f90
+)
+
+
+list(TRANSFORM GRAM2010f PREPEND ${CMAKE_CURRENT_SOURCE_DIR}/Code/)
+
+
+# Add target sources
+TARGET_SOURCES(MarsGRAM2010 PUBLIC ${GRAM2010f})
+
+

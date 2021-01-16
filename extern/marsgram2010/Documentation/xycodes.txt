@@ -1,0 +1,17 @@
+   Code              Parameter
+   ----   -------------------------------------------------------------------
+     1    Planeto-Centric Height (above local MOLA areoid, km)
+     2    Planeto-Centric Height (above local MOLA topographic surface, km)
+     3    Planeto-Centric Latitude (deg.)
+     4    Longitude (deg.) West+ if LonEW = 0, East+ if LonEW = 1
+     5    Time from start (Earth seconds)
+     6    Time from start (Martian Sols)
+     7    Areocentric Longitude of Sun, Ls (deg.)
+     8    Local True Solar Time (Mars hours)
+     9    Pressure (mb)
+    10    Pressure Height (km) [-H*log(Pres/PresSurf) = -H*log(sigma)]
+    11    Sigma coordinate [sigma = Pressure/(Pressure at Surface)]
+    12    Planeto-Centric Height (km) above reference ellipsoid
+    13    Planeto-Graphic Height (km) above reference ellipsoid
+    14    Planeto-Graphic Latitude (deg.)
+    15    Longitude in range -180 to +180 (East or West, controlled by LonEW)

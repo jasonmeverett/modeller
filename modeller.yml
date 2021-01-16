@@ -1,0 +1,29 @@
+
+
+name: modeller
+
+
+channels:
+  - conda-forge
+
+
+dependencies:
+  - python=3.8
+  - cmake
+  - pylint
+  - pytest
+  - numpy
+  - scipy
+  - pandas
+  - plotly
+  - colour 
+  - spiceypy
+  - pybind11
+  - eigen
+  - xorg-libxmu
+  - xorg-libxi
+  - simbody
+  - gcc_linux-64  
+  - gxx_linux-64 
+  - gfortran_linux-64 
+  

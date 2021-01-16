@@ -1,0 +1,489 @@
+                  History of Mars-GRAM program versions
+ 
+ Ver    Date                              Comments
+ ____  _______  ___________________________________________________________
+ 
+ 1.00  5/20/88  Preliminary version with earlier Stewart thermosphere
+                model and no realistic latitude-longitude variation.
+                Documented in ED44-5-20-88 preliminary report.
+ 
+ 2.00   7/1/89  Version documented in July, 1989 technical report. Has
+                newer Stewart thermosphere model and realistic latitude-
+                longitude variability.
+ 
+ 2.10   9/2/89  Adds version numbers to main and all subroutines. Corrects
+                formats 790 and 795 in DATASTEP subroutine.
+ 
+ 2.11  10/2/89  Corrects "ATIO" to "RATIO" and "FH" to "PFH" in THERMOS
+                subroutine. Corrects MARSGRAM, ATMOS2, DATASTEP,
+                PRESSURE, PSURFACE, STEWART2, STRATOS, TEMPS, and
+                TSURFACE to have lines <= 72 characters in length.
+ 
+ 2.20  10/7/89  Corrects illegal log call in THERMOS by adding ES factors
+                to ZF in ATMOS2.  Adds EScalc subroutine in STEWART2.
+                Changes name of terrain height file to HEIGHTS.DAT
+
+ 2.21  10/8/89  Removes character data from COMMON DATA and puts it in
+                new COMMON FILENAME.
+ 
+ 2.22 11/16/89  Adds  REAL J2 to RELLIPS, and REAL nmals to PSURFACE.
+                Changes Julian date by -0.5 to be consistent with
+                astronomical convention of day starting at Greenwich
+                noon.  ORBIT adds back 0.5 to Julian day for consistency
+                with derivation of coefficients.
+
+ 3.0  10/14/91  Adds option for local-scale dust storm, and Zurek wave
+                perturbation model.  Allows heights to go "below" local
+                terrain height and return "realistic" pressure, density
+                and temperature, not the surface values. Both Interactive
+                and Batch versions available.  Batch version uses
+                NAMELIST input, and is completely modular, so that the
+                main driver program can easily be replaced by any
+                calling program, such as a trajectory simulation program.
+
+ 3.1  12/17/92  Change comments and code for DENSRP output to be
+                perturbations in %; change DENSLO output file to DENSRM,
+                containing random perturbation magnitude in %; change 
+                DENSHI output file to DENSWA, containing wave perturbation
+                in %; add DENSWA to the OUTPUT file.  Modify DENSHI and
+                DENSLO to include the wave perturbation amplitude.  Delete
+                several unused variables from declaration statements in
+                the MAIN routine and in subroutines SETUP, ATMOS2, 
+                PSURFACE, STEWART2, DZDUST, THERMOS, and STRATOS.
+
+ 3.1   3/14/94  Transferred version 3.1 to MSFC UNIX environment and tested
+
+ 3.2  11/28/94  Corrected DENSHI, DENSLO initial value problem.  Added
+                parameter value output to Datastep.  Modified DZDUST to use
+                same dust storm start time and intensity as for lower
+                altitude.  Changed output file units to iu0 for messages
+                (normally screen) and iup for LIST output (iup = 0 also
+                suppresses LIST and other output in batch version). 
+                Corrected error in calculation of time-step correlations.
+                Added line number codes in columns 73-80.  Sorted MARSSUBS
+                into alphabetical order by line number codes.  Renamed 
+                Commons RAND to RANDCOM and DATA to DATACOM.  Modified 
+                E-format in LIST output to have a leading digit.  Made code
+                consistent for indentation of If..Then..Else segments and 
+                Do..Continue loops. Moved the NAMELIST read into SETUP for
+                the batch version and removed the commons from the batch 
+                main (to simplify the use of SETUP and DATASTEP as 
+                subroutines in other driver programs). Deleted additional
+                unused variables in ATMOS2 and ORBIT.  Defined pi180 in
+                DATASTEP and corrected NVAR to NVARX.  Corrected slight
+                inconsistency in pressure interpolation in subroutine
+                STRATOS.  Added time (rel. to initial time) in sols to
+                standard LIST file.  Added time and solar longitude to
+                the OUTPUT list.
+
+ 3.3   2/7/95   Simplified vertical interpolation method in subroutine
+                STRATOS.  Added DENSLO and DENSHI output files back
+                ("1 sigma" density envelopes).  Corrected erroneous
+                comments associated with file open statements in the
+                batch version code. Added maxfiles option to suppress 
+                output of TMAX, TMIN and TAVG files for systems that 
+                cannot have more than 16 files open at one time (i.e. 
+                set maxfiles = 16 in the Block Data routine).
+
+ 3.31  3/28/95  Added check for density perturbations not to exceed
+                value set by wave instability (i.e. maximum perturbation
+                magnitude consistent with d-theta/dz > 0).  Insured 
+                that wave amplitudes are zero if wave perturbation
+                model is not selected. Added output of F10.7 at 1AU
+                and at Mars orbit.
+
+ 3.32  4/11/95  Added COSPAR NH mean atmosphere and output of density
+                deviations from COSPAR values (also new option logscale
+                = 2).  Suppress output of NSWIND and EWWIND if maxfiles 
+                = 16.
+
+ 3.33   8/9/95  Takes polar cap radius from Alb function and makes it
+                a separate function, polecap.  Uses new regressions
+                for Tavg versus Absorb (the daily average surface-
+                absorbed solar flux).  Uses new regression for diurnal
+                temperature amplitude (Tamp) versus Qa [the diurnal
+                range (midnight-noon difference) in surface-absorbed
+                solar flux].  These changes in temperature regressions
+                are all in the Tsurface subroutine.
+
+ 3.34  11/1/95  Added comments for JPL Programmer's Guide.  Corrected
+                logic error in density to OUTPUT file (added format
+                810). Corrected problem with crlat and polar in 
+                Tsurface. Corrected semi-diurnal term in dusty-case
+                wave model.  Corrected term in maximum mountain-wave
+                perturbation model.
+
+ 3.4  4/1/96  Added climate factors for temperature profile (CF0-
+              CF75), adjustment factors for base height of 
+              thermosphere (deltaZF), temperature at base of 
+              thermosphere (deltaTF) and exospheric temperature   
+              (deltaTEX).  Included new subroutine Thermpar to compute
+              thermospheric parameters based on parameterizations from  
+              the Bougher Mars Thermospheric Global Circulation Model 
+              (MTGCM), including new variations with latitude and 
+              local solar time.  Adjusted wind coefficient in 
+              thermospheres to better agree with MTGCM winds.  
+              Revised the calculation of solar longitude in the 
+              ORBIT subroutine, using 687-day and 777-day period 
+              terms. Added default values for batch version input, 
+              so that only non-reference parameter values need be 
+              in the INPUT NAMELIST file.  Added a re-check of the 
+              final density perturbation values so that the 
+              stability limits will not be exceeded. Added output of 
+              the solar latitude and the orbital radius to the LIST 
+              file.  Changed xycode output to local solar time in 
+              hours (from hour angle in degrees). Added output to 
+              LIST file of local exospheric temperature, temperature 
+              and height of base of thermosphere, for output 
+              altitudes above 75 km.
+
+ 3.5   7/96  Changed temperature renormalization to be at 25 km above
+             reference ellipsoid datum, not 25 km above local terrain height.
+             Removed terms producing large gradient in surface pressure
+             poleward of 55 deg.  Added option (ipopt) to do hydrostatic
+             interpolation from 75 km to 1.26 nbar.  Added climate adjustment
+             factor for surface pressure (CFp). Added calculation of density
+             scale height [H(rho), retaining pressure scale height H(p)].
+             Added plot output files for density scale height [file=HGTrho,
+             unit=35, files(18)], temperature of 1.26 nbar level [file=Tbase,
+             unit=36, files(19)], and height of 1.26 nbar level [file=Zbase,
+             unit=37, files(20)].  Added option for plot output versus
+             pressure level (NVARX or NVARY = 9).  Increased minimum and
+             maximum allowed random perturbation magnitudes (by about a
+             factor of 2), and added input of random perturbation scale
+             factor (rpscale), with allowable values 0-3.  Changed lapse
+             rates 30 - 50 km and 50 - 75 km (to 1.19 K/km and 0.44 K/km,
+             respectively).  Corrected problem with computing position
+             displacements (DELHGT, DELLAT and DELLON) in mode when
+             trajectory file (TRAJDATA) is read in.
+
+ 3.6  11/96  Added Monte Carlo feature in Batch version and created new dummy
+             trajectory-computing version (marstraj).  Optional NAMELIST
+             format INPUT now includes NMONTE = number on Monte Carlo runs
+             and iup [0 to suppress LIST and graphics output files; iup not
+             equal to zero causes output of LIST and graphics files
+             (default)].  Added random seed (NR1) and NMONTE to argument
+             list of SETUP subroutine.  Rewind trajectory input data file
+             (TRAJDATA) when end-of-file is encountered.  Apply random
+             perturbation scaling factor (rpscale) to SIGD, DENSHI, and
+             DENSLO. Include new subroutine Randinit to re-initialize the
+             random number seed (NR1) for each Monte Carlo run.  NOTE THAT
+             NO INTERACTIVE VERSION 3.6 IS PROVIDED.  Batch (and dummy
+             trajectory) version 3.6 and interactive version 3.5 should give
+             the same output if identical input parameters are used
+             [including NMONTE = 1 (the default case)].
+
+ 3.7  6/97   Added time- or latitude-dependent climate factors (CFs) on
+             trajectory input data. CFs include (CF0, CF5, CF15, CF30, CF50,
+             CF75, CFp, deltaZF, deltaTF, and deltaTEX).  To use CFs from
+             the INPUT file, use CFs of 0.0 on the trajectory input file.
+             Non-zero CFs on the trajectory input file will supersede those
+             on the INPUT file.  Two auxiliary programs are provided for
+             adding CFs to trajectory files:  Program bldmgt.f will generate
+             a "trajectory" consisting of user-defined steps in height,
+             latitude, longitude, and time. Program rdmgt.f will read a
+             previously generated trajectory data file (TRAJDATA, containing
+             time, height, latitude, and longitude) and will add CFs.  Both
+             bldmgt and rdmgt programs interpolate CFs from an auxiliary CF
+             data file (cfinfo.txt, see description in bldmgt.f or rdmgt.f
+             source code).
+
+ 3.8 11/98   Code line numbers (in parentheses) give approximate starting
+             line(s) where changes appear in code. Changed former batch
+             version code line numbers from MARB to MGRM (MGRM 1). Reduced
+             number of graphics output files; included more variables in
+             each file (SETU 36, SETU 90, DSTP 280); See file "headers.txt".
+             Changed to NASA Ames low resolution topography (SETU 15), using
+             average terrain height at poles for all longitudes.  Decreased
+             temperature gradient at polar cap edge (ALBL 26, TSRF 53a).
+             Revised procedure whereby input heights <= -5 km are treated as
+             being at the terrain surface (ATM2 54b, ATM2 82, DSTF 14).
+             Revised lapse rate at surface for surface temperature 
+             calculation (ATM2 67, ATM2 99).  Revised perturbation magnitudes 
+             versus height (ATM2 217b, DSTP 50a, DSTP 199b).  New iterative
+             procedure for finding ZF (height of 1.26 nbar level) for hydrostatic
+             interpolation option (ATM2 2144a).  Pressure scale height added
+             to DATASTEP output (DSTP 2a).  Added corlim factor (ratio of
+             trajectory step size to minimum size for assured perturbation
+             accuracy) with warning messages if corlim < 1 (DSTP 80). Added
+             gradient wind (curvature) correction to winds (DSTP 160g). Added
+             check to limit wind components to less than sound speed divided
+             by square root of two (DSTP 151a, DSTP 160h). Delete low
+             latitude wind model based on second derivatives. Treat "surface"
+             winds as being at 10 cm, rather than Viking level of 1.6 m (DSTP
+             165).  Added new wind perturbation model, including tidal winds
+             (DSTP 229, DSTP 244c, WAVE 91, MGRM 88). Included computation of
+             F1 ionization peak altitude and molecular weight; added to
+             output files (DSTP 246i, DSTP 290, DSTP 254d, STRA 47a).  Added
+             climate factors to LIST output (DSTP 256a). Convert surface
+             pressure latitude variation to cosine terms, to insure diurnal
+             amplitude goes to zero at the poles (PSRF 61).  Changed to new
+             values of reference ellipsoid radii, gravity term, and rotation
+             rate (consistent with current JPL values) (RLPS 9a, RLPS 18a).
+             Added centrifugal term to gravity (RLPS 22).  Use molecular
+             scale temperature in stratospheric interpolation to account for
+             height variation of molecular weight (STRA 16, STRA 47h).
+             Remove ES(8) and ES(9) terms from calculation of ZF, but not TF;
+             make perturbation standard deviations more consistent in
+             thermosphere (STW2 37d).  Include effect of height change of
+             molecular weight in computation of density scale height (STW2
+             61a, THRM 133b). Add Pathfinder landing site to set of locations
+             that have terrain height specified (TERN 12a).  Apply climate
+             factors to minimum, maximum and average surface temperatures
+             (TMPS 138e).  Include Cos(LAT)/Cos(75) factor in wave 
+             perturbations, to insure zero amplitude at the poles (WAVE 77a). 
+             Allow variable climate factors to be passed from trajectory program
+             to Mars-GRAM subroutines (CFIN 1, MART 58b).  Allow optional high
+             resolution solar positions to be passed from trajectory program
+             to Mars-GRAM subroutines (DUMT 35a, MGRM 72, DSTP 35).  Add
+             subroutine SublTchk to assure that temperatures do not go below
+             CO2 sublimation temperature (ATM2 72d, ATM2 106b, PRES 29a,
+             STCK 1, STRA 47k, THRM 132b).
+
+Mars- 03/00  All parameterizations for temperature versus height, latitude, 
+GRAM         longitude, time of day, and Ls and for surface pressure versus
+2000         latitude, longitude, time of day, and Ls have been replaced by
+(ver 1)      input data tables.  These tables give variation of temperature,
+             density, pressure and wind components with height, latitude,
+             time of day, and Ls.  The tables also provide boundary layer
+             data at 5m and 30m above the surface as a function of longitude.
+             The tables are from the NASA Ames Mars Global Circulation Model
+             (MGCM), for the surface through 80 km altitude, and from the
+             University of Arizona Mars Thermospheric Global Circulation
+             Model (MTGCM) for 80 - 170 km altitude.  The modified Stewart
+             thermospheric model is still used for higher altitudes, and for
+             dependence on solar activity.  With this direct input of MGCM
+             and MTGCM data, there is no longer a need to input "climate
+             factors" (CF0 through CF75, CFp, deltaTF and deltzZF). 
+             Adjustment of exospheric temperature by the parameter deltaTEX
+             is still an option.  Consistent with observations from Mars
+             Global Surveyor, a new longitude-dependent wave model is
+             included, with user-input amplitudes and phases for waves 1
+             through 3 (1 - 3 wavelengths around the planet). Wave model
+             coefficients can be input from the NAMELIST format input file,
+             or from an auxiliary file of time-dependent wave model 
+             coefficients.  A simplified version of the mountain wave
+             perturbation model has been substituted for the earlier one. 
+             The simplified model does not require evaluation of surface 
+             density and temperature gradients (to get Brunt Vaisala frequency).
+             With MGCM and MTGCM data input for several dust optical depths
+             (tau), the global value of tau can be provided as an input, or
+             if tau = 0 is input, a prescribed Viking-like seasonal variation
+             of dust optical depth is used.  The global or local dust storm
+             model is retained, with the program doing all necessary 
+             interpolations on dust optical depth as it varies with time (Ls,
+             and with space, for local storms).  A switch (LonEW) allows users
+             to select to use East Longitude positive, rather than the USGS
+             map standard of West Longitude positive.  Default (LonEW = 0) is
+             still West Longitude positive.  The LonEW switch also determines
+             if the longitude wave model phases are in West or East 
+             Longitude.  Options are now provided whereby the user can specify
+             the name of the NAMELIST format input file, the name of the
+             (optional) trajectory input file, and the path names to the
+             directories where the MGCM, MTGCM and other input data reside.
+
+Mars- 05/01  Revised to use Mars Orbiter Laser Altimeter (MOLA) topography
+GRAM         at 1/2 x 1/2 degree resolution.  Altitude is defined as height
+2001         above the MOLA areoid (equipotential surface).  Optionally,
+(ver 1)      input height information can be given as height above old
+             reference ellipsoid, then converted to height above MOLA
+             areoid within the program.  Revised MGCM data, based on MOLA
+             topography, are used for 0 - 80 km. MTGCM data are the same as
+             for Mars-GRAM 2000 at moderate solar activity (F10.7 = 130),
+             with an added MTGCM data set at low solar activity (F10.7 = 70).
+             MTGCM dependence on solar activity is interpolated/extrapolated
+             logarithmically on F10.7. Fairing between MTGCM data and Stewart
+             model thermosphere is now done over the interval 155 - 170 km
+             (instead of ZF to 170 km, as in Mars-GRAM 2000).  Height
+             adjustment (with new parameter zoffset) of the MTGCM data is
+             now an option.  A new file, hgtoffst.dat, gives the height
+             offsets required to get best match between the MOLA-based MGCM
+             data and the Mars-GRAM 2000 MTGCM data, on a global basis.
+             Optionally, local height offset required for MGCM-MTGCM matchup
+             can be computed and used, or a Ls-dependent height offset can
+             be applied. Height offset due to a dust storm is also computed
+             and added to any input offset.  Duration of dust storm (in
+             degrees of Ls angle) is also controlled by a new input parameter
+             ALSDUR. LOGSCALE = 3 now allows output of densities in units of 
+             kg/km**3 (appropriate for high altitudes). A new set of MGCM 
+             temperature data at the surface allows more realistic boundary 
+             layer temperature gradients, using a logarithmic profile. A 
+             boundary layer model is used to estimate difference between 
+             ground temperature and air temperature immediately above the 
+             ground.  New parameter hgtasfcm allows easy evaluation of 
+             atmospheric variables at any fixed height above the surface 
+             (0 - 4500 m).  For easier comparison with General Circulation Model
+             data, two new output parameters are introduced: sigma level = 
+             local pressure divided by surface pressure, and pressure height 
+             = -Log(sigma). Daily output data now includes local daily minimum 
+             temperature and density, and local daily maximum temperature and 
+             density. Longitude dependent wave perturbations now applied to
+             daily density as well as density at local place and time. Height
+             above the old reference ellipsoid is also an available output
+             parameter. A new output file, MarsRad.txt, contains (along with
+             other output files) necessary information for input to a new
+             auxiliary program (marsrad.f) that computes solar and thermal
+             radiation fluxes at the surface and top-of-atmosphere. File
+             MarsRad.txt contains quantitative dust loading parameters,
+             column mass per unit area, local dust mixing ratio, and dust
+             mass and number of particles per unit volume. Surface albedo,
+             interpolated from new albedo input file, is also output on file
+             MarsRad.txt.
+             
+Mars- 09/03  More precise ephemeris for solar angles and positions; uses
+GRAM         IAU 2000 rotation coordinates, computes one-way light time,
+2005         and allows input time to be Earth-receive time or Mars-event
+(beta        time and Terrestrial Dynamical time or UTC. User input for
+ver 0)       equatorial and polar radii of reference ellipsoid, and option
+             for input height and latitude to be planeto-centric or planeto-
+             graphic (with respect to ellipsoid) or planeto-centric with
+             respect to MOLA (GSFC) areoid. Output height can also still be
+             planeto-centric with respect to MOLA topographic surface.
+             Perturbation model modified to allow more control of how often
+             to update perturbations (or to update mean conditions without
+             updating perturbations). New feature to allow repeat of random 
+             perturbation sequence in trajectory program (example program 
+             dumytraj.f).  Also provide new example trajectory program 
+             (multtraj.f) that allows atmospheric values and perturbations 
+             to be evaluated at multiple positions during one trajectory 
+             run.  Vertical wind perturbation model added.  New input 
+             parameters allow separate scaling for density and wind 
+             perturbations, and multiplier factor for perturbation scale 
+             lengths, as well as scaling factor for mean winds.  Minimum 
+             and maximum dust tau values for seasonal variation in dust 
+             optical depth (input Dusttau = 0) can be input.  New slope wind 
+             model (based on Ye, Segal, and Pielke, 1990) computes MOLA 
+             slope effects on winds from 0 - 4.5 km above the surface (day) 
+             or 0 - 2.5 km (night). Slope winds can also be scaled with an 
+             input factor (with 0 factor to suppress slope wind output). 
+             Option for traveling component of longitude-dependent waves 
+             1 - 3 now included.
+
+Mars- 12/03  Added vertical component for slope winds, also scaled with
+GRAM         slope wind factor.  Vertical slope winds are computed from  
+2005         terrain slope times total horizontal wind (mean horizontal
+(beta        wind plus horizontal slope wind). Vertical slope winds are 
+ver 0)       computed over height range 0 - 4.5km above the surface (day) 
+             or 0 - 2.5 km (night), and are added to vertical perturbed 
+             winds, with the combined vertical wind output as "VertWind" 
+             in the LIST file and "VWpert" in the winds.txt file. Modified
+             maximum magnitudes for random density and wind perturbations, 
+             using revised wave saturation condition. Total variance at
+             aerobraking altitudes now accounted for only by combination
+             of variance from small-scale random perturbations plus 
+             stationary or travelling long waves.  Added species 
+             concentration output. Dispensed with fairing between MTGCM
+             and Stewart models above 155 km, in favor of adjustment of
+             the Stewart model to agree with MTGCM values at the top of
+             the altitude range for which they are available.  Adjustment
+             to the Stewart model continues upward from the last 
+             available MTGCM level to all higher altitudes.
+             
+Mars- 10/04  At request of GN&C customers concerned about interface with
+GRAM         double-precision trajectory codes, converted all 
+2005         calculations to double precision.  Added new MGCM and MTGCM 
+(D.P.        data sets for TES mapping years 1 and 2 and new subroutines
+beta         in file TESsubs.f. Option to use previous (Mars-GRAM 2001 
+ver 1)       MGCM and MTGCM) data or new TES mapping year 1 and 2 data is
+             controlled by new input option MapYear (= 0 to use previous
+             data).  New data sets were produced from MGCM and MTGCM
+             models using TES-observed global distributions of dust 
+             optical depth.  These used new techniques for better
+             matchup of MGCM and MTGCM data near 80 km.  Required height
+             offsets for best MGCM/MTGCM matchup are now much smaller 
+             (although not zero). Added output of height offset values
+             on LIST.txt and Density.txt files.  Added option to 
+             substitute auxiliary input profile of thermodynamic and/or
+             wind data for MGCM/MTGCM climatology, within user-specified
+             region. Use of this option controlled by (optional) input
+             profile file name and parameters profnear and proffar.
+             For TES mapping year > 0, switch-over from MTGCM to Stewart
+             thermosphere values extending upward to 240 km. Converted
+             to option for long file names for LIST, OUTPUT, TRAJECTORY
+             files, etc. (up to character*60).  Added option to suppress
+             daily max/min data calculations, to increase run speed.
+             In order for users implementing multiple atmospheric models 
+             into one trajectory code to avoid duplication of names for 
+             source code files, subroutines, functions, and common blocks, 
+             suffix '_M05' was appended to all these names.  No suffix 
+             was appended in source code for auxiliary programs (e.g.
+             marsrad.f).  Modified routine to automatically generate 
+             random seed numbers.
+
+Mars- 03/05  Replaced bogus Map Year 2 MTGCM data (replicated Year 1 data)
+GRAM         with correct Year 2 MTGCM data. Deleted unused variable
+2005         maxfiles from Common DATACOM.  Fixed problem with perturbation
+(D.P.        correlation terms RHOd, RHOu, and RHOv in wrapper routine.
+ver 1)       Simplified input/output of variables in wrapper routine.
+             Corrected problem with water vapor concentrations at high 
+             near-surface temperatures.  Corrected problem with dust mass
+             density if LOGSCALE = 3.  Added option to interpret input height
+             values > 3000 km as planeto-centric radius (in km).  Corrected
+             comments in topoareo subroutine and README files to correctly
+             indicate original MOLA data is in IAU 1991 (not IAU 1997)
+             rotation coordinates [This is a correction in comments only;
+             topoareo code is not affected].
+
+Mars- 10/05  Patch to fix problem of unnecessary calls to random number 
+GRAM         generator when perturbation updates are not being done.
+2005         Revisions to subroutine ProfTerp to allow dual-valued 
+(Ver 1.1)    auxiliary profiles (e.g. inbound and outbound legs of an
+             aerocapture trajectory).  Add transmittance output to MarsRad
+             program; make heatrate option user-input controlled.
+             
+Mars- 09/06  Changed 3-D and 4-D interpolation/extrapolation routines to 
+GRAM         work in logarithmic scale for density and pressure (still 
+2005         linear scale for temperature and winds).  Logarithmic 
+(Ver 1.2     extrapolation for dust optical depth is important, because 
+  Sep 06)    of certain high-altitude cases where MGCM data are so 
+             sensitive to dust loading that linear extrapolation to 
+             optical depths as low as 0.1 (from data at tau = 0.3 and 
+             1.0) can yield negative density or pressure.  Added "Save" 
+             commands insure necessary variables are treated as "static", 
+             for compilers which do not default to this option. Other 
+             changes (which have no effect on output): (1) insure a default 
+             value is assigned to input parameter blwinfac, and (2) delete 
+             unnecessary reassignment of various perturbation scale 
+             parameters.
+
+Mars- 12/06  Patch to correct Densmax and P1max interpolation error for case  
+GRAM         when idaydata = 0
+2005
+(Ver 1.2
+  Dec 06)
+
+Mars-  2/07  Patch to correct for missing rwscale effect on part of SIGW
+GRAM         from near-surface altitudes
+2005
+(Ver 1.2
+  Feb 07)  
+
+Mars-  7/07  Patch to add effect of wave perturbations to auxiliary profile
+GRAM         pressure and density input data, and correct effect of wave
+2005         perturbations on Stewart thermosphere output.
+(Ver 1.2
+  Jul 07) 
+  
+Mars-  9/09  Patch to adjust input values of MGCM Map Year 0 pressure and 
+GRAM         density for dust optical depths 0.3, 1.0, and 3, to achieve 
+2005         better match with Map Years 1 and 2 MGCM output at comparable  
+(Ver 1.3     dust loading. Patch to allow Ls-dependent dust storms to start 
+  Sep 09)    as early as Ls = 120.
+  
+Mars-  9/10  Fortran 90 Mars-GRAM version. Uses more standard PC binary form
+GRAM         input data files. Applies empirical adjustment factors to MGCM
+2010         and MTGCM input data, to achieve better comparison with TES
+(Ver 1.0     Limb data in the 0 - 60 km height range, and MRO and Odyssey
+ Beta        aerobraking data above about 95 km.  Adjustment factors depend
+ Sep 10)     on Ls, latitude, and altitude.  Most significant adjustments are
+             for large dust optical depths (> 1.0). NAMELIST input files must
+             now have identifier $INPUT_M10 in 1st line, instead of $INPUT.
+ 
+ Mars- 11/10 Revised empirical adjustment factors for MTGCM data, derived by
+ GRAM        comparison with MGS, ODyssey and MRO aerobraking observations.
+ 2010        Forces agreement between (revised) Map Year 0 MGCM at 80 km and
+ (Ver 1.0    (revised) Map Year 0 MTGCM at 80 km. Revised standard deviations   
+  Nov 10)    of the perturbation model, based on comparisons with MGS, ODY, 
+             and MRO aerobraking observations.  Eliminated parameter STDL 
+             from the Namelist input (STDL is now superceded by the revised
+             perturbation standard deviations).
