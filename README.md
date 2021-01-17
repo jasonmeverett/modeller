@@ -1,40 +1,38 @@
 # Modeller
 
-Multibody sim playground w/ Simbody, Pybind, and SPICE.
+Multibody simulation playground that utilizes Simbody for dynamics. Wrappers for Pybind11, SPICE, and MarsGRAM (with more to come!). Utilizes Docker, CMake, and Miniconda.
 
 ## Prerequisites
 
-Miniconda needs to be installed because of required access to newer GNU build versions. Configure a local working version of miniconda as follows:
+* Docker (so far only tested with Docker Desktop, WSL2 backend)
+* Visual Studio Code (not necessary but makes development a ton easier!)
 
-```
-cd ~
-wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
-bash Miniconda3-latest-Linux-x86_64.sh
-```
+## Clone and Create Docker Development Image
 
-Move throught the installation process by either hitting `Enter` or `yes` to all options. By default, miniconda3 will install at `/home/<user>` if using default options. Ensure that this new `conda` is being referenced properly:
+So far, a "deployment" image has not yet been created, only a "development" image that can be used for active development. The idea is to eventually build up a much leaner "deployment" image that can be used to run more efficient simulations on clusters and other closed systems.
 
-```
-[jmeveret@msgncc3 modeller]$ which conda
-~/miniconda3/bin/conda
-```
-
-## Clone and Create Environment
+Clone this repository:
 
 ```
 git clone https://devcentral.nasa.gov/jmeveret/modeller.git
-cd modeller/
-conda env create -f ./modeller.yml
 ```
 
-Note: the last command above may take several minutes!
-
-## Build
+Build the docker image:
 
 ```
-conda activate modeller
-mkdir build
-cd build/
-cmake ..
-cmake --build . -j
+cd ./modeller
+docker built -t modeller-dev:1.0 .
 ```
+
+## Developing and Running the Simulation Suite
+
+My typical workflow involves Visual Studio code (see the `.devcontainer` and `.vscode` directories), but it is also possible to just work in the image directly. For development purposes, if using visual studio code, open this directory as a folder in Code and open up the command pallette (`Ctrl-Shift-P`) and select `Rebuild and Reopen in Container`. This will automatically bind-mount this repository.
+
+The development image also comes with X11 support and small IDE's, so if it's desired, one can also run the image with:
+
+```
+docker run -e DISPLAY -ti -p 8080:8080 modeller-dev:1.0 /bin/bash
+```
+
+Passing your `DISPLAY` variable is only necessary if you plan on doing any sort of visualization.
+
