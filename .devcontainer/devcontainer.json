@@ -1,10 +1,9 @@
 
 {
 	"name": "C++",
-	"build": {
-		"dockerfile": "../Dockerfile",
+	"build":{
+		"dockerfile": "../Dockerfile"
 	},
-
 	
 	"settings": { 
 		"terminal.integrated.shell.linux": "/bin/bash"
@@ -21,5 +20,9 @@
 	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [],
+	"forwardPorts": [8080],
+	
+	"containerEnv": {
+		"DISPLAY": "172.23.64.1:0.0"
+	}
 }

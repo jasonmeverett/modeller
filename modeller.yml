@@ -20,5 +20,4 @@ dependencies:
   - spiceypy
   - pybind11
   - eigen
-  - simbody
   

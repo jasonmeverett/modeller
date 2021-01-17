@@ -12,19 +12,9 @@
 //     
 //     ------------------------------------------------------------------------------------
 
-// Pull in all Modeller includes.
-#include <Modeller/examples.hpp>
-#include <Modeller/consts.hpp>
-#include <Modeller/world.hpp>
-#include <Modeller/output.hpp>
-using namespace Modeller::Constants;
-using namespace Modeller::Output;
-using namespace Modeller::Core;
 
-
-// Simbody.
-#include "Simbody.h"
-using namespace SimTK;
+// Include Modeller.
+#include <Modeller/Modeller.hpp>
 
 
 // Logging output.

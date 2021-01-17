@@ -58,4 +58,6 @@ traces.append(
 )
 
 fig = go.Figure(data=traces)
+pio.renderers.default = 'browser'
 fig.write_html('first_figure.html')
+fig.show()

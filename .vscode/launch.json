@@ -15,7 +15,7 @@
             "name": "C++ debug",
             "type": "cppdbg",
             "request": "launch",
-            "program": "/usr/bin/python3",
+            "program": "/miniconda3/envs/modeller/bin/python",
             "args": ["${file}"],
             "cwd": "${workspaceFolder}"
         }
