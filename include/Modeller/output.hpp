@@ -15,15 +15,19 @@ namespace Modeller
         class DataSet
         {
         public:
-            DataSet() {}
+            DataSet(std::string name) : name(name) {}
 
             std::string getName() { return this->name; }
             std::vector<std::vector<double>> getData() { return this->data; }
+            void addDataEntry(std::vector<double> dataEntry)
+            { 
+                this->data.push_back(dataEntry); 
+            }
 
             static void Build(py::module& m)
             {
                 py::class_<DataSet>(m, "DataSet")
-                    .def(py::init<>())
+                    .def(py::init<std::string>())
                     .def("getName", &DataSet::getName)
                     .def("getData", &DataSet::getData);
             }
@@ -39,27 +43,11 @@ namespace Modeller
         {
         public:
             DataBase() {}
-            
-
-
-        protected:
-            std::vector<DataSet*> datasets;
-        };
-
-
-        class DataLogger : public PeriodicEventReporter 
-        {
-        public:
-            DataLogger(Real interval, DataSet * ds) : PeriodicEventReporter(interval), ds(ds) {}
-
-            void handleEvent(const State& s) const override {
-                
-            }
-
+            void addDataSet(DataSet ds) { this->datasets.push_back(ds); }
+            DataSet* getDataSetByName(std::string name);
 
         protected:
-            DataSet* ds;
-
+            std::vector<DataSet> datasets;
         };
     }
 }

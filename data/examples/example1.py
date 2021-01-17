@@ -9,6 +9,7 @@ Simple oscillator (oscillates acceleration manually by "motion")
 import sys
 import numpy as np
 import plotly.io as pio
+pio.renderers.default = 'browser'
 import plotly.graph_objects as go
 
 # Locate Modeller and import.
@@ -58,6 +59,4 @@ traces.append(
 )
 
 fig = go.Figure(data=traces)
-pio.renderers.default = 'browser'
-fig.write_html('first_figure.html')
 fig.show()

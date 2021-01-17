@@ -23,6 +23,6 @@
 	"forwardPorts": [8080],
 	
 	"containerEnv": {
-		"DISPLAY": "${env:DISPLAY}"
+		"DISPLAY": "<display here>"
 	}
 }
