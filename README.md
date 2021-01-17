@@ -24,6 +24,15 @@ cd ./modeller
 docker built -t modeller-dev:1.0 .
 ```
 
-## Development
+## Developing and Running the Simulation Suite
 
+My typical workflow involves Visual Studio code (see the `.devcontainer` and `.vscode` directories), but it is also possible to just work in the image directly. For development purposes, if using visual studio code, open this directory as a folder in Code and open up the command pallette (`Ctrl-Shift-P`) and select `Rebuild and Reopen in Container`. This will automatically bind-mount this repository.
+
+The development image also comes with X11 support and small IDE's, so if it's desired, one can also run the image with:
+
+```
+docker run -e DISPLAY -ti -p 8080:8080 modeller-dev:1.0 /bin/bash
+```
+
+Passing your `DISPLAY` variable is only necessary if you plan on doing any sort of visualization.
 
