@@ -6,7 +6,8 @@
 	},
 	
 	"settings": { 
-		"terminal.integrated.shell.linux": "/bin/bash"
+		"terminal.integrated.shell.linux": "/bin/bash",
+		"terminal.integrated.inheritEnv": true
 	},
 
 	
@@ -19,10 +20,9 @@
 		"mechatroner.rainbow-csv"
 	],
 
-	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	"forwardPorts": [8080],
 	
 	"containerEnv": {
-		"DISPLAY": "172.23.64.1:0.0"
+		"DISPLAY": "${env:DISPLAY}"
 	}
 }

@@ -21,7 +21,6 @@ cfg_dict = { }
 # Run the example.
 out_data = np.array(M.examples.Run_Ex2(cfg_dict))
 
-
 # # Plot the output
 # traces = []
 # traces.append(

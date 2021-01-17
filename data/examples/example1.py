@@ -5,7 +5,7 @@ Simple oscillator (oscillates acceleration manually by "motion")
 '''
 
 
-
+ 
 import sys
 import numpy as np
 import plotly.io as pio
