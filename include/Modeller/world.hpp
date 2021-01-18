@@ -1,6 +1,7 @@
 #include "Simbody.h"
 
 #include <Modeller/output.hpp>
+#include <Modeller/simulation.hpp>
 
 namespace Modeller
 {
@@ -37,12 +38,21 @@ namespace Modeller
             SimbodyMatterSubsystem          m_matter;
             GeneralForceSubsystem           m_forces;
             
+            Modeller::Core::Simulation * getCurrentSimulation(){return this->sim;}
+            void registerSimulation(Modeller::Core::Simulation * sim){this->sim = sim;}
 
+            void ResetSystems()
+            {
+                this->m_system.resetAllCountersToZero();
+            }
             
+        protected:
+            Modeller::Core::Simulation * sim;
         };
 
     
         World * GetWorld(); 
+        void SetWorld(World * w);
     }
 }
 

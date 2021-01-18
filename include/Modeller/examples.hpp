@@ -2,6 +2,7 @@
 
 // Modeller includes
 #include <Modeller/output.hpp>
+#include <Modeller/simulation.hpp>
 
 // Pybind.
 #include <pybind11/pybind11.h>
@@ -16,6 +17,8 @@ namespace Modeller
     {
         std::vector<std::vector<double>> Run_Ex1(py::dict cfg);
         
-        Modeller::Output::DataSet Run_Ex2(py::dict cfg);
+        Modeller::Core::Simulation Run_Ex2(py::dict cfg);
+
+        void Run_Ex3(py::dict cfg);
     }
 }

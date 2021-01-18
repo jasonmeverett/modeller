@@ -7,6 +7,8 @@
 #include <Modeller/world.hpp>
 #include <Modeller/output.hpp>
 #include <Modeller/forces.hpp>
+#include <Modeller/simulation.hpp>
+
 using namespace Modeller::Constants;
 using namespace Modeller::Output;
 using namespace Modeller::Core;

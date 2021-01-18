@@ -43,11 +43,19 @@ namespace Modeller
         {
         public:
             DataBase() {}
-            void addDataSet(DataSet ds) { this->datasets.push_back(ds); }
+            void addDataSet(DataSet& ds) { this->datasets.push_back(&ds); }
+            void addDataSet(DataSet * ds){ this->datasets.push_back(ds); }
             DataSet* getDataSetByName(std::string name);
 
+            static void Build(py::module& m)
+            {
+                py::class_<DataBase>(m, "DataBase")
+                    .def(py::init<>())
+                    .def("getDataSetByName", &DataBase::getDataSetByName);
+            }
+
         protected:
-            std::vector<DataSet> datasets;
+            std::vector<DataSet*> datasets;
         };
     }
 }

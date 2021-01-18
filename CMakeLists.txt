@@ -35,9 +35,11 @@ pybind11_add_module(Modeller
     src/Modeller/Modeller.cpp
     src/Modeller/world.cpp
     src/Modeller/forces.cpp
+    src/Modeller/output.cpp
     
     src/examples/example1.cpp 
     src/examples/example2.cpp
+    src/examples/example3.cpp
     
 )
 
