@@ -1,3 +1,4 @@
+
 # Modeller
 
 Multibody simulation playground that utilizes Simbody for dynamics. Wrappers for Pybind11, SPICE, and MarsGRAM (with more to come!). Utilizes Docker, CMake, and Miniconda.
@@ -35,4 +36,9 @@ docker run -e DISPLAY -ti -p 8080:8080 modeller-dev:1.0 /bin/bash
 ```
 
 Passing your `DISPLAY` variable is only necessary if you plan on doing any sort of visualization.
+
+<p align="center">
+  <img src="data/sandwich.png" width="350" title="hover text">
+</p>
+
 
