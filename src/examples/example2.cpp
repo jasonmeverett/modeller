@@ -92,19 +92,14 @@ namespace Ex2
         {
             GetWorld()->m_system.realize(state, Stage::Dynamics);
 
-            // Force - manual
-            double q1 = m1.getOneQ(state, 1);
-            double dq1 = q1 - s1.getQZero(state);
-            double force1 = -1.0 * s1.getStiffness(state) * dq1;
-            double q2 = m2.getOneQ(state, 1);
-            double dq2 = q2 - s2.getQZero(state);
-            double force2 = -1.0 * s2.getStiffness(state) * dq2;
-
-            // Force - pull out (NOT WORKING)
-            // double force1 = GetWorld()->m_system.getMobilityForces(state, Stage::Dynamics)[s1.getForceIndex()];
-            // double force2 = GetWorld()->m_system.getMobilityForces(state, Stage::Dynamics)[s2.getForceIndex()];
+            // Force - pull out
+            double force1 = GetWorld()->m_system.getMobilityForces(state, Stage::Dynamics)[
+                m1.getFirstQIndex(state) + 1
+            ];
+            double force2 = GetWorld()->m_system.getMobilityForces(state, Stage::Dynamics)[
+                m2.getFirstQIndex(state) + 1
+            ];
             
-
             // Set lines
             DecorativeLine line1, line2;
             line1.setPoint2(m1.getBodyOriginLocation(state));
@@ -238,7 +233,7 @@ Modeller::Core::Simulation Modeller::Examples::Run_Ex2(py::dict cfg)
         viz.setMode(Visualizer::Mode::PassThrough);
         GetWorld()->m_system.addEventReporter(new Visualizer::Reporter(viz, update_rate));
         viz.addDecorationGenerator(new Ex2Drawer(pendulum1, pendulum2, spring1, spring2));
-        //viz.setBackgroundColor(Vec3(0));
+        viz.setBackgroundColor(Vec3(0));
     }
  
     // Create Data Set and create the logger class for that dataset.

@@ -15,7 +15,7 @@ import colour
 from math import trunc
 
 # Locate Modeller and import.
-sys.path.append('/workspaces/modeller/build')
+sys.path.append('/workspaces/modeller_gh/build')
 import Modeller as M
 
 # Set up a configuration dictionary to pass to the example.

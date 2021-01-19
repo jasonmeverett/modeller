@@ -14,11 +14,11 @@
 # ------------------------------------------------------------------------------------
 
 
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.10) 
 project(Modeller VERSION 0.1 LANGUAGES C CXX Fortran)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
-# set(CMAKE_BUILD_TYPE Debug)
+set(CMAKE_BUILD_TYPE Debug)
  
 set(CMAKE_Fortran_MODULE_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/mod)
 set(ENTITYX_BUILD_SHARED False CACHE bool "Testing")
