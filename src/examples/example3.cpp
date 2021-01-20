@@ -28,6 +28,8 @@
 #include <tuple>
 #include <iomanip>
 
+#define PCD(x) py::cast<double>(x)
+
 
 namespace Ex3
 {
@@ -113,8 +115,8 @@ namespace Ex3
     class Ex3Drawer : public SimTK::DecorationGenerator
     {
     public:
-        Ex3Drawer( MobilizedBody m1, MobilizedBody m2, py::dict cfg) :  m1(m1),  m2(m2), cfg(cfg) {}
-
+        Ex3Drawer( MobilizedBody m1, MobilizedBody m2, SpringDamper sd1, SpringDamper sd2, py::dict cfg) 
+            :  m1(m1),  m2(m2), sd1(sd1), sd2(sd2), cfg(cfg) {}
 
         /**
          * @brief Required override for inheriting from a DecorationGenerator
@@ -127,6 +129,11 @@ namespace Ex3
         {
             GetWorld()->m_system.realize(state, Stage::Dynamics);
 
+            double l1 = m1.getBodyOriginLocation(state).norm();
+            double l2 = m2.findBodyOriginLocationInAnotherBody(state, m1).norm();
+            double f1 = - PCD(cfg["spring1"]["k"]) * (l1 - PCD(cfg["spring1"]["x0"])) * static_cast<double>(!std::get<0>(sd1).isDisabled(state));
+            double f2 = - PCD(cfg["spring2"]["k"]) * (l2 - PCD(cfg["spring2"]["x0"])) * static_cast<double>(!std::get<0>(sd2).isDisabled(state)) ;
+
             // Set texts
             DecorativeText text_title("Sim Time: " + std::to_string(state.getTime()) + " sec");
             text_title.setIsScreenText(true);
@@ -138,60 +145,48 @@ namespace Ex3
             sphere.setTransform(Transform(GetWorld()->m_matter.calcSystemMassCenterLocationInGround(state)));
             geometry.push_back(sphere);
 
-            if(state.getTime() <= py::cast<double>(cfg["spring1_cut_time"]))
-            {
-                // Force - pull out
-                double force1 = GetWorld()->m_system.getMobilityForces(state, Stage::Dynamics)[
-                    m1.getFirstQIndex(state) + 1
-                ];
-                DecorativeLine line1;
-                DecorativeText text_sp1;
-                line1.setPoint2(m1.getBodyOriginLocation(state));
-                line1.setLineThickness(3.0);
-                line1.setColor( force1 > 0.0 ? Vec3(fabs(force1)/30.0,0,0) : Vec3(0,fabs(force1)/30.0,fabs(force1)/30.0) );
-                geometry.push_back(line1);
-                double l = m1.getBodyOriginLocation(state).norm();
-                text_sp1.setText(std::to_string(l) + " m");
-                text_sp1.setTransform(0.5*(m1.getBodyOriginLocation(state)));
-                text_sp1.setScale(0.1);
-                geometry.push_back( text_sp1 );
-            }else{
+            DecorativeText text_sp1(std::to_string(f1) + " N");
+            text_sp1.setTransform(0.5*(m1.getBodyOriginLocation(state)));
+            text_sp1.setScale(0.1);
+            geometry.push_back( text_sp1 );
+
+            DecorativeText text_sp2(std::to_string(f2) + " N");
+            text_sp2.setTransform(0.5*(m1.getBodyOriginLocation(state) + m2.getBodyOriginLocation(state)));
+            text_sp2.setScale(0.1);
+            geometry.push_back( text_sp2 );
+
+            if(state.getTime() >= py::cast<double>(cfg["spring1_cut_time"])){
                 DecorativeText text("Spring1 Cut: " + std::to_string(py::cast<double>(cfg["spring1_cut_time"])) + " sec");
                 text.setIsScreenText(true);
                 text.setColor(Vec3(0.9,0,0));
                 geometry.push_back( text );
+            }else
+            {
+                DecorativeLine line1(Vec3(0), m1.getBodyOriginLocation(state));
+                line1.setLineThickness(PCD(cfg["spring1"]["x0"]) / l1);
+                line1.setColor( f1 > 0.0 ? Vec3(fabs(f1)/30.0,0,0) : Vec3(0,fabs(f1)/30.0,fabs(f1)/30.0) );
+                geometry.push_back(line1);
             }
 
-            if(state.getTime() <= py::cast<double>(cfg["spring2_cut_time"]))
+            if(state.getTime() >= py::cast<double>(cfg["spring2_cut_time"]))
             {
-                double force2 = GetWorld()->m_system.getMobilityForces(state, Stage::Dynamics)[
-                    m2.getFirstQIndex(state) + 1
-                ];
-                
-                // Set lines
-                DecorativeLine line2;
-                DecorativeText text_sp2;
-                line2.setTransform(m1.getBodyTransform(state));
-                line2.setPoint2(m2.findBodyOriginLocationInAnotherBody(state, m1));
-                line2.setLineThickness(3.0);
-                line2.setColor( force2 > 0.0 ? Vec3(fabs(force2)/30.0,0,0) : Vec3(0,fabs(force2)/30.0,fabs(force2)/30.0) );
-                geometry.push_back(line2);
-                double l = m2.findBodyOriginLocationInAnotherBody(state, m1).norm();
-                text_sp2.setText(std::to_string(l) + " m");
-                text_sp2.setTransform(0.5*(m1.getBodyOriginLocation(state) + m2.getBodyOriginLocation(state)));
-                text_sp2.setScale(0.1);
-                geometry.push_back( text_sp2 );
-            }else{
                 DecorativeText text("Spring2 Cut: " + std::to_string(py::cast<double>(cfg["spring2_cut_time"])) + " sec");
                 text.setIsScreenText(true);
                 text.setColor(Vec3(0,0.9,0));
                 geometry.push_back( text );
+            }else{
+                DecorativeLine line2(m1.getBodyOriginLocation(state), m2.getBodyOriginLocation(state));
+                line2.setLineThickness(PCD(cfg["spring2"]["x0"]) / l2);
+                line2.setColor( f2 > 0.0 ? Vec3(fabs(f2)/30.0,0,0) : Vec3(0,fabs(f2)/30.0,fabs(f2)/30.0) );
+                geometry.push_back(line2);
             }
         }
 
     protected:
         MobilizedBody m1;
         MobilizedBody m2;
+        SpringDamper sd1;
+        SpringDamper sd2;
         py::dict cfg;
 
     };
@@ -298,7 +293,13 @@ Modeller::Core::Simulation Modeller::Examples::Run_Ex3(py::dict cfg)
     {
         GetWorld()->m_system.setUseUniformBackground(true);
         Visualizer viz(GetWorld()->m_system);
-        viz.addDecorationGenerator(new Ex3Drawer(ball_spring_1, ball_spring_2, cfg));
+        viz.addDecorationGenerator(new Ex3Drawer(
+            ball_spring_1, 
+            ball_spring_2, 
+            std::make_tuple(spring1, damper1),
+            std::make_tuple(spring2, damper2),
+            cfg
+        ));
         GetWorld()->m_system.addEventReporter(
             new Visualizer::Reporter(
                 viz, 

@@ -6,7 +6,8 @@
                 "${workspaceFolder}/include",
                 "${workspaceFolder}/extern/pybind11/include",
                 "${workspaceFolder}/extern/entityx",
-                "/usr/local/include"
+                "/usr/local/include",
+                "/simbody-source/Simbody/src"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/gcc",

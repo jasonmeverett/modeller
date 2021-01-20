@@ -29,9 +29,9 @@ cfg = {
             np.random.normal()
         ],
         "v0": [
-            0.4*np.random.normal(), 
-            0.4*np.random.normal(), 
-            0.4*np.random.normal()
+            0.2*np.random.normal(), 
+            0.2*np.random.normal(), 
+            0.2*np.random.normal()
         ]
     },
 
@@ -44,20 +44,20 @@ cfg = {
             np.random.normal()
         ],
         "v0": [
-            0.4*np.random.normal(), 
-            0.4*np.random.normal(), 
-            0.4*np.random.normal()
+            0.2*np.random.normal(), 
+            0.2*np.random.normal(), 
+            0.2*np.random.normal()
         ]
     },
 
     "spring1":{
-        "k"     : np.random.uniform(400, 1200),
+        "k"     : np.random.uniform(100, 500),
         "x0"    : np.random.uniform(0.5, 1.5),
         "c"     : np.random.uniform(1.1, 2.0),
     },
 
     "spring2":{
-        "k"     : np.random.uniform(400, 1200),
+        "k"     : np.random.uniform(100, 500),
         "x0"    : np.random.uniform(0.5, 1.5),
         "c"     : np.random.uniform(1.1, 2.0),
     },
