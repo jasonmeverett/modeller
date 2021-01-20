@@ -33,7 +33,7 @@ add_subdirectory(extern/entityx)
 
 pybind11_add_module(Modeller
     src/Modeller/Modeller.cpp
-    src/Modeller/world.cpp
+    src/Modeller/world.cpp 
     src/Modeller/forces.cpp
     src/Modeller/output.cpp
     
