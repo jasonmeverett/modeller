@@ -115,6 +115,7 @@ if cfg["plot_energy"]:
 
     fig0 = go.Figure(data=traces)
     fig0.update_layout({
+        "template":"plotly_dark",
         "title": {
             "text":"Energies",
             "x":0.5
@@ -137,9 +138,6 @@ if cfg["plot_out"]:
             z = out_data[:,2],
             mode = 'lines',
             name = 'Pendulum 1 Position',
-            line = {
-                'width': 1
-            }
         )
     )
 
@@ -150,14 +148,12 @@ if cfg["plot_out"]:
             z = out_data[:,5],
             mode = 'lines',
             name = 'Pendulum 2 Position',
-            line = {
-                'width': 1
-            }
         )
     )
 
     fig1 = go.Figure(data=traces)
     fig1.update_layout({
+        "template":"plotly_dark",
         "title": {
             "text":"Pendulum Positions",
             "x":0.5
