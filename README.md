@@ -1,4 +1,8 @@
 
+<p align="center">
+  <img src="data/modeller-logo.png" width="350" title="hover text">
+</p>
+
 # Modeller
 
 Multibody simulation playground that utilizes Simbody for dynamics. Wrappers for Pybind11, SPICE, and MarsGRAM (with more to come!). Utilizes Docker, CMake, and Miniconda.
