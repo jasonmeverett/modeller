@@ -8,6 +8,8 @@ PYBIND11_MODULE(Modeller, m)
     sm_examples.def("Run_Ex1", &Modeller::Examples::Run_Ex1);
     sm_examples.def("Run_Ex2", &Modeller::Examples::Run_Ex2);
     sm_examples.def("Run_Ex3", &Modeller::Examples::Run_Ex3);
+    sm_examples.def("Run_Ex4", &Modeller::Examples::Run_Ex4);
+    sm_examples.def("Run_Ex5", &Modeller::Examples::Run_Ex5);
 
     // Build extra modules
     Modeller::Output::DataSet::Build(m);

@@ -21,7 +21,7 @@ import Modeller as M
 cfg = {
 
     "ball1":{
-        "mass": np.random.uniform(0.1, 10.0),
+        "mass": np.random.uniform(0.1, 4.0),
         "radius": 0.1,
         "r0": [
             np.random.normal(), 
@@ -36,7 +36,7 @@ cfg = {
     },
 
     "ball2":{
-        "mass": np.random.uniform(0.1, 10.0),
+        "mass": np.random.uniform(0.1, 4.0),
         "radius": 0.1,
         "r0": [
             np.random.normal(), 
@@ -51,28 +51,28 @@ cfg = {
     },
 
     "spring1":{
-        "k"     : np.random.uniform(100, 500),
+        "k"     : np.random.uniform(400, 600),
         "x0"    : np.random.uniform(0.5, 1.5),
-        "c"     : np.random.uniform(1.1, 2.0),
+        "c"     : np.random.uniform(1.1, 3.0),
     },
 
     "spring2":{
-        "k"     : np.random.uniform(100, 500),
+        "k"     : np.random.uniform(400, 600),
         "x0"    : np.random.uniform(0.5, 1.5),
-        "c"     : np.random.uniform(1.1, 2.0),
+        "c"     : np.random.uniform(1.1, 3.0),
     },
 
-    "spring1_cut_time" : 0.6 + 0.01*np.random.normal(),
-    "spring2_cut_time" : 1.2 + 0.01*np.random.normal(),
+    "spring1_cut_time" : 1000.6 + 0.01*np.random.normal(),
+    "spring2_cut_time" : 1001.2 + 0.01*np.random.normal(),
 
-    "sim_time":2.0,
-    "use_viz":True,
-    "use_grav":False,
-    "plot_out":False,
+    "sim_time":30.0,
+    "use_viz":False,
+    "use_grav":True,
+    "plot_out":True,
     "plot_energy":True,
     "viz_update_rate": 0.01,
     "output_dataset_name": "state_info",
-    "output_data_rate": 0.001,
+    "output_data_rate": 0.01,
     "integ_acc":1e-8
 }
 

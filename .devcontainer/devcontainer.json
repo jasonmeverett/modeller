@@ -1,16 +1,17 @@
 
 {
 	"name": "C++",
-	"build":{
-		"dockerfile": "../Dockerfile"
-	},
-	
+
+	// This is currently non-functioning, but would be nice
+	"dockerComposeFile": ["../docker-compose.yml"],
+	"service": "modeller-dev",
+    "workspaceFolder": "/modeller_gh",
+
+	// Set *default* container specific settings.json values on container create.
 	"settings": { 
-		"terminal.integrated.shell.linux": "/bin/bash",
-		"terminal.integrated.inheritEnv": true
+		"terminal.integrated.shell.linux": "/bin/bash"
 	},
 
-	
 	"extensions": [
 		"ms-vscode.cpptools-extension-pack",
 		"ms-vscode.cmake-tools",
@@ -18,11 +19,5 @@
 		"eamodio.gitlens",
 		"donjayamanne.python-extension-pack",
 		"mechatroner.rainbow-csv"
-	],
-
-	"forwardPorts": [8080],
-	
-	"containerEnv": {
-		"DISPLAY": "<display here>"
-	}
+	]
 }
