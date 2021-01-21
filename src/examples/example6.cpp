@@ -32,7 +32,7 @@
 
 // Helper macro for readability
 #define PCD(x) py::cast<double>(x)
-
+#define PCB(x) py::cast<bool>(x)
 
 namespace Ex6
 {
@@ -464,11 +464,14 @@ Modeller::Core::Simulation Modeller::Examples::Run_Ex6(py::dict cfg)
         GetWorld()->m_system.addEventHandler(&toggler);
     }
 
-    // GetWorld()->m_system.setUseUniformBackground(true);
-    // Visualizer viz(GetWorld()->m_system);
-    // viz.addDecorationGenerator(new Ex6Drawer( cap, cfg ));
-    // GetWorld()->m_system.addEventReporter(  
-    //     new Visualizer::Reporter(  viz,  viz_update_rate ) );
+    if(PCB(cfg["use_viz"]))
+    {
+        GetWorld()->m_system.setUseUniformBackground(true);
+        Visualizer viz(GetWorld()->m_system);
+        viz.addDecorationGenerator(new Ex6Drawer( cap, cfg ));
+        GetWorld()->m_system.addEventReporter(  
+            new Visualizer::Reporter(  viz,  viz_update_rate ) );
+    }
 
     DataSet * ds = new DataSet("output");
     sim.getDataBase()->addDataSet(ds);
