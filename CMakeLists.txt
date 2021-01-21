@@ -42,6 +42,7 @@ pybind11_add_module(Modeller
     src/examples/example3.cpp
     src/examples/example4.cpp
     src/examples/example5.cpp
+    src/examples/example6.cpp
     
 )
 

@@ -8,7 +8,7 @@
 //             ██║ ╚═╝ ██║╚██████╔╝██████╔╝███████╗███████╗███████╗███████╗██║  ██║
 //             ╚═╝     ╚═╝ ╚═════╝ ╚═════╝ ╚══════╝╚══════╝╚══════╝╚══════╝╚═╝  ╚═╝
 //
-//                                          Ex4
+//                                          Ex5
 //                                          ---
 //                       CMD Exmaple in Chapter 4.2 (discrete & continuous)
 //     
@@ -78,22 +78,6 @@ namespace Ex5
     };   
 
 
-    class Ex5GainSwitcher : public ScheduledEventHandler
-    {
-    public:
-        Ex5GainSwitcher() {}
-
-        Real getNextEventTime(const State& state, bool includeCurrentTime) const override {
-            return 1.0;
-        }
-
-        void handleEvent(State &s, Real accuracy, bool &shouldTerminate) const override {
-            Ex5::kgain = 2000.0;
-            return;
-        }
-    };
-
-
     class Ex5Controller : public PeriodicEventHandler
     {
     public:
@@ -102,6 +86,13 @@ namespace Ex5
 
         void handleEvent(State &s, Real accuracy, bool &shouldTerminate) const override {
             
+            if(s.getTime() >= 1.0 - 1e-8)
+            {
+                Ex5::kgain = 2000.0;
+            }else{
+                Ex5::kgain = 1000.0;
+            }
+
             double gamma = this->m_mobod.getOneQ(s, 0);
             double a_cmd = Ex5::kgain * (this->gamma_cmd - gamma);
 
@@ -147,7 +138,6 @@ Modeller::Core::Simulation Modeller::Examples::Run_Ex5(py::dict cfg)
     GetWorld()->registerSimulation(&sim);
     DataSet * ds = new DataSet("output");
     sim.getDataBase()->addDataSet(ds);
-    GetWorld()->m_system.addEventHandler(new Ex5::Ex5GainSwitcher());
     GetWorld()->m_system.addEventHandler(new Ex5::Ex5Controller( 0.1, mobod ));
     GetWorld()->m_system.addEventReporter(new Ex5::Ex5DataLogger( 0.1, ds, mobod ));
 

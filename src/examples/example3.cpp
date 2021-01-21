@@ -214,7 +214,7 @@ namespace Ex3
             }else
             {
                 DecorativeLine line1(Vec3(0), m1.getBodyOriginLocation(s));
-                line1.setLineThickness(PCD(cfg["spring1"]["x0"]) / l1);
+                line1.setLineThickness(3.0);
                 line1.setColor( f1 > 0.0 ? Vec3(fabs(f1)/30.0,0,0) : Vec3(0,fabs(f1)/30.0,fabs(f1)/30.0) );
                 geometry.push_back(line1);
             }
@@ -227,7 +227,7 @@ namespace Ex3
                 geometry.push_back( text );
             }else{
                 DecorativeLine line2(m1.getBodyOriginLocation(s), m2.getBodyOriginLocation(s));
-                line2.setLineThickness(PCD(cfg["spring2"]["x0"]) / l2);
+                line2.setLineThickness(3.0);
                 line2.setColor( f2 > 0.0 ? Vec3(fabs(f2)/30.0,0,0) : Vec3(0,fabs(f2)/30.0,fabs(f2)/30.0) );
                 geometry.push_back(line2);
             }
@@ -314,6 +314,8 @@ Modeller::Core::Simulation Modeller::Examples::Run_Ex3(py::dict cfg)
         0,
         PCD(cfg["spring2"]["c"])
     );
+
+    
 
 
 

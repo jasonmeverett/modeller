@@ -65,8 +65,8 @@ cfg = {
     "spring1_cut_time" : 1000.6 + 0.01*np.random.normal(),
     "spring2_cut_time" : 1001.2 + 0.01*np.random.normal(),
 
-    "sim_time":100.0,
-    "use_viz":False,
+    "sim_time":20.0,
+    "use_viz":True,
     "use_grav":True,
     "plot_out":True,
     "plot_energy":True,
