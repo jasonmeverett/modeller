@@ -37,35 +37,7 @@ namespace Ex3
     using SpringDamper = std::tuple<Force::MobilityLinearSpring, Force::MobilityLinearDamper>;
 
     
-    /**
-     * @brief Euler 321 to Quat pulled from Wiki.
-     * https://en.wikipedia.org/wiki/Conversion_between_quaternions_and_Euler_angles
-     * 
-     * @param Eul 
-     * @return Quaternion_<Real> 
-     */
-    Quaternion_<Real> Euler321ToQuaternion(Vec3 Eul) // yaw (Z), pitch (Y), roll (X)
-    {
-        double roll     = Eul[0];
-        double pitch    = Eul[1];
-        double yaw      = Eul[2];
-
-        // Abbreviations for the various angular functions
-        double cy = cos(yaw * 0.5);
-        double sy = sin(yaw * 0.5);
-        double cp = cos(pitch * 0.5);
-        double sp = sin(pitch * 0.5);
-        double cr = cos(roll * 0.5);
-        double sr = sin(roll * 0.5);
     
-        Quaternion_<Real> q;
-        q[0] = cr * cp * cy + sr * sp * sy;
-        q[1] = sr * cp * cy - cr * sp * sy;
-        q[2] = cr * sp * cy + sr * cp * sy;
-        q[3] = cr * cp * sy - sr * sp * cy;
-    
-        return q;
-    }
 
     
     /**
@@ -396,8 +368,8 @@ Modeller::Core::Simulation Modeller::Examples::Run_Ex3(py::dict cfg)
     eul_joint_1[1] = (py::cast<std::vector<double>>(cfg["joint2"]["eul0"]) )[1]   ;
     eul_joint_1[2] = (py::cast<std::vector<double>>(cfg["joint2"]["eul0"]) )[2]   ;
 
-    Quaternion r1(Ex3::Euler321ToQuaternion(eul_joint_0));
-    Quaternion r2(Ex3::Euler321ToQuaternion(eul_joint_1));
+    Quaternion r1(Euler321ToQuaternion(eul_joint_0));
+    Quaternion r2(Euler321ToQuaternion(eul_joint_1));
 
     joint_1.setQ( s, r1 );
     joint_2.setQ( s, r2 );

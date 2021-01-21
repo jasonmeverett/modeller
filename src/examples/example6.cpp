@@ -45,10 +45,51 @@ namespace Ex6
     std::vector<MobilizedBody::Weld> SRM_thrust_frames;
 
 
+    class Ex6DataLogger : public PeriodicEventReporter 
+    {
+    public:
+
+        // Upon construction, clear the output.
+        Ex6DataLogger(Real interval, DataSet* ds, MobilizedBody &st2) : 
+            PeriodicEventReporter(interval), 
+            ds(ds),
+            st2(st2) { }
+
+        void handleEvent(const State& s) const override {
+            GetWorld()->m_system.realize(s, Stage::Dynamics);
+
+            std::vector<double> out_row;
+            out_row.push_back(s.getTime());
+            out_row.push_back( 
+                acos(dot(
+                    st2.getBodyRotation(s) * Vec3(1,0,0),
+                    Vec3(1,0,0)
+                ))*180.0/PI
+            );
+            out_row.push_back(
+                (st2.getBodyRotation(s).invert() * st2.getBodyAngularVelocity(s))[0] * 30.0 / PI
+            );
+
+            out_row.push_back(GetWorld()->m_system.calcEnergy(s));
+            out_row.push_back(GetWorld()->m_system.calcKineticEnergy(s));
+            out_row.push_back(GetWorld()->m_system.calcPotentialEnergy(s));
+
+            this->ds->addDataEntry(out_row);
+        }
+
+
+    protected:
+
+        // Local reference to the mobilized body.
+        MobilizedBody st2;
+        DataSet* ds;
+
+    };   
+
     class Ex6Drawer : public SimTK::DecorationGenerator
     {
     public:
-        Ex6Drawer(py::dict cfg) : cfg(cfg) {}
+        Ex6Drawer(MobilizedBody st2, py::dict cfg) : st2(st2), cfg(cfg) {}
 
         /**
          * @brief Required override for inheriting from a DecorationGenerator
@@ -67,6 +108,29 @@ namespace Ex6
             text_title.setColor(Vec3(0,0,0.9));
             geometry.push_back( text_title );
 
+            DecorativeText text_angmom("BodyX to Vgo: " + std::to_string(
+                acos(dot(
+                    st2.getBodyRotation(s) * Vec3(1,0,0),
+                    Vec3(1,0,0)
+                ))*180.0/PI
+            ) + " deg");
+            text_angmom.setIsScreenText(true);
+            text_angmom.setColor(Vec3(1,0,0));
+            geometry.push_back( text_angmom );
+
+            double roll_x = (st2.getBodyRotation(s).invert() * st2.getBodyAngularVelocity(s))[0] * 30.0 / PI;
+            DecorativeText tex_angvel("Roll Rate RPM: " + std::to_string( roll_x ));
+            tex_angvel.setIsScreenText(true);
+            tex_angvel.setColor(Vec3(1,0,0));
+            geometry.push_back( tex_angvel );
+
+            geometry.push_back(DecorativeLine()
+                .setPoint1(st2.findMassCenterLocationInGround(s) - Vec3(1,0,0)) 
+                .setPoint2(st2.findMassCenterLocationInGround(s) + Vec3(1,0,0))
+                .setLineThickness(3.0)
+                .setColor(Vec3(0))
+            );
+
             for(int ii = 0; ii < cap_spring_welds.size(); ii++)
             {
                 auto spring = base_to_cap_springs[ii];
@@ -84,13 +148,14 @@ namespace Ex6
 
     protected:
         py::dict cfg;
+        MobilizedBody st2;
 
     };
 
-    class ReleaseConstraints : public ScheduledEventHandler
+    class ConstraintReleaser : public ScheduledEventHandler
     {
     public:
-        ReleaseConstraints(double septime, Constraint::Rod constraint)
+        ConstraintReleaser(double septime, Constraint::Rod constraint)
             : septime(septime), constraint(constraint) {}
 
         Real getNextEventTime(const State& s, bool incCurTime) const override {
@@ -107,10 +172,34 @@ namespace Ex6
 
     };
 
-    class KillSpring : public TriggeredEventHandler
+    class ForceToggler : public ScheduledEventHandler
     {
     public:
-        KillSpring(Force::TwoPointLinearSpring force, MobilizedBody m1, MobilizedBody m2, double l) 
+        ForceToggler(double time, Force* force)
+            : time(time), force(force) {}
+
+        Real getNextEventTime(const State& s, bool incCurTime) const override {
+            return this->time;
+        }
+
+        void handleEvent(State &s, Real accuracy, bool& shouldTerminate) const override {
+            if( this->force->isDisabled(s) ) {
+                this->force->enable(s);
+            } else {
+                this->force->disable(s);
+            }
+        }
+
+    protected:
+        double time;
+        Force* force;
+
+    };
+
+    class SpringDisconnector : public TriggeredEventHandler
+    {
+    public:
+        SpringDisconnector(Force::TwoPointLinearSpring force, MobilizedBody m1, MobilizedBody m2, double l) 
             : force(force), m1(m1), m2(m2), l(l), TriggeredEventHandler(Stage::Position) {}
 
         Real getValue(const State& s) const override {
@@ -156,19 +245,28 @@ Modeller::Core::Simulation Modeller::Examples::Run_Ex6(py::dict cfg)
     GetWorld()->registerSimulation(&sim);
 
     double base_r = 0.3;
-    double base_hz = 0.1;
-    double base_mass = 10.0;
-    double cap_hz = 0.2;
-    double cap_mass = 30.0;
-    double base_cap_x0 = 0.05;
-    double sim_time = 10.0;
-    double integ_acc = 1e-12;
-    double viz_update_rate = 0.01;
+    double base_hz = 1.5;
+    double base_mass = 100.0;
+    double cap_hz = 0.6;
+    double cap_mass = 50.0;
+    
     double spring_r_fac = 0.8;
     double spring_x0 = 0.1;
-    double spring_k = 600;
-    double const_times[] = {1.0, 1.001, 1.002, 1.003};
+    double spring_k = 80000;
+    double base_cap_x0 = 0.1 - 0.0015;
+    
+    double const_times[] = {1.004, 1.000, 1.002, 1.005};
+    double r2d = 180.0 / PI;
+    double d2r = PI / 180.0;
+    Vec3 spinup1_eul321_mount_to_thrust(1.0 * d2r, -2.0 * d2r, 0);
+    Vec3 spinup2_eul321_mount_to_thrust(-2.0 * d2r, 1.0 * d2r, 0);
+    double spinup_times[] = {2.0, 2.0};
+    double thrust_durs[] = {1.0, 1.0};
+    double thrust_mag = 1;
 
+    double sim_time = 10.0;
+    double integ_acc = 1e-12;
+    double viz_update_rate = 0.005;
     
     Body::Massless default_bod;
 
@@ -185,7 +283,7 @@ Modeller::Core::Simulation Modeller::Examples::Run_Ex6(py::dict cfg)
                 -PI/2, 
                 Vec3(0,0,1)
             )
-        )
+        ).setOpacity(0.5)
     );
 
     Body::Rigid rb_cap(
@@ -201,7 +299,7 @@ Modeller::Core::Simulation Modeller::Examples::Run_Ex6(py::dict cfg)
                 -PI/2, 
                 Vec3(0,0,1)
             )
-        )
+        ).setOpacity(0.5)
     );
 
     MobilizedBody::Free base(
@@ -266,19 +364,23 @@ Modeller::Core::Simulation Modeller::Examples::Run_Ex6(py::dict cfg)
             base_cap_x0
         ));
         
-        GetWorld()->m_system.addEventHandler(new KillSpring(
+        GetWorld()->m_system.addEventHandler(new ConstraintReleaser(
+            const_times[ii],
+            init_cap_constraints[ii]
+        ));
+
+        GetWorld()->m_system.addEventHandler(new SpringDisconnector(
             base_to_cap_springs[ii],
             base_spring_welds[ii],
             cap_spring_welds[ii],
             spring_x0
         ));
-
-        GetWorld()->m_system.addEventHandler(new ReleaseConstraints(
-            const_times[ii],
-            init_cap_constraints[ii]
-        ));
-
     }
+
+    /* -----------------------------------------------------
+     * SPINUP MOUNTING FRAMES
+     * -----------------------------------------------------
+     */
 
     SRM_spinup_mounts.push_back(
         MobilizedBody::Weld(
@@ -304,20 +406,73 @@ Modeller::Core::Simulation Modeller::Examples::Run_Ex6(py::dict cfg)
         )
     );
 
-    // TODO: ADD IN
-    // SRM_spinup_forces
+    /* -----------------------------------------------------
+     * SPINUP THRUSTING FRAMES
+     * -----------------------------------------------------
+     */
 
-    // SRM_spinup_forces.push_back(
-    //     Force::MobilityConstantForce(
-    //     )
-    // );
+    SRM_thrust_frames.push_back(
+        MobilizedBody::Weld(
+            SRM_spinup_mounts[0],
+            Transform(
+                Rotation(Euler321ToQuaternion(spinup1_eul321_mount_to_thrust))
+            ),
+            default_bod,
+            Transform()
+        )
+    );
 
+    SRM_thrust_frames.push_back(
+        MobilizedBody::Weld(
+            SRM_spinup_mounts[1],
+            Transform(
+                Rotation(Euler321ToQuaternion(spinup2_eul321_mount_to_thrust))
+            ),
+            default_bod,
+            Transform()
+        )
+    );
 
-    GetWorld()->m_system.setUseUniformBackground(true);
-    Visualizer viz(GetWorld()->m_system);
-    viz.addDecorationGenerator(new Ex6Drawer( cfg ));
-    GetWorld()->m_system.addEventReporter(  
-        new Visualizer::Reporter(  viz,  viz_update_rate ) );
+    /* -----------------------------------------------------
+     * FORCES
+     * -----------------------------------------------------
+     */
+    std::vector<ConstantForceAlongXAxis> f_spinups = {
+        ConstantForceAlongXAxis(
+            GetWorld()->m_forces,
+            SRM_thrust_frames[0],
+            thrust_mag
+        ),
+        ConstantForceAlongXAxis(
+            GetWorld()->m_forces,
+            SRM_thrust_frames[1],
+            thrust_mag
+        )
+    };
+    f_spinups[0].setDisabledByDefault(true);
+    f_spinups[1].setDisabledByDefault(true);
+    
+    std::vector<ForceToggler> togglers_spinup = {
+        ForceToggler(spinup_times[0], &f_spinups[0]),
+        ForceToggler(spinup_times[1], &f_spinups[1]),
+        ForceToggler(spinup_times[0] + thrust_durs[0], &f_spinups[0]),
+        ForceToggler(spinup_times[1] + thrust_durs[1], &f_spinups[1]),
+    };
+
+    for(auto &toggler : togglers_spinup)
+    {
+        GetWorld()->m_system.addEventHandler(&toggler);
+    }
+
+    // GetWorld()->m_system.setUseUniformBackground(true);
+    // Visualizer viz(GetWorld()->m_system);
+    // viz.addDecorationGenerator(new Ex6Drawer( cap, cfg ));
+    // GetWorld()->m_system.addEventReporter(  
+    //     new Visualizer::Reporter(  viz,  viz_update_rate ) );
+
+    DataSet * ds = new DataSet("output");
+    sim.getDataBase()->addDataSet(ds);
+    GetWorld()->m_system.addEventReporter(new Ex6::Ex6DataLogger( 0.001, ds, cap ));
 
     State s = GetWorld()->m_system.realizeTopology();
     

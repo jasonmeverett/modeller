@@ -1,4 +1,4 @@
-
+#pragma once
 
 // Modeller includes
 #include <Modeller/output.hpp>

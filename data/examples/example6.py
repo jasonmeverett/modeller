@@ -26,3 +26,14 @@ out_data = np.array(
 )
 
 
+fig1 = go.Figure(
+    data=[
+        go.Scatter(
+            x=out_data[:,0],
+            y=out_data[:,1]
+        )
+    ]
+)
+
+fig1.write_html('ex6_b2vgo')
+fig1.show()
