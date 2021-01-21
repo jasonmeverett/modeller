@@ -1,6 +1,6 @@
 '''
 
-Double pendulum (example pulled from Simbody manual)
+Double pendulum, 3DOF, drag
 
 '''
 
@@ -15,57 +15,57 @@ import colour
 from math import trunc
 
 # Locate Modeller and import.
-sys.path.append('/workspaces/modeller_gh/build')
+sys.path.append('/modeller_gh/build')
 import Modeller as M
 
 cfg = {
 
-    "ball1":{
-        "mass": np.random.uniform(0.1, 4.0),
-        "radius": 0.1,
-        "r0": [
-            np.random.normal(), 
-            np.random.normal(), 
-            np.random.normal()
-        ],
-        "v0": [
-            0.2*np.random.normal(), 
-            0.2*np.random.normal(), 
-            0.2*np.random.normal()
-        ]
-    },
-
-    "ball2":{
-        "mass": np.random.uniform(0.1, 4.0),
-        "radius": 0.1,
-        "r0": [
-            np.random.normal(), 
-            np.random.normal(), 
-            np.random.normal()
-        ],
-        "v0": [
-            0.2*np.random.normal(), 
-            0.2*np.random.normal(), 
-            0.2*np.random.normal()
+    "joint1":{
+        "rotational_damping": np.random.uniform(0.1, 0.5),
+        "eul0":[
+            np.random.uniform(0.0, 2*np.pi),
+            np.random.uniform(0.0, 2*np.pi),
+            np.random.uniform(0.0, 2*np.pi)
         ]
     },
 
     "spring1":{
-        "k"     : np.random.uniform(400, 600),
+        "k"     : np.random.uniform(100, 200),
         "x0"    : np.random.uniform(0.5, 1.5),
-        "c"     : np.random.uniform(1.1, 3.0),
+        "c"     : np.random.uniform(0.1, 1.0)
+    },
+
+    "ball1":{
+        "mass": np.random.uniform(0.1, 4.0),
+        "init_dist": np.random.uniform(-3.0, 3.0),
+        "radius": 0.1,
+    },
+
+    "joint2":{
+        "rotational_damping": np.random.uniform(0.1, 0.5),
+        "eul0":[
+            np.random.uniform(0.0, 2*np.pi),
+            np.random.uniform(0.0, 2*np.pi),
+            np.random.uniform(0.0, 2*np.pi)
+        ]
     },
 
     "spring2":{
-        "k"     : np.random.uniform(400, 600),
+        "k"     : np.random.uniform(100, 200),
         "x0"    : np.random.uniform(0.5, 1.5),
-        "c"     : np.random.uniform(1.1, 3.0),
+        "c"     : np.random.uniform(0.1, 1.0)
+    },
+
+    "ball2":{
+        "mass": np.random.uniform(0.1, 4.0),
+        "init_dist": np.random.uniform(-3, 3),
+        "radius": 0.1,
     },
 
     "spring1_cut_time" : 1000.6 + 0.01*np.random.normal(),
     "spring2_cut_time" : 1001.2 + 0.01*np.random.normal(),
 
-    "sim_time":30.0,
+    "sim_time":100.0,
     "use_viz":False,
     "use_grav":True,
     "plot_out":True,
