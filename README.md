@@ -1,6 +1,6 @@
 
 <p align="center">
-  <img src="data/modeller-logo.png" width="350" title="hover text">
+  <img src="data/modeller-logo.png" width="600" title="hover text">
 </p>
 
 # Modeller
