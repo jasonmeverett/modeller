@@ -218,6 +218,8 @@ namespace Ex6
         void handleEvent(State &s, Real accuracy, bool &shouldTerminate) const override {
             force.disable(s);
             std::cout << "Time: " << s.getTime() << " SPRING SEP\n";
+            // std::cout << "Distance: " << std::setprecision(10) << 
+            //     m2.findBodyOriginLocationInAnotherBody(s, m1).norm() << "\n";
             return;
         }
 
@@ -471,6 +473,7 @@ Modeller::Core::Simulation Modeller::Examples::Run_Ex6(py::dict cfg)
         viz.addDecorationGenerator(new Ex6Drawer( cap, cfg ));
         GetWorld()->m_system.addEventReporter(  
             new Visualizer::Reporter(  viz,  viz_update_rate ) );
+        viz.setBackgroundColor(Vec3(0));
     }
 
     DataSet * ds = new DataSet("output");

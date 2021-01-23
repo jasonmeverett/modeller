@@ -15,7 +15,7 @@ import colour
 from math import trunc
 
 # Locate Modeller and import.
-sys.path.append('/modeller_gh/build')
+sys.path.append('/modeller/build')
 import Modeller as M
 
 cfg = {
@@ -66,5 +66,5 @@ fig2 = go.Figure(
 
 fig2.write_html('ex6_energy.html')
 
-fig1.show()
-fig2.show()
+#fig1.show()
+#fig2.show()

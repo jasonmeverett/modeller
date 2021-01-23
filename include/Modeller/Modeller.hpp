@@ -9,12 +9,15 @@
 #include <Modeller/forces.hpp>
 #include <Modeller/simulation.hpp>
 #include <Modeller/rotations.hpp>
+#include <Modeller/SpiceInterface.hpp>
+
 
 using namespace Modeller::Constants;
 using namespace Modeller::Output;
 using namespace Modeller::Core;
 using namespace Modeller::Forces;
 using namespace Modeller::Utility;
+using namespace Modeller::Spice;
 
 // Simbody.
 #include "Simbody.h"

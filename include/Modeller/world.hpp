@@ -4,6 +4,7 @@
 
 #include <Modeller/output.hpp>
 #include <Modeller/simulation.hpp>
+#include <Modeller/SpiceInterface.hpp>
 
 namespace Modeller
 {
@@ -40,8 +41,9 @@ namespace Modeller
             SimbodyMatterSubsystem          m_matter;
             GeneralForceSubsystem           m_forces;
             
-            Modeller::Core::Simulation * getCurrentSimulation(){return this->sim;}
-            void registerSimulation(Modeller::Core::Simulation * sim){this->sim = sim;}
+            Modeller::Core::Simulation * getCurrentSimulation(){return this->currentSim;}
+            void registerSimulation(Modeller::Core::Simulation * sim){this->currentSim = sim;}
+            void registerSpiceEngine(Modeller::Spice::SpiceEngine * SE){this->spiceEngine = SE;}
 
             void ResetSystems()
             {
@@ -49,7 +51,8 @@ namespace Modeller
             }
             
         protected:
-            Modeller::Core::Simulation * sim;
+            Modeller::Core::Simulation * currentSim;
+            Modeller::Spice::SpiceEngine * spiceEngine;
         };
 
     

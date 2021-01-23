@@ -15,7 +15,7 @@ import colour
 from math import trunc
 
 # Locate Modeller and import.
-sys.path.append('/modeller_gh/build')
+sys.path.append('/modeller/build')
 import Modeller as M
 
 cfg = {
@@ -66,7 +66,7 @@ cfg = {
     "spring2_cut_time" : 1001.2 + 0.01*np.random.normal(),
 
     "sim_time":20.0,
-    "use_viz":True,
+    "use_viz":False,
     "use_grav":True,
     "plot_out":True,
     "plot_energy":True,
@@ -124,7 +124,7 @@ if cfg["plot_energy"]:
         "yaxis_title":"Energy (J)",
     })
     fig0.write_html("ex3_energy.html")
-    fig0.show()
+    #fig0.show()
 
 
 if cfg["plot_out"]:
@@ -163,6 +163,6 @@ if cfg["plot_out"]:
         "scene_aspectmode":"data"
     })
     fig1.write_html("ex3_pos.html")
-    fig1.show()
+    #fig1.show()
 
 

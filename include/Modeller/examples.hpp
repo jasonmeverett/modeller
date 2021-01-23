@@ -26,5 +26,9 @@ namespace Modeller
         Modeller::Core::Simulation Run_Ex5(py::dict cfg);
 
         Modeller::Core::Simulation Run_Ex6(py::dict cfg);
+
+        Modeller::Core::Simulation Run_Ex7(py::dict cfg);
+
+        Modeller::Core::Simulation Run_Ex8(py::dict cfg);
     }
 }

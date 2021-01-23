@@ -2,7 +2,15 @@
 using namespace Modeller::Utility;
 
 
-Quaternion_<Real> Modeller::Utility::Euler321ToQuaternion(Vec3 Eul) // yaw (Z), pitch (Y), roll (X)
+/**
+ * @brief Convert Euler values into a quaternion. Although the 
+ * input to the function is in roll-pitch-yaw, the actual 
+ * Euler sequence used is a yaw-pitch-roll.
+ * 
+ * @param Eul 
+ * @return Quaternion_<Real> 
+ */
+Quaternion_<Real> Modeller::Utility::Euler321ToQuaternion(Vec3 Eul)
 {
     double roll     = Eul[0];
     double pitch    = Eul[1];

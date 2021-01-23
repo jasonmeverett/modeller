@@ -25,7 +25,7 @@ pio.renderers.default = 'browser'
 import plotly.graph_objects as go
 
 # Locate Modeller and import.
-sys.path.append('/modeller_gh/build')
+sys.path.append('/modeller/build')
 import Modeller as M
 
 # Set up a configuration dictionary to pass to the example.

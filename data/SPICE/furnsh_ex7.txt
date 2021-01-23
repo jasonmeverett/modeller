@@ -1,0 +1,18 @@
+\begintext
+
+    Here are the SPICE kernels required for my application
+    program.
+
+    Note that kernels are loaded in the order listed. Thus we
+    need to list the highest priority kernel last.
+
+
+\begindata
+
+KERNELS_TO_LOAD = (  
+    '/modeller/data/SPICE/naif0012.tls'
+    '/modeller/data/SPICE/pck00010.tpc'
+    '/modeller/data/SPICE/de440.bsp' 
+)
+
+\begintext

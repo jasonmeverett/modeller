@@ -5,7 +5,7 @@
 	// This is currently non-functioning, but would be nice
 	"dockerComposeFile": ["../docker-compose.yml"],
 	"service": "modeller-dev",
-    "workspaceFolder": "/modeller_gh",
+    "workspaceFolder": "/modeller",
 
 	// Set *default* container specific settings.json values on container create.
 	"settings": { 

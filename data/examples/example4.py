@@ -15,7 +15,7 @@ import colour
 from math import trunc
 
 # Locate Modeller and import.
-sys.path.append('/modeller_gh/build')
+sys.path.append('/modeller/build')
 import Modeller as M
 
 cfg = {}
