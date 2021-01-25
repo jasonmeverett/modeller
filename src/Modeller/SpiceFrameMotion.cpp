@@ -47,26 +47,23 @@ void Modeller::Spice::SpiceFrameMotionImpl::calcPrescribedPositionDot(const Stat
     xf2rav_c(xfmat, rotmat, av);
     m2q_c(rotmat, quat);
 
-    /**
-     * @brief The below code computes Qdot = 1/2 * Omega(omeg) * q.
-     * 
-     * TODO: It would be great to include some conversions for this.
-     * 
-     */
-    SpiceDouble avs[4][4] = {
-        {0,     -av[0],     -av[1],     -av[2]},
-        {av[0],     0,      av[2],     -av[1]},
-        {av[1],  -av[2],    0,          av[0]},
-        {av[2],  av[1],     -av[0],         0}
-    };
+    // /** Convert av. */
+    // SpiceDouble avNew[3];
+    // mxv_c(rotmat, av, avNew);
+    // av[0] = avNew[0];
+    // av[1] = avNew[1];
+    // av[2] = avNew[2];
 
-    qdot[0] = 0.5*(avs[0][0]*quat[0] + avs[0][1]*quat[1] + avs[0][2]*quat[3] + avs[0][3]*quat[3]);
-    qdot[1] = 0.5*(avs[1][0]*quat[0] + avs[1][1]*quat[1] + avs[1][2]*quat[3] + avs[1][3]*quat[3]);
-    qdot[2] = 0.5*(avs[2][0]*quat[0] + avs[2][1]*quat[1] + avs[2][2]*quat[3] + avs[2][3]*quat[3]);
-    qdot[3] = 0.5*(avs[3][0]*quat[0] + avs[3][1]*quat[1] + avs[3][2]*quat[3] + avs[3][3]*quat[3]);
+    Vec4 qdot_new = Rotation::convertAngVelToQuaternionDot(
+        Vec4(quat[0], quat[1], quat[2], quat[3]), 
+        Vec3(av[0], av[1], av[2])
+    );
+    qdot[0] = qdot_new[0];
+    qdot[1] = qdot_new[1];
+    qdot[2] = qdot_new[2];
+    qdot[3] = qdot_new[3];
 
     return;
-
 }
 
 

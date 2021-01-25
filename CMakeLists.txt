@@ -50,7 +50,7 @@ pybind11_add_module(Modeller
 target_include_directories(Modeller PUBLIC 
     ${CMAKE_SOURCE_DIR}/include
     ${CMAKE_SOURCE_DIR}/extern/pybind11/include
-    ${CMAKE_SOURCE_DIR}/extern/marsgram2020/Code
+    ${CMAKE_SOURCE_DIR}/extern/marsgram2010/Code
     ${Simbody_INCLUDE_DIR}
     $ENV{SPICE_INCDIR}
 ) 

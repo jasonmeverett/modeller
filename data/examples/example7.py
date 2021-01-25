@@ -19,7 +19,7 @@ sys.path.append('/modeller/build')
 import Modeller as M
 
 cfg = {
-    "use_viz":True
+    "use_viz":False
 }
 print("Running...")
 SimOut = M.examples.Run_Ex7(cfg)

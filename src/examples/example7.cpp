@@ -94,9 +94,9 @@ Modeller::Core::Simulation Modeller::Examples::Run_Ex7(py::dict cfg)
 
     State s = GetWorld()->m_system.realizeTopology();
 
-    RungeKuttaMersonIntegrator integ(GetWorld()->m_system);
-    integ.setAccuracy(1);
-    integ.setMaximumStepSize(1000.0);
+    RungeKutta3Integrator integ(GetWorld()->m_system);
+    integ.setAccuracy(1e-6);
+    integ.setMaximumStepSize(1.0);
     TimeStepper ts(GetWorld()->m_system, integ);
     ts.initialize(s);
     ts.stepTo(5.0 * spd_c());

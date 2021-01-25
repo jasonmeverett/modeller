@@ -128,7 +128,7 @@ namespace Ex6
                 .setPoint1(st2.findMassCenterLocationInGround(s) - Vec3(1,0,0)) 
                 .setPoint2(st2.findMassCenterLocationInGround(s) + Vec3(1,0,0))
                 .setLineThickness(3.0)
-                .setColor(Vec3(0))
+                .setColor(Vec3(1))
             );
 
             for(int ii = 0; ii < cap_spring_welds.size(); ii++)
