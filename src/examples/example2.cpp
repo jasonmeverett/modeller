@@ -77,65 +77,14 @@ namespace Ex2
     };   
 
 
-
-    /**
-     * @brief decoration generator for Ex2.
-     * 
-     */
-    class Ex2Drawer : public SimTK::DecorationGenerator
+    class Ex2Printer : public PeriodicEventReporter 
     {
     public:
-        Ex2Drawer(MobilizedBody m1, MobilizedBody m2, Force::MobilityLinearSpring s1, Force::MobilityLinearSpring s2) : m1(m1), m2(m2), s1(s1), s2(s2) {}
-
-        void generateDecorations(const State& state, 
-            Array_<DecorativeGeometry>& geometry) override 
-        {
-            GetWorld()->m_system.realize(state, Stage::Dynamics);
-
-            // Force - pull out
-            double force1 = GetWorld()->m_system.getMobilityForces(state, Stage::Dynamics)[
-                m1.getFirstQIndex(state) + 1
-            ];
-            double force2 = GetWorld()->m_system.getMobilityForces(state, Stage::Dynamics)[
-                m2.getFirstQIndex(state) + 1
-            ];
-            
-            // Set lines
-            DecorativeLine line1, line2;
-            line1.setPoint2(m1.getBodyOriginLocation(state));
-            line2.setTransform(m1.getBodyTransform(state));
-            line2.setPoint2(m2.findBodyOriginLocationInAnotherBody(state, m1));
-            line1.setLineThickness(3.0);
-            line2.setLineThickness(3.0);
-            line1.setColor( force1 > 0.0 ? Vec3(fabs(force1)/30.0,0,0) : Vec3(0,fabs(force1)/30.0,fabs(force1)/30.0) );
-            line2.setColor( force2 > 0.0 ? Vec3(fabs(force2)/30.0,0,0) : Vec3(0,fabs(force2)/30.0,fabs(force2)/30.0) );
-            geometry.push_back(line1);
-            geometry.push_back(line2);
-
-            // Set texts
-            DecorativeText text_title, text_sp1, text_sp2;
-            text_title.setText("Sim Time: " + std::to_string(state.getTime()) + " sec");
-            text_title.setIsScreenText(true);
-            text_title.setColor(Vec3(0,0,1));
-            text_sp1.setText(std::to_string(force1) + " N");
-            text_sp1.setTransform(0.5*(m1.getBodyOriginLocation(state)));
-            text_sp1.setScale(0.1);
-            text_sp2.setText(std::to_string(force2) + " N");
-            text_sp2.setTransform(0.5*(m1.getBodyOriginLocation(state) + m2.getBodyOriginLocation(state)));
-            text_sp2.setScale(0.1);
-            geometry.push_back( text_title );
-            geometry.push_back( text_sp1 );
-            geometry.push_back( text_sp2 );
+        Ex2Printer(Real interval) : PeriodicEventReporter(interval){ }
+        void handleEvent(const State& s) const override {
+            std::cout << "Time: " << s.getTime() << std::endl;
         }
-
-    protected:
-        MobilizedBody m1;
-        MobilizedBody m2;
-        Force::MobilityLinearSpring s1;
-        Force::MobilityLinearSpring s2;
-
-    };
-
+    };   
 }
 
 
@@ -161,7 +110,6 @@ Modeller::Core::Simulation Modeller::Examples::Run_Ex2(py::dict cfg)
     p2.length               = py::cast<double>(cp2["length_m"]);
     p2.inital_angular_rate  = py::cast<double>(cp2["initial_angular_rate_deg_s"]) * PI / 180.0;
     double cd2              = py::cast<double>(cp2["damping_coeff"]);
-    bool useViz             = py::cast<bool>(cfg["use_viz"]);
     double simTime          = py::cast<double>(cfg["sim_time"]);
     double data_rate        = py::cast<double>(cfg["output_data_rate"]);
     std::string ds_name     = py::cast<std::string>(cfg["output_dataset_name"]);
@@ -181,9 +129,7 @@ Modeller::Core::Simulation Modeller::Examples::Run_Ex2(py::dict cfg)
 
     // Describe mass and visualization properties for a generic body.
     Body::Rigid p1body(MassProperties(p1.endpoint_mass, Vec3(0), UnitInertia(1)));
-    p1body.addDecoration(Transform(), DecorativeSphere(0.1));
     Body::Rigid p2body(MassProperties(p2.endpoint_mass, Vec3(0), UnitInertia(1)));
-    p2body.addDecoration(Transform(), DecorativeSphere(0.1));
 
     // Create the moving (mobilized) bodies of the pendulum.
     MobilizedBody::BendStretch pendulum1(
@@ -201,20 +147,8 @@ Modeller::Core::Simulation Modeller::Examples::Run_Ex2(py::dict cfg)
     );
 
     // Add spring force.
-    Force::MobilityLinearSpring spring1(
-        GetWorld()->m_forces,
-        pendulum1,
-        1,
-        50.0,
-        1.0
-    );
-    Force::MobilityLinearSpring spring2(
-        GetWorld()->m_forces,
-        pendulum2,
-        1,
-        50.0,
-        1.0
-    );
+    Force::MobilityLinearSpring spring1( GetWorld()->m_forces, pendulum1, 1, 50.0, 1.0 );
+    Force::MobilityLinearSpring spring2( GetWorld()->m_forces, pendulum2, 1, 50.0, 1.0 );
 
     // Add some damping to the joints.
     Force::MobilityLinearDamper damper1( GetWorld()->m_forces, pendulum1, 0, cd1 );
@@ -224,24 +158,13 @@ Modeller::Core::Simulation Modeller::Examples::Run_Ex2(py::dict cfg)
     Force::MobilityLinearDamper damper3( GetWorld()->m_forces, pendulum1, 1, 1.0);
     Force::MobilityLinearDamper damper4( GetWorld()->m_forces, pendulum2, 1, 1.0);
 
-    // Set up visualization.
-    if(useViz)
-    {
-        double update_rate = py::cast<double>(cfg["viz_update_rate"]);
-        GetWorld()->m_system.setUseUniformBackground(true);
-        Visualizer viz(GetWorld()->m_system);
-        viz.setMode(Visualizer::Mode::PassThrough);
-        GetWorld()->m_system.addEventReporter(new Visualizer::Reporter(viz, update_rate));
-        viz.addDecorationGenerator(new Ex2Drawer(pendulum1, pendulum2, spring1, spring2));
-        viz.setBackgroundColor(Vec3(0));
-    }
- 
     // Create Data Set and create the logger class for that dataset.
     DataSet * ds = new DataSet(ds_name);
     sim.getDataBase()->addDataSet(ds);
 
     // Add the reporter that will modify the database with information.
     GetWorld()->m_system.addEventReporter(new Ex2::Ex2DataLogger(data_rate, ds, pendulum1, pendulum2));
+    GetWorld()->m_system.addEventReporter(new Ex2Printer(1));
 
     // Initialize the system and state.
     State state = GetWorld()->m_system.realizeTopology();
@@ -250,9 +173,8 @@ Modeller::Core::Simulation Modeller::Examples::Run_Ex2(py::dict cfg)
     pendulum1.setOneU(state, 0, p1.inital_angular_rate);
     pendulum2.setOneU(state, 0, p2.inital_angular_rate);
     pendulum1.setOneU(state, 1, 5.0);
-    
 
-    // Simulate for 20 seconds.
+    // Simulate.
     RungeKuttaMersonIntegrator integ(GetWorld()->m_system);
     integ.setAccuracy(integ_acc);
     TimeStepper ts(GetWorld()->m_system, integ);

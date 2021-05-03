@@ -1,6 +1,6 @@
 '''
 
-Double pendulum (example pulled from Simbody manual)
+CMD Example
 
 '''
 

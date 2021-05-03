@@ -1,12 +1,13 @@
 
 {
-	"name": "C++",
-
-	// This is currently non-functioning, but would be nice
-	"dockerComposeFile": ["../docker-compose.yml"],
-	"service": "modeller-dev",
-    "workspaceFolder": "/modeller",
-
+	"name": "Modeller",
+	"build":{
+		"dockerfile":"../Dockerfile"
+	},
+	
+	"workspaceFolder": "/modeller",
+	"workspaceMount": "source=${localWorkspaceFolder}/,target=/modeller,type=bind",
+	
 	// Set *default* container specific settings.json values on container create.
 	"settings": { 
 		"terminal.integrated.shell.linux": "/bin/bash"

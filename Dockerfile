@@ -9,7 +9,7 @@
 #         ╚═╝     ╚═╝ ╚═════╝ ╚═════╝ ╚══════╝╚══════╝╚══════╝╚══════╝╚═╝  ╚═╝
 #
 # 
-#                                        v0.1
+#                                        v0.2
 #
 # This image is to be used for development purposes.
 #
@@ -21,8 +21,6 @@
 # -------------------------------------------------------
 
 FROM ubuntu:20.04
-
-EXPOSE 8080
 
 ENV DEBIAN_FRONTEND=noninteractive 
 ENV SPICE_HOME=/opt/SPICE/cspice
@@ -102,11 +100,3 @@ RUN wget http://naif.jpl.nasa.gov/pub/naif/toolkit//C/PC_Linux_GCC_64bit/package
     cd /opt/SPICE && \
     /bin/csh ./importCSpice.csh && \
     ldconfig -v
-
-# -------------------------------------------------------
-#                                    Documentation Server
-# -------------------------------------------------------
-
-# RUN apt-get install npm && \
-#     npm install --global http-server && \
-#     echo "cd /usr/local/share/doc/simbody/api && nohup http-server . & && cd /" >> /root/.bashrc 

@@ -7,6 +7,18 @@
 //             ██║ ╚═╝ ██║╚██████╔╝██████╔╝███████╗███████╗███████╗███████╗██║  ██║
 //             ╚═╝     ╚═╝ ╚═════╝ ╚═════╝ ╚══════╝╚══════╝╚══════╝╚══════╝╚═╝  ╚═╝
 //     
+//          Example of a variable-mass system using a liquid thruster.
+//          In this example, a mobilized body (1-d slider) has a thruster (custom force)
+//          attached to it. This thruster will change force based on a force target, where
+//          the force target is a discrete variable (but the force itself will not be discrete).
+//          during a time step, auxiliary variables are used to integrate mass deltas, and then
+//          mass properties are manually updated at the end of the time step. Note that standard
+//          use of TimeStepper classes cannot be used because of the fact that we need to 
+//          realize topology (mass property changes) each timestep. It was deemed sufficient to
+//          not update mass properties during a timestep, however this means that there are
+//          other mdot-related forces that do not get added to the system, which would need
+//          to be added in manually for more complex systems (jet-damping?).
+//
 //     ------------------------------------------------------------------------------------
 
 // Include Modeller.
@@ -20,15 +32,53 @@
 namespace Ex8
 {
 
-    /**
-     * @brief A placeholder TVC thrust class. Takes force
-     * and ISP as inputs.
-     */
+    /* Force class to handle forces on a mobod. */
     class LiquidTVCThruster : public Force::Custom::Implementation
     {
     public:
-        LiquidTVCThruster(MobilizedBody tvcBase, double force_tgt, double isp, double kp, double kd) 
-        : tvcBase(tvcBase), force_tgt(force_tgt), isp(isp), kp(kp), kd(kd) {}
+
+        /* Main constructor. Eventually, it would make more sense to tie a liquid TVC thruster to a 
+         * tank rather than to a mobod, because the mass flow comes directly from the thruster. Essentially
+         * the thruster object may be in charge of accumulating the mass-delta over an integration timestep,
+         * but another omniscient part of the system should be in charge of then determining where this mass
+         * should be "flushed" from. It would be really cool to eventually build up pipe-lining systems that
+         * connect a thruster to a tank, and simulate flow in these pipes, but it's out of scope for now. 
+         * 
+         * Actually, it would make more sense to tie a liquid thruster to a tank, and then the thruster would
+         * have the ability to flush the mass from the tank directly (and would also be able to query how much
+         * mass is left in the tank). In reality, the mobod that the thruster is attached to should only be ONE
+         * mobod axis, in order to separate out the thrusting object (essentially the nozzle) from the TVC gimbal.
+         * The TVC gimbal would then, through some actuation, apply a torque from the inboard body (the vehicle)
+         * to the outboard body (the nozzle).
+         * 
+         * A vehicle is defined structurally by a mass properties structure. Then, there is another mobilized 
+         * body attached to the mass properties mobilized bod, by a fixed offset, that represents both the liquid
+         * fuel tank and liquid oxidizer tank. This represents just the pure mass properties of the tank itself.
+         * Then there is another mobilized body internal to the fuel tank that represents the actual internal
+         * fuel or oxidizer, perhaps attached to the prop feed line location of the tank, that has variable mass
+         * properties. This is up in the air depending on how slosh should be modelled internally. If tanks have
+         * decreasing inertia properties, how is this handled internally to the tank? Anyways, this is something
+         * that could potentially be a load-in option.
+         * 
+         * Attached to the vehicle structural frame, then, would be a mobilized body rotational joint that 
+         * represents the gimbal. Further downstream from the gimbal would be a nozzle that contains its own
+         * mass properties, and perhaps even the gimbal does as well! The gimbal mobilized body would apply 
+         * torques to the mobilized body depending on some discrete parameter that represetnts the commanded
+         * angle and rate of the TVC. This would be tuned then by whatever transfer function represents the
+         * internal behaviour of the TVC gimballing system. When a torque is applied to this mobilized body, 
+         * that torque effect would hopefully then be propagated out to the rest of the system, such that the
+         * torque effects both the nozzle AND the vehicle body. This would represent the tail-wags-dog behaviour.
+         * This can probably be checked by a simple example that has two mobilized bodies attached to eachother
+         * with the gimbal mobilized body between them applying a torque to the body. It would be great to visualize
+         * this but probably would not be easy to set up because Ubuntu just does not want to share X-server information.
+         * 
+         * */
+        LiquidTVCThruster(MobilizedBody tvcBase, double force_tgt, double isp, double kp, double kd) : 
+            tvcBase(tvcBase), 
+            force_tgt(force_tgt), 
+            isp(isp), 
+            kp(kp), 
+            kd(kd) {}
 
         virtual void realizeTopology(State& s) const override {
             idx_mass = GetWorld()->m_matter.allocateZ(s, Vector(1, Real(0)));
@@ -123,8 +173,6 @@ Modeller::Core::Simulation Modeller::Examples::Run_Ex8(py::dict cfg)
     using namespace Ex8;
 
     double dt = PCD(cfg["dt"]);
-    double mdot = - PCD(cfg["F"]) / (Constants::g0 * PCD(cfg["isp"]));
-    double dm = mdot * dt;
     double t_burn = PCD(cfg["t_burn"]);
 
     MassProperties mp(

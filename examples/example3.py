@@ -124,7 +124,7 @@ if cfg["plot_energy"]:
         "yaxis_title":"Energy (J)",
     })
     fig0.write_html("ex3_energy.html")
-    #fig0.show()
+    fig0.show()
 
 
 if cfg["plot_out"]:
@@ -163,6 +163,6 @@ if cfg["plot_out"]:
         "scene_aspectmode":"data"
     })
     fig1.write_html("ex3_pos.html")
-    #fig1.show()
+    fig1.show()
 
 

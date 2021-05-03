@@ -17,7 +17,7 @@
 
 /** @file example5.cpp
  * 
- * @brief This example simulates the CMD block that was configured in Chapter 4.1. Note that
+ * @brief This example simulates the CMD block that was configured in Chapter 4.2. Note that
  * this example uses custom dynamics, so the easiest way to simulate the movement was via
  * prescribing the velocity of the mobility in question. 
  * 
